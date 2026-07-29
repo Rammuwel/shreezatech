@@ -13,12 +13,11 @@ RUN apk add --no-cache \
         supervisor \
         libzip-dev \
         sqlite-dev \
+        oniguruma-dev \
     && docker-php-ext-install \
         bcmath \
         ctype \
-        fileinfo \
         mbstring \
-        pdo \
         pdo_sqlite \
         zip \
     && docker-php-ext-enable opcache

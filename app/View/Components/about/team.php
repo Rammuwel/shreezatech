@@ -1,0 +1,62 @@
+<?php
+
+namespace App\View\Components\about;
+
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class team extends Component
+{
+    /**
+     * Create a new component instance.
+     */
+
+    public array $team = [
+
+        [
+            "name" => "Ram Muwel",
+            "position" => "CEO & Founder",
+            "image" => "images/team/ram.png",
+            "linkedin" => "#",
+            "twitter" => "#",
+        ],
+
+        [
+            "name" => "Lokendra Jatav",
+            "position" => "Chief Technology Officer",
+            "image" => "images/team/loken2.png",
+            "linkedin" => "#",
+            "twitter" => "#",
+        ],
+
+        [
+            "name" => "Priya Singh",
+            "position" => "Head of Engineering",
+            "image" => "images/team/ananya.png",
+            "linkedin" => "#",
+            "twitter" => "#",
+        ],
+
+        [
+            "name" => "Neha Verma",
+            "position" => "Head of Marketing",
+            "image" => "images/team/priya.png",
+            "linkedin" => "#",
+            "twitter" => "#",
+        ],
+
+    ];
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
+    {
+        return view('components.about.team');
+    }
+}

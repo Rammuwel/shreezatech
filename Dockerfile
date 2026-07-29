@@ -12,7 +12,7 @@ RUN apk add --no-cache \
         nginx \
         supervisor \
         libzip-dev \
-        sqlite3-dev \
+        sqlite-dev \
     && docker-php-ext-install \
         bcmath \
         ctype \

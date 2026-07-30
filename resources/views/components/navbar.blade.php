@@ -64,7 +64,7 @@ $navItems = [
         </div>
       </a>
 
-      <div class="hidden lg:flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-4">
         @foreach($navItems as $item)
           @if($item['dropdown'])
           <div
@@ -75,9 +75,10 @@ $navItems = [
             <a
               wire:navigate
               href="{{ route($item['route']) }}"
-              class="flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 {{ request()->routeIs($item['route']) ? 'text-heading bg-primary/10' : 'text-text hover:text-heading hover:bg-card' }}">
+              class="relative flex items-center gap-1 py-1 text-sm font-medium transition-colors duration-200 group {{ request()->routeIs($item['route']) ? 'text-heading' : 'text-text hover:text-heading' }}">
               {{ $item['title'] }}
               <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="{ 'rotate-180': subOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary rounded-full transition-transform duration-300 {{ request()->routeIs($item['route']) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
             </a>
             <div
               x-show="subOpen"
@@ -113,8 +114,9 @@ $navItems = [
           <a
             wire:navigate
             href="{{ route($item['route']) }}"
-            class="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 {{ request()->routeIs($item['route']) ? 'text-heading bg-primary/10' : 'text-text hover:text-heading hover:bg-card' }}">
+            class="relative py-1 text-sm font-medium transition-colors duration-200 group {{ request()->routeIs($item['route']) ? 'text-heading' : 'text-text hover:text-heading' }}">
             {{ $item['title'] }}
+            <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary rounded-full transition-transform duration-300 {{ request()->routeIs($item['route']) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
           </a>
           @endif
         @endforeach

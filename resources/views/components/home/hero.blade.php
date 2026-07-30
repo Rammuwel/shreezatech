@@ -7,9 +7,9 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-5 gap-12 lg:gap-20 items-center">
+      <div x-data="mouseParallax()" @mousemove="move" @mouseleave="leave" class="grid lg:grid-cols-5 gap-6 lg:gap-20 items-center">
 
-        <div class="col-span-3">
+        <div class="col-span-3 lg:relative lg:z-10">
           <div x-intersect="animate-fade-in-up" class="opacity-0">
             <div class="inline-flex items-center gap-3 rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 mt-3">
               <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
@@ -60,25 +60,30 @@
           </div>
         </div>
 
-        <div class="relative flex justify-center col-span-2">
-          <div class="absolute w-[26rem] h-[26rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
-          <div class="absolute w-[20rem] h-[20rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
-          <div class="absolute w-[22rem] h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
+        <div class="relative flex justify-center col-span-2 min-h-[20rem] lg:min-h-[32rem]">
+          <div class="absolute w-[18rem] h-[18rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
+          <div class="absolute w-[14rem] h-[14rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
+          <div class="absolute w-[16rem] h-[16rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
 
-          <img src="{{ asset('logo.png') }}" class="relative z-0 w-64 lg:w-80 opacity-50 animate-float" alt="Shreeza" style="animation:float 6s ease-in-out infinite;">
+          <div class="relative z-0 mt-8 lg:mt-16 will-change-transform"
+               :style="'transform:translate(' + (x * 6) + 'px,' + (y * 6) + 'px)'">
+            <img src="{{ asset('logo.png') }}" class="w-64 lg:w-80 opacity-50" alt="Shreeza">
+          </div>
 
           @foreach([
-            ['icon' => 'brain', 'title' => 'AI Powered', 'desc' => 'Automation', 'class' => '-left-4 lg:-left-16 top-8 lg:top-16'],
-            ['icon' => 'desktop', 'title' => 'RAD', 'desc' => 'Rapid Application Development', 'class' => '-left-4 lg:-left-16 top-56 lg:top-80'],
-            ['icon' => 'cloud', 'title' => 'Cloud', 'desc' => 'AWS & Azure', 'class' => '-right-4 lg:-right-16 top-24 lg:top-32'],
-            ['icon' => 'shield', 'title' => 'Secure', 'desc' => 'Enterprise Grade', 'class' => '-right-4 lg:-right-8 bottom-12 lg:bottom-20'],
+            ['icon' => 'brain', 'title' => 'AI Powered', 'desc' => 'Automation', 'class' => '-left-4 lg:-left-16 top-8 lg:top-16', 'parallax' => -8],
+            ['icon' => 'desktop', 'title' => 'RAD', 'desc' => 'Rapid Application Development', 'class' => '-left-4 lg:-left-16 top-56 lg:top-80', 'parallax' => -15],
+            ['icon' => 'cloud', 'title' => 'Cloud', 'desc' => 'AWS & Azure', 'class' => '-right-4 lg:-right-16 top-24 lg:top-32', 'parallax' => 10],
+            ['icon' => 'shield', 'title' => 'Secure', 'desc' => 'Enterprise Grade', 'class' => '-right-4 lg:-right-8 bottom-12 lg:bottom-20', 'parallax' => 12],
           ] as $card)
-          <div class="absolute {{ $card['class'] }} rounded-2xl bg-card/90 border border-border p-3 lg:p-4 backdrop-blur-xl shadow-lg" style="animation:float {{ 3 + $loop->index * 0.5 }}s ease-in-out {{ $loop->index * 0.5 }}s infinite; will-change:transform">
-            <div class="flex items-center gap-2 lg:gap-3">
-              <div class="text-primary"><x-svg.index :icon="$card['icon']" class="w-5 h-5" /></div>
-              <div>
-                <h4 class="font-semibold text-heading text-sm">{{ $card['title'] }}</h4>
-                <p class="text-xs text-muted">{{ $card['desc'] }}</p>
+          <div :style="'transform:translate(' + (x * {{ $card['parallax'] }}) + 'px,' + (y * {{ $card['parallax'] }}) + 'px)'" class="absolute z-20 {{ $card['class'] }} will-change-transform">
+            <div class="rounded-2xl bg-card/90 border border-border p-3 lg:p-4 backdrop-blur-xl shadow-lg" style="animation:float {{ 12 + $loop->index * 2 }}s ease-in-out {{ $loop->index * 0.8 }}s infinite">
+              <div class="flex items-center gap-2 lg:gap-3">
+                <div class="text-primary"><x-svg.index :icon="$card['icon']" class="w-5 h-5" /></div>
+                <div>
+                  <h4 class="font-semibold text-heading text-sm">{{ $card['title'] }}</h4>
+                  <p class="text-xs text-muted">{{ $card['desc'] }}</p>
+                </div>
               </div>
             </div>
           </div>

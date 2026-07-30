@@ -1,5 +1,5 @@
 <section x-data="testimonialsCarousel()" class="py-8 sm:py-10">
-  <script>window.__testimonials = @json($testimonials);</script>
+  <script>window.__testimonials = {!! Js::from($testimonials) !!};</script>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div x-intersect="animate-fade-in-up" class="opacity-0">
@@ -22,7 +22,7 @@
         <div class="overflow-hidden">
           <div class="flex transition-transform duration-500 ease-out" :style="'transform: translateX(-' + (current * (100/perView)) + '%)'">
             <template x-for="(item, i) in items" :key="i">
-              <div class="min-w-[100%] md:min-w-[50%] lg:min-w-[33.33%] xl:min-w-[25%] shrink-0 px-2">
+              <div class="min-w-[100%] md:min-w-[50%] lg:min-w-[33.33%] shrink-0 px-2">
                 <div class="group rounded-2xl border border-border bg-card/70 p-5 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_15px_40px_rgba(37,99,235,0.15)] h-full">
                   <div class="flex items-center gap-3 mb-4">
                     <img :src="item.image" :alt="item.name" class="w-11 h-11 rounded-full object-cover">
@@ -90,8 +90,7 @@
 
       updatePerView() {
         const w = window.innerWidth + 16;
-        if (w >= 1280) this.perView = 4;
-        else if (w >= 1024) this.perView = 3;
+        if (w >= 1024) this.perView = 3;
         else if (w >= 768) this.perView = 2;
         else this.perView = 1;
         this.padItems();

@@ -20,7 +20,7 @@
                 </h1>
 
                 <p style="margin-top:8px;font-size:15px;">
-                    Shreeza Tech • Consulting & Software Solutions
+                    Shreeza • Tech Consulting & Software Solutions
                 </p>
 
             </td>
@@ -31,7 +31,7 @@
             <td style="padding:35px;">
 
                 <p style="margin-top:0;font-size:16px;color:#374151;">
-                    A new enquiry has been submitted through the Shreeza Tech website.
+                    A new enquiry has been submitted through the Shreeza website.
                 </p>
 
                 <table width="100%" cellpadding="12" cellspacing="0"
@@ -107,12 +107,12 @@
             <td style="background:#111827;padding:20px;text-align:center;color:#9ca3af;font-size:13px;">
 
                 <strong style="color:#ffffff;">
-                    Shreeza Tech
+                    Shreeza
                 </strong>
 
                 <br>
 
-                Consulting & Software Solutions
+                Tech Consulting & Software Solutions
 
                 <br><br>
 

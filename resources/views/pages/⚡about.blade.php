@@ -4,8 +4,8 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $title = "ShreezaTech | About Us";
-    public $metaDescription = "Learn about ShreezaTech's journey, our team, and our mission to deliver innovative software solutions.";
+    public $title = "Shreeza | About Us";
+    public $metaDescription = "Learn about Shreeza's journey, our team, and our mission to deliver innovative software solutions.";
 };
 ?>
 

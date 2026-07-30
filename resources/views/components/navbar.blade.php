@@ -53,13 +53,13 @@ $navItems = [
     <div class="flex items-center justify-between h-16 lg:h-20">
 
       <a href="{{ route('home') }}" wire:navigate class="flex items-center gap-2 shrink-0">
-        <img src="{{ asset('logo.png') }}" class="w-10 lg:w-12" alt="ShreezaTech">
+        <img src="{{ asset('logo.png') }}" class="w-10 lg:w-12" alt="Shreeza">
         <div>
           <h2 class="text-xl lg:text-2xl font-bold text-heading leading-tight">
-            Shreeza<span class="text-secondary">Tech</span>
+            Shreeza
           </h2>
           <p class="text-[10px] lg:text-xs text-muted leading-tight -mt-0.5">
-            Consulting & Software Solutions
+            Tech Consulting & Software Solutions
           </p>
         </div>
       </a>

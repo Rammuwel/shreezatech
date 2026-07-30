@@ -55,7 +55,7 @@ new class extends Component
 
 ?>
 <div>
-    <x-seo.meta title="ShreezaTech | Contact" description="Get in touch with ShreezaTech. Start your next project with a free consultation." />
+    <x-seo.meta title="Shreeza | Contact" description="Get in touch with Shreeza. Start your next project with a free consultation." />
     <x-contact.form />
     <x-contact.map />
     <x-contact.faq />

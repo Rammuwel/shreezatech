@@ -7,9 +7,9 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div x-data="mouseParallax()" @mousemove="move" @mouseleave="leave" class="grid lg:grid-cols-5 gap-6 lg:gap-20 items-center">
+      <div x-data="mouseParallax()" @mousemove="move" @mouseleave="leave" class="grid md:grid-cols-5 gap-6 md:gap-12 lg:gap-20 items-center">
 
-        <div class="col-span-3 lg:relative lg:z-10">
+        <div class="col-span-3 md:relative md:z-10">
           <div x-intersect="animate-fade-in-up" class="opacity-0">
             <div class="inline-flex items-center gap-3 rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 mt-3">
               <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
@@ -28,18 +28,18 @@
               We build enterprise software, AI-powered platforms, cloud infrastructure, mobile applications, and digital products that transform businesses worldwide.
             </p>
 
-            <div class="mt-3 flex flex-wrap gap-3">
+            <div class="mt-3 flex flex-wrap gap-2 md:gap-3">
               <a wire:navigate href="{{ route('contact') }}"
-                class="rounded-full bg-primary px-8 py-3.5 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all">
+                class="rounded-full bg-primary px-5 md:px-8 py-2.5 md:py-3.5 text-sm md:font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all">
                 Start Your Project
               </a>
               <a wire:navigate href="{{ route('portfolio') }}"
-                class="rounded-full border border-border px-8 py-3.5 font-semibold text-heading hover:border-primary transition-all">
+                class="rounded-full border border-border px-5 md:px-8 py-2.5 md:py-3.5 text-sm md:font-semibold text-heading hover:border-primary transition-all">
                 Explore Work
               </a>
             </div>
 
-            <div class="mt-3 grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="mt-4 md:mt-6 lg:mt-8 grid grid-cols-4 gap-1 md:gap-2 lg:gap-3">
               @foreach([
                 ['count' => 50, 'suffix' => '+', 'label' => 'Projects', 'icon' => 'code'],
                 ['count' => 30, 'suffix' => '+', 'label' => 'Clients', 'icon' => 'handshake'],
@@ -47,23 +47,23 @@
                 ['count' => 50, 'suffix' => '+', 'label' => 'Satisfaction', 'icon' => 'smile'],
               ] as $stat)
               <div class="text-center">
-                <div class="flex justify-center items-center gap-2">
+                <div class="flex justify-center items-center gap-1 md:gap-2">
                   <div class="text-primary">
-                    <x-svg.index :icon="$stat['icon']" class="w-6 h-6 sm:w-7 sm:h-7" />
+                    <x-svg.index :icon="$stat['icon']" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
                   </div>
-                  <h2 x-data="counter" data-count="{{ $stat['count'] }}" data-suffix="{{ $stat['suffix'] }}" x-text="count + suffix" class="text-2xl sm:text-3xl font-bold text-heading">0{{ $stat['suffix'] }}</h2>
+                  <h2 x-data="counter" data-count="{{ $stat['count'] }}" data-suffix="{{ $stat['suffix'] }}" x-text="count + suffix" class="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-heading">0{{ $stat['suffix'] }}</h2>
                 </div>
-                <p class="text-sm text-muted mt-1">{{ $stat['label'] }}</p>
+                <p class="text-[10px] sm:text-xs md:text-xs lg:text-sm text-muted mt-0.5 md:mt-1">{{ $stat['label'] }}</p>
               </div>
               @endforeach
             </div>
           </div>
         </div>
 
-        <div class="relative flex justify-center col-span-2 min-h-[20rem] lg:min-h-[32rem]">
-          <div class="absolute w-[18rem] h-[18rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
-          <div class="absolute w-[14rem] h-[14rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
-          <div class="absolute w-[16rem] h-[16rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
+        <div class="relative flex justify-center col-span-3 md:col-span-2 min-h-[16rem] md:min-h-[28rem] lg:min-h-[32rem]">
+          <div class="absolute w-[16rem] h-[16rem] md:w-[24rem] md:h-[24rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
+          <div class="absolute w-[12rem] h-[12rem] md:w-[18rem] md:h-[18rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
+          <div class="absolute w-[14rem] h-[14rem] md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
 
           <div class="relative z-0 mt-8 lg:mt-16 will-change-transform"
                :style="'transform:translate(' + (x * 6) + 'px,' + (y * 6) + 'px)'">

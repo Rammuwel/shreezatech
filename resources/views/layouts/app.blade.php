@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="{{ $metaDescription ?? 'ShreezaTech - Consulting & Software Solutions. We build modern software, AI solutions and scalable cloud applications.' }}">
+  <meta name="description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions. We build modern software, AI solutions and scalable cloud applications.' }}">
   <meta name="keywords" content="software development, web development, mobile apps, AI solutions, cloud computing, Laravel, Livewire">
 
   <meta property="og:title" content="{{ $title ?? config('app.name') }}">
-  <meta property="og:description" content="{{ $metaDescription ?? 'ShreezaTech - Consulting & Software Solutions' }}">
+  <meta property="og:description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:image" content="{{ asset('og-image.png') }}">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ $title ?? config('app.name') }}">
-  <meta name="twitter:description" content="{{ $metaDescription ?? 'ShreezaTech - Consulting & Software Solutions' }}">
+  <meta name="twitter:description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
 
   <link rel="canonical" href="{{ url()->current() }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logo.png') }}">

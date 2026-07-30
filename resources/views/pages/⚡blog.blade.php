@@ -4,8 +4,8 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $title = "ShreezaTech | Blog";
-    public $metaDescription = "Explore the latest insights, tutorials, and updates from ShreezaTech on software development, AI, cloud computing, and digital innovation.";
+    public $title = "Shreeza | Blog";
+    public $metaDescription = "Explore the latest insights, tutorials, and updates from Shreeza on software development, AI, cloud computing, and digital innovation.";
     
     public array $posts = [
         [
@@ -13,7 +13,7 @@ new class extends Component
             'excerpt' => 'Learn how to architect and build enterprise-grade web applications using Laravel\'s powerful features and best practices.',
             'image' => 'images/blog/laravel.jpg',
             'category' => 'Development',
-            'author' => 'ShreezaTech Team',
+            'author' => 'Shreeza Team',
             'date' => 'Jul 15, 2026',
             'slug' => 'building-scalable-web-applications-laravel',
         ],
@@ -22,7 +22,7 @@ new class extends Component
             'excerpt' => 'Discover how artificial intelligence is transforming business processes and what it means for your organization.',
             'image' => 'images/blog/ai.jpg',
             'category' => 'AI & ML',
-            'author' => 'ShreezaTech Team',
+            'author' => 'Shreeza Team',
             'date' => 'Jul 10, 2026',
             'slug' => 'future-of-ai-business-automation',
         ],
@@ -31,7 +31,7 @@ new class extends Component
             'excerpt' => 'A comprehensive guide to migrating your infrastructure to the cloud with minimal downtime and maximum efficiency.',
             'image' => 'images/blog/cloud.jpg',
             'category' => 'Cloud',
-            'author' => 'ShreezaTech Team',
+            'author' => 'Shreeza Team',
             'date' => 'Jul 5, 2026',
             'slug' => 'cloud-migration-step-by-step-guide',
         ],
@@ -40,7 +40,7 @@ new class extends Component
             'excerpt' => 'Stay ahead of the curve with these emerging UI/UX design trends that are shaping the digital landscape.',
             'image' => 'images/blog/uiux.jpg',
             'category' => 'Design',
-            'author' => 'ShreezaTech Team',
+            'author' => 'Shreeza Team',
             'date' => 'Jun 28, 2026',
             'slug' => 'ui-ux-trends-2026',
         ],
@@ -49,7 +49,7 @@ new class extends Component
             'excerpt' => 'Explore the benefits of mobile applications for businesses and how they drive customer engagement and revenue.',
             'image' => 'images/blog/mobile.jpg',
             'category' => 'Mobile',
-            'author' => 'ShreezaTech Team',
+            'author' => 'Shreeza Team',
             'date' => 'Jun 20, 2026',
             'slug' => 'why-business-needs-mobile-app',
         ],
@@ -58,7 +58,7 @@ new class extends Component
             'excerpt' => 'Implement these DevOps best practices to streamline your development pipeline and accelerate delivery.',
             'image' => 'images/blog/devops.jpg',
             'category' => 'DevOps',
-            'author' => 'ShreezaTech Team',
+            'author' => 'Shreeza Team',
             'date' => 'Jun 12, 2026',
             'slug' => 'devops-best-practices-2026',
         ],

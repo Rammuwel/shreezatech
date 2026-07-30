@@ -7,8 +7,8 @@ new class extends Component
 {
     use WithFileUploads;
     
-    public $title = "ShreezaTech | Careers";
-    public $metaDescription = "Join ShreezaTech and be part of a team building the future of digital innovation. Explore exciting career opportunities.";
+    public $title = "Shreeza | Careers";
+    public $metaDescription = "Join Shreeza and be part of a team building the future of digital innovation. Explore exciting career opportunities.";
     
     public $name = '';
     public $email = '';

@@ -32,7 +32,7 @@ class ContactNotificationMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Contact Enquiry - Shreeza Tech',
+            subject: 'New Contact Enquiry - Shreeza',
         );
     }
 

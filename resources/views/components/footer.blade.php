@@ -4,10 +4,10 @@
     <div class="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
       <div class="lg:col-span-2">
         <a href="{{ route('home') }}" wire:navigate class="flex items-center gap-2">
-          <img src="{{ asset('logo.png') }}" class="w-10" alt="ShreezaTech">
+          <img src="{{ asset('logo.png') }}" class="w-10" alt="Shreeza">
           <div>
             <h2 class="text-2xl font-bold text-heading">Shreeza</h2>
-            <p class="text-xs text-muted">Tech. Consulting & Software Solutions</p>
+            <p class="text-xs text-muted">Tech Consulting & Software Solutions</p>
           </div>
         </a>
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">
@@ -99,7 +99,7 @@
         </form>
       </div>
 
-      <p class="text-xs text-muted">&copy; {{ date('Y') }} ShreezaTech. All rights reserved.</p>
+      <p class="text-xs text-muted">&copy; {{ date('Y') }} Shreeza. All rights reserved.</p>
 
       <button
         x-data

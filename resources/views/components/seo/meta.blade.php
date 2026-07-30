@@ -16,10 +16,10 @@ $address = $address ?? config('app.address', '');
 $schema = [
   '@context' => 'https://schema.org',
   '@type' => 'Organization',
-  'name' => 'ShreezaTech',
+  'name' => 'Shreeza',
   'url' => config('app.url'),
   'logo' => asset('logo.png'),
-  'description' => $description ?? 'Consulting & Software Solutions',
+  'description' => $description ?? 'Tech Consulting & Software Solutions',
   'contactPoint' => [
     '@type' => 'ContactPoint',
     'telephone' => $phone,
@@ -38,18 +38,18 @@ if ($address) {
 }
 @endphp
 
-<meta name="description" content="{{ $description ?? 'ShreezaTech - Consulting & Software Solutions' }}">
+<meta name="description" content="{{ $description ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
 @if($keywords)<meta name="keywords" content="{{ $keywords }}">@endif
 
 <meta property="og:title" content="{{ $title ? $title.' | '.config('app.name') : config('app.name') }}">
-<meta property="og:description" content="{{ $description ?? 'ShreezaTech - Consulting & Software Solutions' }}">
+<meta property="og:description" content="{{ $description ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
 <meta property="og:type" content="{{ $ogType }}">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:image" content="{{ $ogImage ?? asset('og-image.png') }}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $title ? $title.' | '.config('app.name') : config('app.name') }}">
-<meta name="twitter:description" content="{{ $description ?? 'ShreezaTech - Consulting & Software Solutions' }}">
+<meta name="twitter:description" content="{{ $description ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
 
 <link rel="canonical" href="{{ $canonical }}">
 

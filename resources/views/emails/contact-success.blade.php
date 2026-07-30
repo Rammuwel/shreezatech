@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Thank You for Contacting Shreeza Tech</title>
+    <title>Thank You for Contacting Shreeza</title>
 </head>
 
 <body style="margin:0;padding:40px;background:#f3f4f6;font-family:Arial,Helvetica,sans-serif;">
@@ -35,7 +35,7 @@
                 </p>
 
                 <p style="line-height:1.8;color:#4b5563;">
-                    Thank you for contacting <strong>Shreeza Tech</strong>.
+                    Thank you for contacting <strong>Shreeza</strong>.
                     We appreciate your interest in our services.
                 </p>
 
@@ -104,13 +104,13 @@
                 </p>
 
                 <strong style="color:#2563eb;">
-                    Shreeza Tech
+                    Shreeza
                 </strong>
 
                 <br>
 
                 <span style="color:#6b7280;">
-                    Consulting & Software Solutions
+                    Tech Consulting & Software Solutions
                 </span>
 
             </td>
@@ -121,7 +121,7 @@
             <td style="background:#111827;padding:25px;text-align:center;color:#9ca3af;">
 
                 <strong style="color:#ffffff;">
-                    Shreeza Tech. Consulting and Software Solutions
+                    Shreeza. Tech Consulting & Software Solutions
                 </strong>
 
                 <br>

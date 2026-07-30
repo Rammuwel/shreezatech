@@ -36,7 +36,7 @@ class ContactSuccessMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thank You for Contacting Shreeza Tech',
+            subject: 'Thank You for Contacting Shreeza',
         );
     }
 

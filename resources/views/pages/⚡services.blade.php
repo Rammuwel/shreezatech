@@ -32,7 +32,7 @@ new class extends Component
 ?>
 
 <div>
-    <x-seo.meta title="ShreezaTech | Services" description="Explore our comprehensive software development services including web, mobile, AI, cloud, and UI/UX design solutions." />
+    <x-seo.meta title="Shreeza | Services" description="Explore our comprehensive software development services including web, mobile, AI, cloud, and UI/UX design solutions." />
     <x-services.hero />
     <x-services.services
         :services="$services"

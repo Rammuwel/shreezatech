@@ -15,7 +15,7 @@ new class extends Component
 ?>
 
 <div>
-    <x-seo.meta :title="'ShreezaTech | '.($solution['title'] ?? 'Solution Details')" :description="'Explore our '.($solution['title'] ?? 'solution').' - industry-specific digital solutions for your business.'" />
+    <x-seo.meta :title="'Shreeza | '.($solution['title'] ?? 'Solution Details')" :description="'Explore our '.($solution['title'] ?? 'solution').' - industry-specific digital solutions for your business.'" />
     <x-solution-details.hero :solution="$solution" />
     <x-solution-details.overview :overview="$solution['overview']" />
     <x-solution-details.challenges :challenges="$solution['challenges']" />

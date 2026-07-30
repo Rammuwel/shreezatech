@@ -20,12 +20,12 @@ class ContactSuccessMail extends Mailable
      *
      * @var mixed
      */
-    public Contact $contact;
+    public  $contact;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Contact $contact)
+    public function __construct( $contact)
     {
         $this->contact = $contact;
     }

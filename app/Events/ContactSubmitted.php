@@ -18,8 +18,9 @@ class ContactSubmitted
     /**
      * Create a new event instance.
      */
-     public Contact $contact;
-    public function __construct(Contact $contact)
+    public $contact;
+    
+    public function __construct($contact)
     {
         $this->contact = $contact;
     }

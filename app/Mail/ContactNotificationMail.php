@@ -18,8 +18,8 @@ class ContactNotificationMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public Contact $contact;
-    public function __construct(Contact $contact)
+    public  $contact;
+    public function __construct( $contact)
     {
         $this->contact = $contact;
     }

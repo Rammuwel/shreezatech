@@ -1,5 +1,5 @@
 <section x-data="testimonialsCarousel()" class="py-8 sm:py-10">
-  <script>window.__testimonials = {{ Js::from($testimonials) }};</script>
+  <script>window.__testimonials = @json($testimonials);</script>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div x-intersect="animate-fade-in-up" class="opacity-0">

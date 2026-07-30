@@ -61,7 +61,7 @@
         </div>
 
         <div class="relative flex justify-center col-span-2">
-          <div class="absolute w-[26rem] h-[26rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
+          <div class="absolute w-104 h-104 lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
           <div class="absolute w-[20rem] h-[20rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
           <div class="absolute w-[22rem] h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
 

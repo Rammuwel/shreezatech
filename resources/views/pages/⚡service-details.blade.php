@@ -15,23 +15,13 @@ new class extends Component
 ?>
 
 <div>
-    
-    <x-navbar />
+    <x-seo.meta :title="'ShreezaTech | '.($service['title'] ?? 'Service Details')" description="Learn about our {{ $service['title'] ?? 'service' }} - {{ $service['short'] ?? 'Professional software development services' }}" />
     <x-service-details.hero :service="$service" />
-
     <x-service-details.overview :service="$service" />
-
     <x-service-details.features :service="$service" />
-
     <x-service-details.technology :service="$service" />
-
     <x-service-details.process :service="$service" />
-
     <x-service-details.why-choose :service="$service" />
-
     <x-service-details.faq :service="$service" />
-
     <x-home.banner  />
-    <x-footer />
-
 </div>

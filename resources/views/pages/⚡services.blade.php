@@ -32,7 +32,7 @@ new class extends Component
 ?>
 
 <div>
-    <x-navbar />
+    <x-seo.meta title="ShreezaTech | Services" description="Explore our comprehensive software development services including web, mobile, AI, cloud, and UI/UX design solutions." />
     <x-services.hero />
     <x-services.services
         :services="$services"
@@ -41,5 +41,4 @@ new class extends Component
     <x-services.features />
     <x-services.process />
     <x-home.banner/>
-    <x-footer />
 </div>

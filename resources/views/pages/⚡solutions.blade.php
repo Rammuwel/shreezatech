@@ -32,12 +32,11 @@ new class extends Component
 ?>
 
 <div>
-    <x-navbar />
+    <x-seo.meta title="ShreezaTech | Solutions" description="Industry-specific software solutions for healthcare, finance, education, retail, manufacturing, and more." />
     <x-solutions.hero />
     <x-solutions.solutions
         :solutions="$solutions"
         :offset="$offset"
         :len="$len" />
     <x-home.banner />
-    <x-footer />
 </div>

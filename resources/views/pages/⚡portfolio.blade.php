@@ -56,9 +56,8 @@ new class extends Component
     }
 };
 ?>
-
 <div>
-    <x-navbar />
+    <x-seo.meta title="ShreezaTech | Portfolio" description="Explore our portfolio of successful projects across various industries including fintech, healthcare, e-commerce, and more." />
     <x-portfolio.hero />
     <x-portfolio.portfolio
         :projects="$projects"
@@ -66,7 +65,5 @@ new class extends Component
         :len="$len"
         :activeCategory="$activeCategory" />
     <x-portfolio.termonology />
-
     <x-home.banner />
-    <x-footer />
 </div>

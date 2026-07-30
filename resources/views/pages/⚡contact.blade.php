@@ -54,12 +54,9 @@ new class extends Component
 };
 
 ?>
-
 <div>
-    <x-navbar />
-
+    <x-seo.meta title="ShreezaTech | Contact" description="Get in touch with ShreezaTech. Start your next project with a free consultation." />
     <x-contact.form />
     <x-contact.map />
     <x-contact.faq />
-    <x-footer />
 </div>

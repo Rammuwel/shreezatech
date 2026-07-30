@@ -4,16 +4,16 @@ use Livewire\Component;
 
 new class extends Component
 {
-    //
+    public $title = "ShreezaTech | About Us";
+    public $metaDescription = "Learn about ShreezaTech's journey, our team, and our mission to deliver innovative software solutions.";
 };
 ?>
 
 <div>
-    <x-navbar/>
+    <x-seo.meta :title="$title" :description="$metaDescription" />
     <x-about.hero/>
     <x-about.state/>
     <x-about.journy/>
     <x-about.team/>
     <x-home.banner/>
-    <x-footer />
 </div>

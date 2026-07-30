@@ -7,7 +7,7 @@
         <!-- Main Card -->
         <div>
 
-            <div class="grid lg:grid-cols-6 gap-16">
+           <div class="grid grid-cols-1 lg:grid-cols-6 gap-10 lg:gap-16">
 
                 <!-- ===================================== -->
                 <!-- LEFT : PROCESS -->
@@ -40,8 +40,7 @@
                             border-t-2 border-dashed border-border">
                         </div>
 
-                        <div
-                            class="grid grid-cols-5 gap-3 relative z-10">
+                       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
 
                             <!-- ================= STEP 1 ================= -->
 

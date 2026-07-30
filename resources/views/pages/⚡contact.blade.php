@@ -32,8 +32,8 @@ new class extends Component
 
 
         $validated = $this->validate();
-        $contact =  Contact::create($validated);
-
+        // $contact =  Contact::create($validated);
+        $contact  = $validated;
          
          ContactSubmitted::dispatch($contact);
 

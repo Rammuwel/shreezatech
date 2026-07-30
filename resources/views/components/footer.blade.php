@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
         <!-- Main Structure Grid -->
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
 
             <!-- Company Profile & Meta Section -->
             <div class="lg:col-span-2">

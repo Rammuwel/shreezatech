@@ -228,7 +228,7 @@ $navItems = [
 
 <nav
     x-data="{ open: false }"
-    class="fixed top-0 left-0 w-full z-50 border-b border-border bg-background backdrop-blur-xl font-sans">
+    class="sticky top-0 w-full z-50 border-b border-border bg-background backdrop-blur-xl font-sans">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
         <div class="flex items-center justify-between h-20">
@@ -239,12 +239,12 @@ $navItems = [
                 <img src="{{ asset('logo.png') }}" class="w-15 " alt="Shreeza">
 
                 <div class="ml-0.5">
-                    <h2 class=" text-3xl font-bold  text-heading">
-                        Shree<b class="text-secondary">z</b>a
+                    <h2 class="text-3xl font-bold  text-heading">
+                        Shreeza<span class=" text-secondary">Tech</span>
                     </h2>
 
                     <p class="text-xs text-muted">
-                        Tech. Consulting & Software Solutions
+                       Consulting & Software Solutions
                     </p>
                 </div>
 
@@ -542,9 +542,15 @@ $navItems = [
 
             <button
                 @click="open=!open"
-                class="lg:hidden text-white">
+                class="lg:hidden text-heading p-2 focus:outline-none">
 
-                ☰
+                <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                
+                <svg x-show="open" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
 
             </button>
 
@@ -557,35 +563,46 @@ $navItems = [
     <div
         x-show="open"
         x-transition
-        class="lg:hidden border-t border-white/10 bg-slate-950">
+        x-cloak
+        class="lg:hidden absolute top-full left-0 w-full border-t border-border bg-background shadow-xl max-h-[80vh] overflow-y-auto">
 
         <div class="flex flex-col p-6 space-y-4">
 
-            <a wire:navigate href="{{ route('home') }}">Home</a>
+            @foreach($navItems as $item)
 
-            <a href="#">Services</a>
+                @if($item['dropdown'])
+                    <div x-data="{ subOpen: false }" class="flex flex-col">
+                        <button @click="subOpen = !subOpen" class="flex justify-between items-center text-text hover:text-primary transition font-medium text-left">
+                            {{ $item['title'] }}
+                            <svg class="w-4 h-4 transition duration-300" :class="{ 'rotate-180': subOpen }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        
+                        <div x-show="subOpen" x-transition class="mt-3 pl-4 space-y-3 flex flex-col border-l border-border">
+                            @foreach($item['items'] as $subItem)
+                                <a wire:navigate href="{{ url($item['route'], $subItem['route']) }}" class="text-muted hover:text-primary text-sm flex items-center gap-3">
+                                    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa {{ $subItem['icon'] ?? '' }}"></i>
+                                    </div>
+                                    {{ $subItem['title'] }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <a wire:navigate href="{{ route($item['route']) }}" class="text-text hover:text-primary transition font-medium">
+                        {{ $item['title'] }}
+                    </a>
+                @endif
 
-            <a href="#">Portfolio</a>
+            @endforeach
 
-            <a href="#">About</a>
-
-            <a href="#">Contact</a>
-
-            @guest
-
-            <a wire:navigate href="{{ route('login') }}">Login</a>
-
-            <a wire:navigate href="{{ route('register') }}">
-                Register
-            </a>
-
-            @else
-
-            <a wire:navigate href="{{ route('dashboard') }}">
-                Dashboard
-            </a>
-
-            @endguest
+            <div class="pt-4 mt-2 border-t border-border">
+                <a wire:navigate href="{{ route('contact') }}" class="flex justify-center w-full rounded-full bg-secondary px-6 py-3 font-semibold text-white hover:bg-secondary-hover transition-all">
+                    Get Started
+                </a>
+            </div>
 
         </div>
 

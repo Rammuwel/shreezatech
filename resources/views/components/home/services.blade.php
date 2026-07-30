@@ -1,10 +1,10 @@
 <section class="services py-10">
 
-    <div class="max-w-7xl mx-auto lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Header -->
 
-        <div class="services-header flex items-end justify-between mb-6">
+        <div class="services-header flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-8">
 
             <div>
 
@@ -12,16 +12,16 @@
                     WHAT WE DO
                 </span>
 
-                <h2 class="services-title text-2xl font-bold text-heading">
+                <h2 class="services-title text-3xl md:text-4xl font-bold text-heading">
                     Services We Provide
                 </h2>
 
             </div>
 
             <a
-                href="{{ route('services') }}"
                 wire:navigate
-                class="hidden md:flex items-center gap-2 text-primary font-medium hover:gap-4 transition-all">
+                href="{{ route('services') }}"
+                class="hidden md:flex items-center gap-2 text-primary font-medium transition-all hover:gap-4">
 
                 View All Services
 

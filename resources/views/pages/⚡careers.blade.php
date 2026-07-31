@@ -17,7 +17,6 @@ new class extends Component
     public $experience = '';
     public $message = '';
     public $resume;
-    public $submitted = false;
 
     public array $positions = [
         'Senior Laravel Developer',
@@ -46,14 +45,9 @@ new class extends Component
     public function submit()
     {
         $this->validate();
-        
-        if ($this->resume) {
-            $this->resume->store('resumes', 'public');
-        }
-        
-        $this->submitted = true;
+
         $this->reset(['name', 'email', 'phone', 'position', 'experience', 'message', 'resume']);
-        
+
         session()->flash('success', 'Application submitted successfully! We will review your application and get back to you.');
     }
 };
@@ -71,14 +65,15 @@ new class extends Component
             </div>
 
             @if(session('success'))
-            <div x-intersect="animate-fade-in-up" class="opacity-0 max-w-2xl mx-auto text-center p-8 rounded-2xl bg-success/10 border border-success/20">
-                <svg class="w-16 h-16 mx-auto text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <h3 class="text-2xl font-bold text-heading mt-4">Application Submitted!</h3>
-                <p class="text-muted mt-2">{{ session('success') }}</p>
+            <div class="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+                <div id="career-modal" class="pointer-events-auto w-full max-w-md rounded-2xl border border-border bg-card p-8 text-center shadow-2xl">
+                    <svg class="w-16 h-16 mx-auto text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="text-2xl font-bold text-heading mt-4">Application Submitted!</h3>
+                    <p class="text-muted mt-2">{{ session('success') }}</p>
+                    <button type="button" onclick="document.getElementById('career-modal').style.display='none'" class="mt-6 w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover transition-all">Done</button>
+                </div>
             </div>
             @endif
-
-            @if(!session('success'))
             <div class="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 <div x-intersect="animate-fade-in-up" class="opacity-0 space-y-6">
                     <h2 class="text-2xl font-bold text-heading">Why Work With Us?</h2>
@@ -170,7 +165,6 @@ new class extends Component
                     </div>
                 </div>
             </div>
-            @endif
         </div>
     </section>
 

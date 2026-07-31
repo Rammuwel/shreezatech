@@ -16,7 +16,7 @@ class Team extends Component
 
         [
             "name" => "Ram Muwel",
-            "position" => "CEO & Founder",
+            "position" => "Founder & CEO",
             "image" => "images/team/ram.png",
             "linkedin" => "#",
             "twitter" => "#",

@@ -1,6 +1,6 @@
 <section class="py-5">
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Heading -->
 
@@ -24,14 +24,21 @@
 
         <div class="relative mt-10">
 
-            <!-- Line -->
+            <!-- Horizontal Line (Desktop) -->
 
             <div
-                class="absolute left-0 right-0 top-60 h-0.5
+                class="hidden lg:block absolute left-0 right-0 top-60 h-0.5
                 bg-border">
             </div>
 
-            <div class="grid grid-cols-5 gap-8">
+            <!-- Vertical Line (Mobile & Tablet) -->
+
+            <div
+                class="lg:hidden absolute left-4 top-0 bottom-0 w-0.5
+                bg-border">
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8 pl-10 lg:pl-0">
 
                 @foreach($journey as $item)
 
@@ -67,11 +74,23 @@
 
                         </div>
 
-                        <!-- Dot -->
+                        <!-- Dot (Desktop) -->
 
                         <div
-                            class="absolute left-1/2 -translate-x-1/2
+                            class="hidden lg:block absolute left-1/2 -translate-x-1/2
                             top-58">
+
+                            <div
+                                class="w-4 h-4 rounded-full
+                                bg-primary shadow-[0_0_20px_#2563eb]">
+                            </div>
+
+                        </div>
+
+                        <!-- Dot (Mobile & Tablet) -->
+
+                        <div
+                            class="lg:hidden absolute -left-8 top-6">
 
                             <div
                                 class="w-4 h-4 rounded-full

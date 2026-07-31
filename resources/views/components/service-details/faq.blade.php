@@ -17,7 +17,7 @@
 
             </span>
 
-            <h2 class="mt-5 text-4xl font-bold text-white lg:text-5xl">
+            <h2 class="mt-5 text-4xl font-bold text-heading lg:text-5xl">
 
                 Have Questions? We've Got Answers
 
@@ -46,7 +46,7 @@
                         @click="open = !open"
                         class="flex w-full items-center justify-between p-6 text-left">
 
-                        <h3 class="text-lg font-semibold text-white">
+                        <h3 class="text-lg font-semibold text-heading">
 
                             {{ $faq['question'] }}
 

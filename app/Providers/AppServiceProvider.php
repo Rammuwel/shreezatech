@@ -5,9 +5,8 @@ namespace App\Providers;
 use App\Events\ContactSubmitted;
 use App\Listeners\SendContactEmails;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\URL;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Force HTTPS in production environments
         if (config('app.env') === 'production') {
-            URL::forceScheme('https');
+            Url::forceScheme('https');
         }
     }
 }

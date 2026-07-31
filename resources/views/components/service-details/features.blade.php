@@ -16,7 +16,7 @@
 
             </span>
 
-            <h2 class="mt-5 text-4xl font-bold text-white lg:text-5xl">
+            <h2 class="mt-5 text-4xl font-bold text-heading lg:text-5xl">
 
                 Powerful Features for Modern Businesses
 
@@ -47,7 +47,7 @@
 
                     </div>
 
-                    <h3 class="mt-8 text-2xl font-semibold text-white">
+                    <h3 class="mt-8 text-2xl font-semibold text-heading">
 
                         {{ $feature['title'] }}
 

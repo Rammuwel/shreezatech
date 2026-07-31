@@ -19,7 +19,7 @@
 
             </span>
 
-            <h2 class="mt-6 text-4xl font-bold text-white lg:text-5xl">
+            <h2 class="mt-6 text-4xl font-bold text-heading lg:text-5xl">
 
                 Technologies We Use
 
@@ -50,7 +50,7 @@
 
                     </div>
 
-                    <h3 class="mt-6 text-xl font-semibold text-white">
+                    <h3 class="mt-6 text-xl font-semibold text-heading">
 
                         {{ $technology }}
 

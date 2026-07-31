@@ -8,6 +8,8 @@ new class extends Component
     public $title = "Shreeza | Blog";
     public $metaDescription = "Explore the latest insights, tutorials, and updates from Shreeza on software development, AI, cloud computing, and digital innovation.";
 
+    public string $category = '';
+
     public array $posts = [];
 
     public array $categories = [];
@@ -16,17 +18,30 @@ new class extends Component
 
     public bool $heroVisible = true;
 
-    public function mount(): void
+    public function mount(string $category): void
     {
-        $this->posts = BlogPosts::all();
+        $resolved = BlogPosts::findCategoryBySlug($category);
+        $this->category = $resolved ?? 'All';
+        $this->activeCategory = $resolved ? Str::lower($resolved) : 'all';
+        $this->posts = $resolved ? BlogPosts::findByCategory($resolved) : BlogPosts::all();
         $this->categories = BlogPosts::categories();
+        $this->title = $resolved ? "{$resolved} | Shreeza Blog" : "Shreeza | Blog";
+        $this->metaDescription = $resolved ? "Browse our articles about {$resolved} covering best practices, trends, and insights." : $this->metaDescription;
     }
 
     public function filterByCategory(string $category): void
     {
         $this->activeCategory = $category;
         $this->heroVisible = false;
-        $this->posts = $category === 'all' ? BlogPosts::all() : BlogPosts::findByCategory($category);
+        if ($category === 'all') {
+            $this->posts = BlogPosts::all();
+            $this->category = 'All';
+            $this->title = 'Shreeza | Blog';
+        } else {
+            $this->posts = BlogPosts::findByCategory($category);
+            $this->category = ucfirst($category);
+            $this->title = ucfirst($category).' | Shreeza Blog';
+        }
     }
 };
 ?>
@@ -49,13 +64,15 @@ new class extends Component
             <div x-intersect="animate-fade-in-up" class="opacity-0">
                 <span class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-bold tracking-[0.2em] uppercase text-primary">
                     <i class="fa-solid fa-newspaper"></i>
-                    Our Blog
+                    Blog
                 </span>
                 <h1 class="mt-5 text-4xl sm:text-5xl font-bold text-heading tracking-tight">
-                    Insights & <span class="bg-linear-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">Updates</span>
+                    {{ $activeCategory === 'all' ? 'All Articles' : ucfirst($activeCategory).' Articles' }}
                 </h1>
                 <p class="mt-4 text-lg text-muted max-w-2xl mx-auto">
-                    Stay informed with the latest trends, tutorials, and news from our team on software development, AI, and cloud computing.
+                    {{ $activeCategory === 'all'
+                        ? 'Stay informed with the latest trends, tutorials, and news from our team.'
+                        : 'Browse our articles and insights about '.ucfirst($activeCategory).'.' }}
                 </p>
             </div>
         </div>
@@ -125,64 +142,6 @@ new class extends Component
                     </button>
                 </div>
             @endif
-        </div>
-    </section>
-
-    <!-- ================= Newsletter ================= -->
-    <section class="relative overflow-hidden bg-background/60 pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative overflow-hidden rounded-[32px] border border-border bg-card px-8 py-14 lg:px-16">
-                <div class="absolute -right-20 -top-20 h-60 w-60 rounded-full border border-primary/10"></div>
-                <div class="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-primary/5 blur-[80px]"></div>
-
-                <div class="relative grid items-center gap-10 lg:grid-cols-2">
-                    <div>
-                        <span class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary">
-                            <i class="fa-solid fa-envelope"></i>
-                            Newsletter
-                        </span>
-                        <h2 class="mt-5 text-3xl font-bold text-heading sm:text-4xl">
-                            Stay Updated With <span class="text-primary">Our Latest Insights</span>
-                        </h2>
-                        <p class="mt-4 text-muted leading-7">
-                            Subscribe to receive the latest technology trends, development tutorials, AI insights, and company updates directly in your inbox.
-                        </p>
-                        <div class="mt-6 space-y-3">
-                            <div class="flex items-center gap-3 text-sm text-text">
-                                <i class="fa-solid fa-circle-check text-primary"></i>
-                                Weekly Tech Articles
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-text">
-                                <i class="fa-solid fa-circle-check text-primary"></i>
-                                Industry Insights
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-text">
-                                <i class="fa-solid fa-circle-check text-primary"></i>
-                                No Spam. Unsubscribe Anytime.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="rounded-3xl border border-border bg-background/50 p-8">
-                            <h3 class="text-2xl font-semibold text-heading">Subscribe Now</h3>
-                            <p class="mt-2 text-sm text-muted">Join thousands of developers and business leaders.</p>
-                            <form action="{{ route('newsletter.subscribe') }}" method="POST" class="mt-7 space-y-4">
-                                @csrf
-                                <input type="text" name="name" placeholder="Full Name"
-                                    class="h-14 w-full rounded-xl border border-border bg-card px-5 text-text placeholder:text-muted outline-none transition focus:border-primary">
-                                <input type="email" name="email" placeholder="Email Address" required
-                                    class="h-14 w-full rounded-xl border border-border bg-card px-5 text-text placeholder:text-muted outline-none transition focus:border-primary">
-                                <button type="submit"
-                                    class="flex h-14 w-full items-center justify-center rounded-xl bg-primary font-semibold text-white transition hover:bg-primary/90 active:scale-95">
-                                    Subscribe Now
-                                    <i class="fa-solid fa-arrow-right ml-3"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 

@@ -62,7 +62,7 @@ new class extends Component
 <div>
     <x-seo.meta :title="$title" :description="$metaDescription" />
 
-    <section class="py-16 sm:py-20">
+    <section class="py-16 sm:py-20 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div x-intersect="animate-fade-in-up" class="opacity-0 text-center max-w-2xl mx-auto mb-12">
                 <span class="text-secondary uppercase tracking-[0.25em] text-xs font-bold">CAREERS</span>

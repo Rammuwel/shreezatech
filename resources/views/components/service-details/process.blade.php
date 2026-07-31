@@ -18,7 +18,7 @@
 
             </span>
 
-            <h2 class="mt-5 text-4xl font-bold text-white lg:text-5xl">
+            <h2 class="mt-5 text-4xl font-bold text-heading lg:text-5xl">
 
                 Our Proven Development Process
 
@@ -62,7 +62,7 @@
                         <div
                             class="flex-1 rounded-3xl border border-border bg-card p-8 transition duration-300 hover:border-primary/30 hover:-translate-y-1">
 
-                            <h3 class="text-2xl font-semibold text-white">
+                            <h3 class="text-2xl font-semibold text-heading">
 
                                 {{ $step }}
 

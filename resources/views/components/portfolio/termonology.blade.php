@@ -1,6 +1,7 @@
 <section class="py-10">
 
-    <div class="max-w-7xl mx-auto  border-border bg-card rounded-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="border-border bg-card rounded-2xl">
 
         <!-- Features -->
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-5">
@@ -96,6 +97,8 @@
                 </p>
 
             </div>
+
+        </div>
 
         </div>
 

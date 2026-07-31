@@ -50,7 +50,7 @@
 
                         <img
                             src="{{ asset($member['image']) }}"
-                            class="h-80 w-full object-cover
+                            class="h-80 w-full object-cover origin-bottom
                             transition duration-700
                             group-hover:scale-110">
 

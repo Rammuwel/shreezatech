@@ -1,5 +1,5 @@
 <section class="portfolio-hero overflow-hidden  bg-background">
-    <div class="relative mt-25  flex items-center">
+    <div class="relative mt-20  flex items-center">
 
         <!-- ================= Background ================= -->
 
@@ -33,7 +33,7 @@
             class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
             <div
-                class="grid lg:grid-cols-4 gap-20 items-center">
+                class="grid lg:grid-cols-4 gap-10 lg:gap-20 items-center">
 
                 <!-- ================================================= -->
                 <!-- LEFT -->
@@ -114,7 +114,7 @@
 
                     <img
                         src="{{ asset('/images/projects/banner.png') }}"
-                        class="portfolio-image relative z-0 w-207 hero-float opacity-30 "
+                        class="portfolio-image relative z-0 w-64 sm:w-96 lg:w-125 xl:w-207 hero-float opacity-30 "
                         alt="Shreeza">
 
                 </div>
@@ -122,7 +122,8 @@
 
         </div>
     </div>
-       <div class="max-w-7xl mx-auto  border-border bg-card rounded-2xl mb-3 ">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
+        <div class="border-border bg-card rounded-2xl">
 
         <!-- Features -->
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">
@@ -218,6 +219,8 @@
                 </p>
 
             </div>
+
+        </div>
 
         </div>
 

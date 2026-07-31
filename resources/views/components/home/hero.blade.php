@@ -94,7 +94,7 @@
     </div>
   </div>
 
-  <div class="my-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="mb-4 mt-0 md:mt-2 md:mb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="rounded-2xl border border-border bg-card/50 backdrop-blur-xl p-6">
       <div class="flex flex-col lg:flex-row lg:items-center gap-6">
         <div class="lg:w-1/4">

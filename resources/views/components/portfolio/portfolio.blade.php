@@ -7,7 +7,7 @@
 ])
 
 
-<section class="ortfolio  w-6xl m-auto">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="portfolio-filter flex flex-wrap  gap-3 py-5">
 
         @foreach($categories as $category)
@@ -27,7 +27,7 @@
         @endforeach
 
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7 my-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7 my-4">
 
         @foreach($projects as $project)
 

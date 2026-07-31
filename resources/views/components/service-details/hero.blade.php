@@ -1,7 +1,7 @@
 @props(['service'])
 
 <section class="py-10 hero overflow-hidden  bg-background">
-    <div class="relative mt-20  flex items-center">
+    <div class="relative mt-10  flex items-center">
 
        
           <div class="absolute inset-0">
@@ -57,7 +57,7 @@
 
                         <i class="fa-solid fa-chevron-right text-xs"></i>
 
-                        <span class="text-white">
+                        <span class="text-heading">
                             {{ $service['name'] }}
                         </span>
 

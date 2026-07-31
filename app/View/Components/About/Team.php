@@ -24,7 +24,7 @@ class Team extends Component
 
         [
             "name" => "Lokendra Jatav",
-            "position" => "Chief Technology Officer",
+            "position" => "Co-founder & CTO",
             "image" => "images/team/loken2.png",
             "linkedin" => "#",
             "twitter" => "#",

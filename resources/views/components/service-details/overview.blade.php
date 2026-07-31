@@ -22,7 +22,7 @@
 
                 </span>
 
-                <h2 class="mt-5 text-4xl font-bold text-white lg:text-5xl">
+                <h2 class="mt-5 text-4xl font-bold text-heading lg:text-5xl">
 
                     {{ $service['overview']['title'] }}
 
@@ -50,7 +50,7 @@
 
                             </div>
 
-                            <span class="font-medium text-white">
+                            <span class="font-medium text-heading">
 
                                 {{ $benefit }}
 

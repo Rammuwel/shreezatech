@@ -1,10 +1,6 @@
 <?php
 
 use App\Events\ContactSubmitted;
-use App\Mail\ContactNotificationMail;
-use App\Mail\ContactSuccessMail;
-use App\Models\Contact;
-use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 new class extends Component
@@ -28,15 +24,10 @@ new class extends Component
 
     public function submit(): void
     {
-
-
-
         $validated = $this->validate();
-        // $contact =  Contact::create($validated);
-        $contact  = $validated;
-         
-         ContactSubmitted::dispatch($contact);
+        $validated['created_at'] = now();
 
+        ContactSubmitted::dispatch($validated);
 
         session()->flash(
             'success',

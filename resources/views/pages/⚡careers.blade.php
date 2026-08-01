@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Models\CareerApplication;
 
 new class extends Component
 {
@@ -16,7 +17,7 @@ new class extends Component
     public $position = '';
     public $experience = '';
     public $message = '';
-    public $resume;
+    public $resume = null;
 
     public array $positions = [
         'Senior Laravel Developer',
@@ -38,13 +39,28 @@ new class extends Component
             'position' => 'required|string',
             'experience' => 'required|string',
             'message' => 'nullable|string|max:2000',
-            'resume' => 'nullable|file|mimes:pdf,doc,docx|max:5120',
+            'resume' => 'required|file|mimes:pdf,doc,docx|max:5120',
         ];
     }
 
     public function submit()
     {
-        $this->validate();
+        $validated = $this->validate();
+
+        $resumePath = null;
+        if ($this->resume) {
+            $resumePath = $this->resume->store('resumes', 'local');
+        }
+
+        CareerApplication::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'] ?? null,
+            'position' => $validated['position'],
+            'experience' => $validated['experience'],
+            'message' => $validated['message'] ?? null,
+            'resume_path' => $resumePath,
+        ]);
 
         $this->reset(['name', 'email', 'phone', 'position', 'experience', 'message', 'resume']);
 
@@ -58,7 +74,7 @@ new class extends Component
 
     <section class="py-16 sm:py-20 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div x-intersect="animate-fade-in-up" class="opacity-0 text-center max-w-2xl mx-auto mb-12">
+            <div wire:ignore x-intersect="animate-fade-in-up" class="opacity-0 text-center max-w-2xl mx-auto mb-12">
                 <span class="text-secondary uppercase tracking-[0.25em] text-xs font-bold">CAREERS</span>
                 <h1 class="text-3xl sm:text-4xl font-bold text-heading mt-3">Join Our Team</h1>
                 <p class="mt-3 text-text/80">Be part of a passionate team building innovative solutions that make a real impact.</p>
@@ -75,7 +91,7 @@ new class extends Component
             </div>
             @endif
             <div class="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <div x-intersect="animate-fade-in-up" class="opacity-0 space-y-6">
+                <div wire:ignore x-intersect="animate-fade-in-up" class="opacity-0 space-y-6">
                     <h2 class="text-2xl font-bold text-heading">Why Work With Us?</h2>
                     @foreach([
                         ['title' => 'Innovative Projects', 'desc' => 'Work on cutting-edge technologies and challenging problems.'],
@@ -95,11 +111,11 @@ new class extends Component
                     @endforeach
                 </div>
 
-                <div x-intersect="animate-fade-in-up" class="opacity-0">
+                <div>
                     <div class="rounded-2xl border border-border bg-card p-6 sm:p-8">
                         <h2 class="text-xl font-bold text-heading mb-6">Apply Now</h2>
                         
-                        <form wire:submit="submit" class="space-y-4">
+                        <form wire:submit.prevent="submit" class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-heading mb-1.5">Full Name *</label>
                                 <input wire:model="name" type="text" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="John Doe">
@@ -145,7 +161,7 @@ new class extends Component
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-heading mb-1.5">Resume (PDF, DOC)</label>
+                                <label class="block text-sm font-medium text-heading mb-1.5">Resume (PDF, DOC) *</label>
                                 <input wire:model="resume" type="file" accept=".pdf,.doc,.docx" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:text-sm hover:file:bg-primary/20 transition-colors">
                                 @error('resume') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
                                 <div wire:loading wire:target="resume" class="mt-1 text-xs text-muted">Uploading...</div>
@@ -157,9 +173,9 @@ new class extends Component
                                 @error('message') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
                             </div>
 
-                            <button type="submit" wire:loading.attr="disabled" class="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50">
-                                <span wire:loading.remove>Submit Application</span>
-                                <span wire:loading>Submitting...</span>
+                            <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50">
+                                <span wire:loading.remove wire:target="submit">Submit Application</span>
+                                <span wire:loading wire:target="submit">Submitting...</span>
                             </button>
                         </form>
                     </div>

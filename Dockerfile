@@ -18,7 +18,7 @@ RUN apk add --no-cache \
         bcmath \
         ctype \
         mbstring \
-        pdo_sqlite \
+        pdo_pgsql \
         zip \
     && docker-php-ext-enable opcache
 

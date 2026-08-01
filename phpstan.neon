@@ -1,0 +1,17 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 8
+    paths:
+        - app/Contracts
+        - app/Exceptions
+        - app/Http/Controllers/Admin
+        - app/Http/Middleware
+        - app/Http/Requests
+        - app/Jobs
+        - app/Models/CareerApplication.php
+        - app/Providers/AppServiceProvider.php
+        - app/Services
+        - app/Support
+    tmpDir: storage/framework/cache/phpstan

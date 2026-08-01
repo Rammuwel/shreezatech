@@ -13,18 +13,24 @@ class CareerApplication extends Model
         'position',
         'experience',
         'message',
-        'resume_path',
         'status',
         'is_read',
+        'resume_url',
+        'resume_public_id',
+        'resume_original_name',
+        'resume_size',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     */
     protected function casts(): array
     {
         return [
             'is_read' => 'boolean',
+            'resume_size' => 'integer',
         ];
+    }
+
+    public function hasResume(): bool
+    {
+        return $this->resume_public_id !== null;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CareerApplicationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +13,6 @@ Route::post('/newsletter/subscribe', function (Request $request) {
         ? response()->json(['message' => 'Subscribed successfully!'])
         : back()->with('newsletter_status', 'Subscribed successfully!');
 })->name('newsletter.subscribe');
-
 
 Route::livewire('/', 'pages::home')->name('home');
 Route::livewire('/login', 'pages::home')->name('login');
@@ -34,8 +34,6 @@ Route::livewire('/ai', 'pages::home')->name('ai');
 Route::livewire('/ai-automation', 'pages::home')->name('ai-automation');
 Route::livewire('/cyber-security', 'pages::home')->name('cyber-security');
 
-
-
 Route::livewire('/services/{slug}', 'pages::service-details')->name('service');
 Route::livewire('/solutions/{slug}', 'pages::solution-details')->name('solution');
 Route::livewire('/portfolio/{slug}', 'pages::home')->name('portfolio.show');
@@ -49,5 +47,15 @@ Route::livewire('/careers', 'pages::careers')->name('careers');
 // Route::livewire('/services/custom-software', 'pages::home')->name('services.custom-software');
 // Route::livewire('/services/consulting', 'pages::home')->name('services.enterprise');
 
-
 Route::livewire('/contact', 'pages::contact')->name('contact');
+
+Route::prefix('admin')
+    ->middleware('admin.token')
+    ->name('admin.')
+    ->group(function (): void {
+        Route::get('/careers', [CareerApplicationController::class, 'index'])->name('careers.index');
+        Route::get('/careers/{application}', [CareerApplicationController::class, 'show'])->name('careers.show');
+        Route::get('/careers/{application}/resume/download', [CareerApplicationController::class, 'download'])->name('careers.resume.download');
+        Route::get('/careers/{application}/resume/preview', [CareerApplicationController::class, 'preview'])->name('careers.resume.preview');
+        Route::delete('/careers/{application}/resume', [CareerApplicationController::class, 'destroy'])->name('careers.resume.destroy');
+    });

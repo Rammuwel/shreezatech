@@ -1,16 +1,24 @@
 <?php
 
+use App\Contracts\ResumeUploader;
+use App\Exceptions\ResumeUploadException;
+use App\Http\Requests\CareerApplicationRequest;
+use App\Jobs\UploadResume;
+use App\Models\CareerApplication;
+use App\Support\ResumeUploadResult;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use App\Models\CareerApplication;
 
 new class extends Component
 {
     use WithFileUploads;
-    
+
     public $title = "Shreeza | Careers";
     public $metaDescription = "Join Shreeza and be part of a team building the future of digital innovation. Explore exciting career opportunities.";
-    
+
     public $name = '';
     public $email = '';
     public $phone = '';
@@ -30,41 +38,85 @@ new class extends Component
         'Quality Assurance Engineer',
     ];
 
-    protected function rules()
+    protected function rules(): array
     {
-        return [
-            'name' => 'required|min:2|max:100',
-            'email' => 'required|email|max:254',
-            'phone' => 'nullable|string|max:20',
-            'position' => 'required|string',
-            'experience' => 'required|string',
-            'message' => 'nullable|string|max:2000',
-            'resume' => 'required|file|mimes:pdf,doc,docx|max:5120',
-        ];
+        return (new CareerApplicationRequest())->rules();
+    }
+
+    protected function messages(): array
+    {
+        return (new CareerApplicationRequest())->messages();
     }
 
     public function submit()
     {
         $validated = $this->validate();
 
-        $resumePath = null;
-        if ($this->resume) {
-            $resumePath = $this->resume->store('resumes', 'local');
+        if ($this->resume && $this->resume->getSize() > config('services.resume.queue_threshold')) {
+            $this->submitQueued($validated);
+        } else {
+            $this->submitSynchronously($validated);
         }
 
-        CareerApplication::create([
+        $this->reset(['name', 'email', 'phone', 'position', 'experience', 'message', 'resume']);
+
+        session()->flash('success', 'Application submitted successfully! We will review your application and get back to you.');
+    }
+
+    private function submitSynchronously(array $validated): void
+    {
+        $uploader = app(ResumeUploader::class);
+
+        try {
+            $result = $uploader->upload($this->resume);
+        } catch (ResumeUploadException $e) {
+            throw ValidationException::withMessages(['resume' => $e->getMessage()]);
+        }
+
+        try {
+            DB::transaction(function () use ($validated, $result): void {
+                CareerApplication::create($this->applicationData($validated, $result));
+            });
+        } catch (Throwable $e) {
+            $uploader->delete($result->publicId);
+
+            Log::error('Failed to persist career application.', [
+                'email' => $validated['email'],
+                'exception' => $e,
+            ]);
+
+            throw $e;
+        }
+    }
+
+    private function submitQueued(array $validated): void
+    {
+        $application = DB::transaction(function () use ($validated): CareerApplication {
+            return CareerApplication::create($this->applicationData($validated));
+        });
+
+        dispatch(new UploadResume(
+            $application->id,
+            config('livewire.temporary_file_upload.disk') ?? config('filesystems.default'),
+            'livewire-tmp/'.$this->resume->getFilename(),
+            $this->resume->getClientOriginalName(),
+        ));
+    }
+
+    private function applicationData(array $validated, ?ResumeUploadResult $result = null): array
+    {
+        return [
             'name' => $validated['name'],
             'email' => $validated['email'],
             'phone' => $validated['phone'] ?? null,
             'position' => $validated['position'],
             'experience' => $validated['experience'],
             'message' => $validated['message'] ?? null,
-            'resume_path' => $resumePath,
-        ]);
-
-        $this->reset(['name', 'email', 'phone', 'position', 'experience', 'message', 'resume']);
-
-        session()->flash('success', 'Application submitted successfully! We will review your application and get back to you.');
+            'resume_url' => $result?->secureUrl,
+            'resume_public_id' => $result?->publicId,
+            'resume_original_name' => $result?->originalName,
+            'resume_size' => $result?->size,
+        ];
     }
 };
 ?>
@@ -114,8 +166,23 @@ new class extends Component
                 <div>
                     <div class="rounded-2xl border border-border bg-card p-6 sm:p-8">
                         <h2 class="text-xl font-bold text-heading mb-6">Apply Now</h2>
-                        
-                        <form wire:submit.prevent="submit" class="space-y-4">
+
+                        <form
+                            wire:submit.prevent="submit"
+                            class="space-y-4"
+                            x-data="{
+                                uploading: false,
+                                progress: 0,
+                                startUpload() { this.uploading = true; this.progress = 0; },
+                                updateProgress(event) { this.progress = event.detail.progress; },
+                                finishUpload() { this.uploading = false; },
+                                errorUpload() { this.uploading = false; this.progress = 0; },
+                            }"
+                            x-on:livewire-upload-start="startUpload"
+                            x-on:livewire-upload-progress="updateProgress"
+                            x-on:livewire-upload-finish="finishUpload"
+                            x-on:livewire-upload-error="errorUpload"
+                        >
                             <div>
                                 <label class="block text-sm font-medium text-heading mb-1.5">Full Name *</label>
                                 <input wire:model="name" type="text" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="John Doe">
@@ -161,10 +228,18 @@ new class extends Component
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-heading mb-1.5">Resume (PDF, DOC) *</label>
+                                <label class="block text-sm font-medium text-heading mb-1.5">Resume (PDF, DOC, DOCX) *</label>
                                 <input wire:model="resume" type="file" accept=".pdf,.doc,.docx" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:text-sm hover:file:bg-primary/20 transition-colors">
                                 @error('resume') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
-                                <div wire:loading wire:target="resume" class="mt-1 text-xs text-muted">Uploading...</div>
+
+                                <div x-show="uploading" x-cloak class="mt-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-2 flex-1 overflow-hidden rounded-full bg-background">
+                                            <div class="h-2 rounded-full bg-primary transition-all duration-150" :style="'width: ' + progress + '%'"></div>
+                                        </div>
+                                        <span class="text-xs text-muted whitespace-nowrap">Uploading... <span x-text="Math.round(progress) + '%'"></span></span>
+                                    </div>
+                                </div>
                             </div>
 
                             <div>
@@ -173,7 +248,7 @@ new class extends Component
                                 @error('message') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
                             </div>
 
-                            <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50">
+                            <button type="submit" wire:loading.attr="disabled" wire:target="submit" :disabled="uploading" class="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50">
                                 <span wire:loading.remove wire:target="submit">Submit Application</span>
                                 <span wire:loading wire:target="submit">Submitting...</span>
                             </button>

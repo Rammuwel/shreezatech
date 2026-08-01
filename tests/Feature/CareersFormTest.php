@@ -2,21 +2,30 @@
 
 namespace Tests\Feature;
 
+use App\Contracts\ResumeUploader;
 use App\Models\CareerApplication;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Livewire\Livewire;
-use Storage;
+use Tests\Support\FakeResumeUploader;
 use Tests\TestCase;
 
 class CareersFormTest extends TestCase
 {
     use RefreshDatabase;
 
+    private FakeResumeUploader $uploader;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->uploader = new FakeResumeUploader;
+        $this->app->instance(ResumeUploader::class, $this->uploader);
+    }
+
     public function test_careers_submit_flashes_success_and_resets(): void
     {
-        Storage::fake('local');
-
         $component = Livewire::test('pages::careers')
             ->set('name', 'John Doe')
             ->set('email', 'john@example.com')
@@ -37,10 +46,8 @@ class CareersFormTest extends TestCase
             ->assertSet('position', '');
     }
 
-    public function test_careers_submit_persists_application_and_resume(): void
+    public function test_careers_submit_persists_application_and_resume_metadata(): void
     {
-        Storage::fake('local');
-
         $resume = UploadedFile::fake()->create('resume.pdf', 100, 'application/pdf');
 
         Livewire::test('pages::careers')
@@ -65,9 +72,11 @@ class CareersFormTest extends TestCase
         $this->assertSame('I am a great fit!', $application->message);
         $this->assertSame('new', $application->status);
         $this->assertFalse($application->is_read);
-        $this->assertNotNull($application->resume_path);
-
-        Storage::disk('local')->assertExists($application->resume_path);
+        $this->assertNotNull($application->resume_url);
+        $this->assertSame($this->uploader->lastPublicId, $application->resume_public_id);
+        $this->assertSame('resume.pdf', $application->resume_original_name);
+        $this->assertSame($resume->getSize(), $application->resume_size);
+        $this->assertTrue($application->hasResume());
     }
 
     public function test_careers_validation_blocks_empty_submit(): void
@@ -75,5 +84,26 @@ class CareersFormTest extends TestCase
         Livewire::test('pages::careers')
             ->call('submit')
             ->assertHasErrors(['name', 'email', 'position', 'experience', 'resume']);
+    }
+
+    public function test_large_resume_is_queued_and_metadata_saved_by_job(): void
+    {
+        $resume = UploadedFile::fake()->create('resume.pdf', 3 * 1024, 'application/pdf');
+
+        Livewire::test('pages::careers')
+            ->set('name', 'Queued Applicant')
+            ->set('email', 'queued@example.com')
+            ->set('position', 'DevOps Engineer')
+            ->set('experience', '5-10')
+            ->set('resume', $resume)
+            ->call('submit')
+            ->assertHasNoErrors();
+
+        $application = CareerApplication::first();
+
+        $this->assertNotNull($application);
+        $this->assertNotNull($application->resume_public_id);
+        $this->assertNotNull($application->resume_url);
+        $this->assertSame('resume.pdf', $application->resume_original_name);
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use App\Events\ContactSubmitted;
-use App\Listeners\SendContactEmails;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\ServiceProvider;
+use App\Contracts\ResumeUploader;
+use App\Services\ResumeUploadService;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\ServiceProvider;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(ResumeUploader::class, ResumeUploadService::class);
     }
 
     /**
@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Force HTTPS in production environments
         if (config('app.env') === 'production') {
-            Url::forceScheme('https');
+            URL::forceScheme('https');
         }
     }
 }

@@ -21,7 +21,13 @@ RUN apk add --no-cache \
         mbstring \
         pdo_pgsql \
         zip \
-    && docker-php-ext-enable opcache
+    && docker-php-ext-enable opcache \
+    && { \
+        echo 'upload_max_filesize=6M'; \
+        echo 'post_max_size=8M'; \
+        echo 'memory_limit=256M'; \
+        echo 'max_execution_time=180'; \
+    } > /usr/local/etc/php/conf.d/zz-laravel.ini
 
 WORKDIR /app
 COPY composer.json composer.lock ./

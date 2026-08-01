@@ -14,6 +14,7 @@ RUN apk add --no-cache \
         libzip-dev \
         sqlite-dev \
         oniguruma-dev \
+        postgresql-dev \
     && docker-php-ext-install \
         bcmath \
         ctype \

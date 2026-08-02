@@ -4,99 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <title>New Contact Enquiry</title>
+    <style>
+        body, td, p, a, span, h1, h2, h3, div, table { font-family: Arial, Helvetica, sans-serif; }
+        .serif { font-family: Georgia, 'Times New Roman', serif; }
+    </style>
 </head>
 
-<body style="margin:0;padding:40px;background:#f3f4f6;font-family:Arial,sans-serif;">
+<body style="margin:0;padding:40px 20px;background:#f6f7f9;">
 
-    <table width="650" align="center" cellpadding="0" cellspacing="0"
-        style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);">
+    <table width="600" align="center" cellpadding="0" cellspacing="0"
+        style="background:#ffffff;border:1px solid #e2e6ea;">
 
-        <!-- Header -->
+        <!-- Brand Header -->
         <tr>
-            <td style="background:#2563eb;padding:25px;text-align:center;color:#ffffff;">
+            <td style="padding:40px 50px 28px;text-align:center;">
 
-                <h1 style="margin:0;">
-                    📩 New Contact Enquiry
+                <h1 class="serif" style="margin:0;font-size:22px;letter-spacing:4px;color:#1b2a3d;font-weight:700;">
+                    SHREEZA
                 </h1>
 
-                <p style="margin-top:8px;font-size:15px;">
-                    Shreeza • Tech Consulting & Software Solutions
+                <p style="margin:8px 0 0;font-size:10px;letter-spacing:2px;color:#6c7786;text-transform:uppercase;">
+                    Internal Notification
                 </p>
 
             </td>
         </tr>
 
-        <!-- Content -->
+        <!-- Gold Rule -->
         <tr>
-            <td style="padding:35px;">
+            <td style="padding:0 50px;">
+                <div style="width:100%;border-top:2px solid #b98d2d;"></div>
+            </td>
+        </tr>
 
-                <p style="margin-top:0;font-size:16px;color:#374151;">
-                    A new enquiry has been submitted through the Shreeza website.
+        <!-- Intro -->
+        <tr>
+            <td style="padding:44px 50px 30px;text-align:center;">
+
+                <h2 class="serif" style="margin:0;font-size:28px;color:#1b2a3d;font-weight:700;">
+                    New Contact Enquiry
+                </h2>
+
+                <div style="width:40px;border-top:1px solid #b98d2d;margin:18px auto 0;"></div>
+
+                <p style="margin:18px 0 0;font-size:14px;color:#6c7786;letter-spacing:.5px;">
+                    A new enquiry has been submitted via the Shreeza website.
                 </p>
 
-                <table width="100%" cellpadding="12" cellspacing="0"
-                    style="border-collapse:collapse;margin-top:20px;">
+            </td>
+        </tr>
+
+        <!-- Details -->
+        <tr>
+            <td style="padding:10px 50px 20px;">
+
+                <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
 
                     <tr>
-                        <td width="180"
-                            style="background:#f9fafb;border:1px solid #e5e7eb;font-weight:bold;">
+                        <td style="border:1px solid #e2e6ea;border-right:none;background:#fafbfc;padding:13px 18px;font-size:12px;color:#6c7786;letter-spacing:1px;text-transform:uppercase;width:130px;">
                             Name
                         </td>
-
-                        <td style="border:1px solid #e5e7eb;">
+                        <td style="border:1px solid #e2e6ea;padding:13px 18px;font-size:14px;color:#1b2a3d;">
                             {{ $contact->name }}
                         </td>
                     </tr>
 
                     <tr>
-                        <td
-                            style="background:#f9fafb;border:1px solid #e5e7eb;font-weight:bold;">
+                        <td style="border:1px solid #e2e6ea;border-right:none;border-top:none;background:#fafbfc;padding:13px 18px;font-size:12px;color:#6c7786;letter-spacing:1px;text-transform:uppercase;">
                             Email
                         </td>
-
-                        <td style="border:1px solid #e5e7eb;">
+                        <td style="border:1px solid #e2e6ea;border-top:none;padding:13px 18px;font-size:14px;color:#1b2a3d;">
                             {{ $contact->email }}
                         </td>
                     </tr>
 
                     <tr>
-                        <td
-                            style="background:#f9fafb;border:1px solid #e5e7eb;font-weight:bold;">
+                        <td style="border:1px solid #e2e6ea;border-right:none;border-top:none;background:#fafbfc;padding:13px 18px;font-size:12px;color:#6c7786;letter-spacing:1px;text-transform:uppercase;">
                             Phone
                         </td>
-
-                        <td style="border:1px solid #e5e7eb;">
+                        <td style="border:1px solid #e2e6ea;border-top:none;padding:13px 18px;font-size:14px;color:#1b2a3d;">
                             {{ $contact->phone }}
                         </td>
                     </tr>
 
                     <tr>
-                        <td
-                            style="background:#f9fafb;border:1px solid #e5e7eb;font-weight:bold;">
+                        <td style="border:1px solid #e2e6ea;border-right:none;border-top:none;background:#fafbfc;padding:13px 18px;font-size:12px;color:#6c7786;letter-spacing:1px;text-transform:uppercase;">
                             Service
                         </td>
-
-                        <td style="border:1px solid #e5e7eb;">
+                        <td style="border:1px solid #e2e6ea;border-top:none;padding:13px 18px;font-size:14px;color:#1b2a3d;">
                             {{ $contact->service }}
                         </td>
                     </tr>
 
                     <tr>
-                        <td valign="top"
-                            style="background:#f9fafb;border:1px solid #e5e7eb;font-weight:bold;">
+                        <td valign="top" style="border:1px solid #e2e6ea;border-right:none;border-top:none;background:#fafbfc;padding:13px 18px;font-size:12px;color:#6c7786;letter-spacing:1px;text-transform:uppercase;">
                             Message
                         </td>
-
-                        <td style="border:1px solid #e5e7eb;line-height:1.8;">
+                        <td style="border:1px solid #e2e6ea;border-top:none;padding:13px 18px;font-size:14px;color:#1b2a3d;line-height:1.8;">
                             {!! nl2br(e($contact->message)) !!}
                         </td>
                     </tr>
 
                 </table>
 
-                <p style="margin-top:25px;color:#6b7280;font-size:14px;">
+                <p style="margin:24px 0 0;font-size:12px;color:#6c7786;">
                     Submitted on:
-                    <strong>{{ $contact->created_at->format('d M Y, h:i A') }}</strong>
+                    <strong style="color:#1b2a3d;">{{ $contact->created_at->format('d M Y, h:i A') }}</strong>
                 </p>
 
             </td>
@@ -104,19 +117,15 @@
 
         <!-- Footer -->
         <tr>
-            <td style="background:#111827;padding:20px;text-align:center;color:#9ca3af;font-size:13px;">
+            <td style="background:#1b2a3d;padding:26px 50px;text-align:center;">
 
-                <strong style="color:#ffffff;">
-                    Shreeza
-                </strong>
+                <p style="margin:0 0 6px;font-size:12px;color:#ffffff;letter-spacing:1px;">
+                    SHREEZA
+                </p>
 
-                <br>
-
-                Tech Consulting & Software Solutions
-
-                <br><br>
-
-                This email was automatically generated from your website contact form.
+                <p style="margin:0;font-size:11px;color:#8a94a3;">
+                    This email was generated automatically from the Shreeza website contact form.
+                </p>
 
             </td>
         </tr>

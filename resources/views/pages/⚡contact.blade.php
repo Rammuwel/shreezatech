@@ -1,14 +1,21 @@
 <?php
 
-use App\Events\ContactSubmitted;
+use App\Mail\ContactNotificationMail;
+use App\Mail\ContactSuccessMail;
+use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 new class extends Component
 {
     public string $name = '';
+
     public string $email = '';
+
     public string $phone = '';
+
     public string $service = '';
+
     public string $message = '';
 
     protected function rules(): array
@@ -25,9 +32,15 @@ new class extends Component
     public function submit(): void
     {
         $validated = $this->validate();
-        $validated['created_at'] = now();
 
-        ContactSubmitted::dispatch($validated);
+        $contact = new Contact($validated);
+        $contact->created_at = now();
+
+        Mail::to('info@shreezatech.com')
+            ->send(new ContactNotificationMail($contact));
+
+        Mail::to($contact->email)
+            ->send(new ContactSuccessMail($contact));
 
         session()->flash(
             'success',

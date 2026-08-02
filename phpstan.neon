@@ -7,9 +7,9 @@ parameters:
         - app/Contracts
         - app/Exceptions
         - app/Http/Controllers/Admin
+        - app/Http/Controllers/CareerApplicationController.php
         - app/Http/Middleware
         - app/Http/Requests
-        - app/Jobs
         - app/Models/CareerApplication.php
         - app/Providers/AppServiceProvider.php
         - app/Services

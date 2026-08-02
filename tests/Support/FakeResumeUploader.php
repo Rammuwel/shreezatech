@@ -20,6 +20,10 @@ class FakeResumeUploader implements ResumeUploader
 
     public function upload(UploadedFile $file): ResumeUploadResult
     {
+        if ($this->shouldFail) {
+            throw new ResumeUploadException('Simulated upload failure.');
+        }
+
         return $this->buildResult(
             $file->getClientOriginalName(),
             $file->getSize(),

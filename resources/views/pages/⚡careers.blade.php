@@ -1,31 +1,12 @@
 <?php
 
-use App\Contracts\ResumeUploader;
-use App\Exceptions\ResumeUploadException;
-use App\Http\Requests\CareerApplicationRequest;
-use App\Jobs\UploadResume;
-use App\Models\CareerApplication;
-use App\Support\ResumeUploadResult;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Validation\ValidationException;
 use Livewire\Component;
-use Livewire\WithFileUploads;
 
 new class extends Component
 {
-    use WithFileUploads;
+    public $title = 'Shreeza | Careers';
 
-    public $title = "Shreeza | Careers";
-    public $metaDescription = "Join Shreeza and be part of a team building the future of digital innovation. Explore exciting career opportunities.";
-
-    public $name = '';
-    public $email = '';
-    public $phone = '';
-    public $position = '';
-    public $experience = '';
-    public $message = '';
-    public $resume = null;
+    public $metaDescription = 'Join Shreeza and be part of a team building the future of digital innovation. Explore exciting career opportunities.';
 
     public array $positions = [
         'Senior Laravel Developer',
@@ -37,87 +18,6 @@ new class extends Component
         'Mobile App Developer (Flutter)',
         'Quality Assurance Engineer',
     ];
-
-    protected function rules(): array
-    {
-        return (new CareerApplicationRequest())->rules();
-    }
-
-    protected function messages(): array
-    {
-        return (new CareerApplicationRequest())->messages();
-    }
-
-    public function submit()
-    {
-        $validated = $this->validate();
-
-        if ($this->resume && $this->resume->getSize() > config('services.resume.queue_threshold')) {
-            $this->submitQueued($validated);
-        } else {
-            $this->submitSynchronously($validated);
-        }
-
-        $this->reset(['name', 'email', 'phone', 'position', 'experience', 'message', 'resume']);
-
-        session()->flash('success', 'Application submitted successfully! We will review your application and get back to you.');
-    }
-
-    private function submitSynchronously(array $validated): void
-    {
-        $uploader = app(ResumeUploader::class);
-
-        try {
-            $result = $uploader->upload($this->resume);
-        } catch (ResumeUploadException $e) {
-            throw ValidationException::withMessages(['resume' => $e->getMessage()]);
-        }
-
-        try {
-            DB::transaction(function () use ($validated, $result): void {
-                CareerApplication::create($this->applicationData($validated, $result));
-            });
-        } catch (Throwable $e) {
-            $uploader->delete($result->publicId);
-
-            Log::error('Failed to persist career application.', [
-                'email' => $validated['email'],
-                'exception' => $e,
-            ]);
-
-            throw $e;
-        }
-    }
-
-    private function submitQueued(array $validated): void
-    {
-        $application = DB::transaction(function () use ($validated): CareerApplication {
-            return CareerApplication::create($this->applicationData($validated));
-        });
-
-        dispatch(new UploadResume(
-            $application->id,
-            config('livewire.temporary_file_upload.disk') ?? config('filesystems.default'),
-            'livewire-tmp/'.$this->resume->getFilename(),
-            $this->resume->getClientOriginalName(),
-        ));
-    }
-
-    private function applicationData(array $validated, ?ResumeUploadResult $result = null): array
-    {
-        return [
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $validated['phone'] ?? null,
-            'position' => $validated['position'],
-            'experience' => $validated['experience'],
-            'message' => $validated['message'] ?? null,
-            'resume_url' => $result?->secureUrl,
-            'resume_public_id' => $result?->publicId,
-            'resume_original_name' => $result?->originalName,
-            'resume_size' => $result?->size,
-        ];
-    }
 };
 ?>
 
@@ -167,90 +67,78 @@ new class extends Component
                     <div class="rounded-2xl border border-border bg-card p-6 sm:p-8">
                         <h2 class="text-xl font-bold text-heading mb-6">Apply Now</h2>
 
+                        @if(session('error'))
+                        <div class="mb-4 rounded-lg border border-danger/20 bg-danger/10 p-4 text-sm text-danger">
+                            {{ session('error') }}
+                        </div>
+                        @endif
+
                         <form
-                            wire:submit.prevent="submit"
-                            class="space-y-4"
-                            x-data="{
-                                uploading: false,
-                                progress: 0,
-                                startUpload() { this.uploading = true; this.progress = 0; },
-                                updateProgress(event) { this.progress = event.detail.progress; },
-                                finishUpload() { this.uploading = false; },
-                                errorUpload() { this.uploading = false; this.progress = 0; },
-                            }"
-                            x-on:livewire-upload-start="startUpload"
-                            x-on:livewire-upload-progress="updateProgress"
-                            x-on:livewire-upload-finish="finishUpload"
-                            x-on:livewire-upload-error="errorUpload"
-                        >
+                            method="POST"
+                            action="{{ route('careers.apply') }}"
+                            enctype="multipart/form-data"
+                            class="space-y-4">
+
+                            @csrf
+
                             <div>
                                 <label class="block text-sm font-medium text-heading mb-1.5">Full Name *</label>
-                                <input wire:model="name" type="text" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="John Doe">
-                                @error('name') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
+                                <input name="name" type="text" value="{{ old('name') }}" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="John Doe">
+                                <x-field-error field="name" />
                             </div>
 
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-medium text-heading mb-1.5">Email *</label>
-                                    <input wire:model="email" type="email" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="john@example.com">
-                                    @error('email') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
+                                    <input name="email" type="email" value="{{ old('email') }}" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="john@example.com">
+                                    <x-field-error field="email" />
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-heading mb-1.5">Phone</label>
-                                    <input wire:model="phone" type="tel" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="+1 234 567 890">
-                                    @error('phone') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
+                                    <input name="phone" type="tel" value="{{ old('phone') }}" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="+1 234 567 890">
+                                    <x-field-error field="phone" />
                                 </div>
                             </div>
 
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-medium text-heading mb-1.5">Position *</label>
-                                    <select wire:model="position" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading focus:border-primary focus:outline-none transition-colors">
+                                    <select name="position" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading focus:border-primary focus:outline-none transition-colors">
                                         <option value="">Select a position</option>
                                         @foreach($positions as $pos)
-                                        <option value="{{ $pos }}">{{ $pos }}</option>
+                                        <option value="{{ $pos }}" @selected(old('position') === $pos)>{{ $pos }}</option>
                                         @endforeach
                                     </select>
-                                    @error('position') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
+                                    <x-field-error field="position" />
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-heading mb-1.5">Experience *</label>
-                                    <select wire:model="experience" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading focus:border-primary focus:outline-none transition-colors">
+                                    <select name="experience" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading focus:border-primary focus:outline-none transition-colors">
                                         <option value="">Select experience</option>
-                                        <option value="0-1">Less than 1 year</option>
-                                        <option value="1-2">1-2 years</option>
-                                        <option value="3-5">3-5 years</option>
-                                        <option value="5-10">5-10 years</option>
-                                        <option value="10+">10+ years</option>
+                                        <option value="0-1" @selected(old('experience') === '0-1')>Less than 1 year</option>
+                                        <option value="1-2" @selected(old('experience') === '1-2')>1-2 years</option>
+                                        <option value="3-5" @selected(old('experience') === '3-5')>3-5 years</option>
+                                        <option value="5-10" @selected(old('experience') === '5-10')>5-10 years</option>
+                                        <option value="10+" @selected(old('experience') === '10+')>10+ years</option>
                                     </select>
-                                    @error('experience') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
+                                    <x-field-error field="experience" />
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-heading mb-1.5">Resume (PDF, DOC, DOCX) *</label>
-                                <input wire:model="resume" type="file" accept=".pdf,.doc,.docx" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:text-sm hover:file:bg-primary/20 transition-colors">
-                                @error('resume') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
-
-                                <div x-show="uploading" x-cloak class="mt-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="h-2 flex-1 overflow-hidden rounded-full bg-background">
-                                            <div class="h-2 rounded-full bg-primary transition-all duration-150" :style="'width: ' + progress + '%'"></div>
-                                        </div>
-                                        <span class="text-xs text-muted whitespace-nowrap">Uploading... <span x-text="Math.round(progress) + '%'"></span></span>
-                                    </div>
-                                </div>
+                                <input name="resume" type="file" accept=".pdf,.doc,.docx" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:text-sm hover:file:bg-primary/20 transition-colors">
+                                <x-field-error field="resume" />
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-heading mb-1.5">Cover Letter</label>
-                                <textarea wire:model="message" rows="4" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="Tell us why you'd be a great fit..."></textarea>
-                                @error('message') <p class="mt-1 text-xs text-danger">{{ $message }}</p> @enderror
+                                <textarea name="message" rows="4" class="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors" placeholder="Tell us why you'd be a great fit...">{{ old('message') }}</textarea>
+                                <x-field-error field="message" />
                             </div>
 
-                            <button type="submit" wire:loading.attr="disabled" wire:target="submit" :disabled="uploading" class="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50">
-                                <span wire:loading.remove wire:target="submit">Submit Application</span>
-                                <span wire:loading wire:target="submit">Submitting...</span>
+                            <button type="submit" class="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all">
+                                Submit Application
                             </button>
                         </form>
                     </div>

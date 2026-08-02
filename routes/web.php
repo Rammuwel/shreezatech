@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CareerApplicationController;
+use App\Http\Controllers\CareerApplicationController as PublicCareerApplicationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,7 @@ Route::livewire('/reviews', 'pages::home')->name('reviews');
 Route::livewire('/technologies', 'pages::technology')->name('technologies');
 Route::livewire('/about/team', 'pages::home')->name('team');
 Route::livewire('/careers', 'pages::careers')->name('careers');
+Route::post('/careers', [PublicCareerApplicationController::class, 'store'])->name('careers.apply');
 // Route::livewire('/services/cloud', 'pages::home')->name('services.cloud');
 // Route::livewire('/services/security', 'pages::home')->name('services.security');
 // Route::livewire('/services/consulting', 'pages::home')->name('services.consulting');

@@ -4,14 +4,5 @@ includes:
 parameters:
     level: 8
     paths:
-        - app/Contracts
-        - app/Exceptions
-        - app/Http/Controllers/Admin
-        - app/Http/Controllers/CareerApplicationController.php
-        - app/Http/Middleware
-        - app/Http/Requests
-        - app/Models/CareerApplication.php
         - app/Providers/AppServiceProvider.php
-        - app/Services
-        - app/Support
     tmpDir: storage/framework/cache/phpstan

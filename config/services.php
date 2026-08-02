@@ -35,12 +35,4 @@ return [
         ],
     ],
 
-    'admin_token' => env('ADMIN_TOKEN'),
-
-    'resume' => [
-        'folder' => env('RESUME_FOLDER', 'shreeza/careers/resumes'),
-        'allowed_extensions' => ['pdf', 'doc', 'docx'],
-        'max_size' => 5 * 1024 * 1024,
-    ],
-
 ];

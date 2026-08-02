@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Contracts\ResumeUploader;
-use App\Services\ResumeUploadService;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ResumeUploader::class, ResumeUploadService::class);
+        //
     }
 
     /**

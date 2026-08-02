@@ -1,4 +1,4 @@
-<section class="py-20 mt-20">
+<section class="mt-10 pt-20 pb-16 sm:pb-20">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -8,14 +8,16 @@
         </div>
         @endif
         @if (session()->has('error'))
-        <div class="mb-5 rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-green-400">
+        <div class="mb-5 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400">
             {{ session('error') }}
         </div>
         @endif
         <div
+           
             class="grid
             lg:grid-cols-2
-            gap-20
+            gap-12
+            lg:gap-20
             items-start">
 
             <!-- LEFT -->
@@ -287,15 +289,16 @@
                     bg-card/80
                     backdrop-blur-xl
                     p-8
-                    shadow-[0_25px_60px_rgba(0,0,0,.35)]">
+                    shadow-sm">
 
                     <form
                         wire:submit.prevent="submit"
                         class="space-y-5">
 
-                        <!-- Name -->
+                        <div class="grid gap-5 sm:grid-cols-2">
 
-                        <div class="flex flex-col gap-7">
+                            <!-- Name -->
+
                             <div class="relative">
                                 <input
                                     type="text"
@@ -314,7 +317,7 @@
                             transition
                             focus:border-primary">
                                 @error('name')
-                                <p class="text-red-500 text-sm mt-1 absolute -bottom-5 left-2">{{ $message }}</p>
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
 
@@ -338,7 +341,7 @@
                             transition
                             focus:border-primary">
                                 @error('email')
-                                <p class="text-red-500 text-sm mt-1 absolute -bottom-5 left-2">{{ $message }}</p>
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
 
@@ -362,7 +365,7 @@
                             transition
                             focus:border-primary">
                                 @error('phone')
-                                <p class="text-red-500 text-sm mt-1 absolute -bottom-5 left-2">{{ $message }}</p>
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
 
@@ -399,16 +402,18 @@
 
                                 </select>
                                 @error('service')
-                                <p class="text-red-500 text-sm mt-1 absolute -bottom-5 left-2">{{ $message }}</p>
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
+
+                        </div>
 
                             <!-- Message -->
 
                             <div class="relative">
                                 <textarea
                                     wire:model='message'
-                                    rows="2"
+                                    rows="4"
                                     placeholder="Your Message"
                                     class="w-full
                             rounded-xl
@@ -424,16 +429,13 @@
                             border-border  focus:border-primary
                             "></textarea>
                                 @error('message')
-                                <p class="invalid-feedback  absolute -bottom-3 left-2">{{ $message }}</p>
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
 
-
                             <!-- Button -->
 
-
-                        </div>
-                        <button
+                            <button
                             wire:loading.attr="disabled"
                             wire:target="submit"
                             class="mt-2

@@ -12,13 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('career_applications', function (Blueprint $table) {
-
             $table->id();
 
             $table->string('name');
             $table->string('email');
             $table->string('phone', 20)->nullable();
-
             $table->string('position');
             $table->string('experience');
             $table->text('message')->nullable();
@@ -32,6 +30,10 @@ return new class extends Migration
 
             $table->timestamps();
 
+            $table->string('resume_url')->nullable();
+            $table->string('resume_public_id')->nullable();
+            $table->string('resume_original_name')->nullable();
+            $table->bigInteger('resume_size')->nullable();
         });
     }
 

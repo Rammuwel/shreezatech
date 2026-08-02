@@ -13,12 +13,13 @@ class CareerApplication extends Model
         'position',
         'experience',
         'message',
-        'status',
-        'is_read',
+        'resume_path',
         'resume_url',
         'resume_public_id',
         'resume_original_name',
         'resume_size',
+        'status',
+        'is_read',
     ];
 
     protected function casts(): array
@@ -27,10 +28,5 @@ class CareerApplication extends Model
             'is_read' => 'boolean',
             'resume_size' => 'integer',
         ];
-    }
-
-    public function hasResume(): bool
-    {
-        return $this->resume_public_id !== null;
     }
 }

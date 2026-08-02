@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\CareerApplicationController;
-use App\Http\Controllers\CareerApplicationController as PublicCareerApplicationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,7 +40,6 @@ Route::livewire('/reviews', 'pages::home')->name('reviews');
 Route::livewire('/technologies', 'pages::technology')->name('technologies');
 Route::livewire('/about/team', 'pages::home')->name('team');
 Route::livewire('/careers', 'pages::careers')->name('careers');
-Route::post('/careers', [PublicCareerApplicationController::class, 'store'])->name('careers.apply');
 // Route::livewire('/services/cloud', 'pages::home')->name('services.cloud');
 // Route::livewire('/services/security', 'pages::home')->name('services.security');
 // Route::livewire('/services/consulting', 'pages::home')->name('services.consulting');
@@ -50,14 +47,3 @@ Route::post('/careers', [PublicCareerApplicationController::class, 'store'])->na
 // Route::livewire('/services/consulting', 'pages::home')->name('services.enterprise');
 
 Route::livewire('/contact', 'pages::contact')->name('contact');
-
-Route::prefix('admin')
-    ->middleware('admin.token')
-    ->name('admin.')
-    ->group(function (): void {
-        Route::get('/careers', [CareerApplicationController::class, 'index'])->name('careers.index');
-        Route::get('/careers/{application}', [CareerApplicationController::class, 'show'])->name('careers.show');
-        Route::get('/careers/{application}/resume/download', [CareerApplicationController::class, 'download'])->name('careers.resume.download');
-        Route::get('/careers/{application}/resume/preview', [CareerApplicationController::class, 'preview'])->name('careers.resume.preview');
-        Route::delete('/careers/{application}/resume', [CareerApplicationController::class, 'destroy'])->name('careers.resume.destroy');
-    });

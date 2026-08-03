@@ -49,7 +49,7 @@ new class extends Component
 
         // Convert the file to a base64 data URI instead of uploading by file path,
         // since Vercel's ephemeral storage may not keep Livewire's temp file.
-        $dataUri = 'data:' . $file->getClientMimeType() . ';base64,' . base64_encode($file->getContent());
+        $dataUri = 'data:' . $file->getMimeType() . ';base64,' . base64_encode($file->getContent());
 
         $upload = new UploadApi();
 

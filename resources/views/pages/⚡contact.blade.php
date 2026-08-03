@@ -36,11 +36,15 @@ new class extends Component
         $contact = new Contact($validated);
         $contact->created_at = now();
 
-        Mail::to('info@shreezatech.com')
-            ->send(new ContactNotificationMail($contact));
+        try {
+            Mail::to('info@shreezatech.com')
+                ->send(new ContactNotificationMail($contact));
 
-        Mail::to($contact->email)
-            ->send(new ContactSuccessMail($contact));
+            Mail::to($contact->email)
+                ->send(new ContactSuccessMail($contact));
+        } catch (\Throwable $e) {
+            report($e);
+        }
 
         session()->flash(
             'success',

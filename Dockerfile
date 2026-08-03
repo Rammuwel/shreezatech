@@ -34,11 +34,13 @@ COPY composer.json composer.lock ./
 COPY . .
 COPY --from=frontend /app/public/build /app/public/build
 COPY docker/nginx.conf /etc/nginx/http.d/default.conf
+COPY docker/php-fpm.conf /usr/local/etc/php-fpm.d/zz-laravel.conf
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY docker/start.sh /start.sh
+COPY docker/start-nginx.sh /start-nginx.sh
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
-    && chmod +x /start.sh \
+    && chmod +x /start.sh /start-nginx.sh \
     && chown -R www-data:www-data /app/storage /app/bootstrap/cache \
     && chmod -R 775 /app/storage /app/bootstrap/cache
 

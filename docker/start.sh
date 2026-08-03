@@ -11,7 +11,7 @@ fi
 
 php /app/artisan storage:link --force 2>/dev/null || true
 
-if [ "${RUN_MIGRATIONS:-false}" = "true" ]; then
+if [ "${RUN_MIGRATIONS:-true}" = "true" ]; then
     php /app/artisan migrate --force
 fi
 

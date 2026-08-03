@@ -1,15 +1,10 @@
 <?php
 
 use App\Models\CareerApplication;
-use Cloudinary\Api\Upload\UploadApi;
 use Livewire\Component;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use Livewire\WithFileUploads;
 
 new class extends Component
 {
-    use WithFileUploads;
-
     public string $title = 'Shreeza | Careers';
 
     public string $metaDescription = 'Join Shreeza and be part of a team building the future of digital innovation. Explore exciting career opportunities.';
@@ -26,7 +21,13 @@ new class extends Component
 
     public string $message = '';
 
-    public TemporaryUploadedFile|string|null $resume = null;
+    public ?string $resume_url = null;
+
+    public ?string $resume_public_id = null;
+
+    public ?string $resume_original_name = null;
+
+    public ?int $resume_size = null;
 
     protected function rules(): array
     {
@@ -37,27 +38,14 @@ new class extends Component
             'position' => 'required|string|max:255',
             'experience' => 'required|string|max:50',
             'message' => 'nullable|string|max:2000',
-            'resume' => 'required|file|mimes:pdf,doc,docx|max:5120',
+            'resume_url' => 'required|url',
+            'resume_original_name' => 'required|string|max:255',
         ];
     }
 
     public function submit(): void
     {
         $this->validate();
-
-        $file = $this->resume;
-
-        // Convert the file to a base64 data URI instead of uploading by file path,
-        // since Vercel's ephemeral storage may not keep Livewire's temp file.
-        $dataUri = 'data:' . $file->getMimeType() . ';base64,' . base64_encode($file->getContent());
-
-        $upload = new UploadApi();
-
-        $response = $upload->upload($dataUri, [
-            'resource_type' => 'auto',
-            'folder' => 'career_resumes',
-            'filename_override' => $file->getClientOriginalName(),
-        ]);
 
         CareerApplication::create([
             'name' => $this->name,
@@ -66,10 +54,10 @@ new class extends Component
             'position' => $this->position,
             'experience' => $this->experience,
             'message' => $this->message,
-            'resume_url' => $response['secure_url'],
-            'resume_public_id' => $response['public_id'],
-            'resume_original_name' => $file->getClientOriginalName(),
-            'resume_size' => $file->getSize(),
+            'resume_url' => $this->resume_url,
+            'resume_public_id' => $this->resume_public_id,
+            'resume_original_name' => $this->resume_original_name,
+            'resume_size' => $this->resume_size,
         ]);
 
         $this->reset([
@@ -79,7 +67,10 @@ new class extends Component
             'position',
             'experience',
             'message',
-            'resume',
+            'resume_url',
+            'resume_public_id',
+            'resume_original_name',
+            'resume_size',
         ]);
 
         session()->flash('success', 'Thank you! Your application has been submitted successfully.');
@@ -100,7 +91,12 @@ new class extends Component
         </div>
     </section>
 
-    <x-careers.apply-form :resume="$resume" />
+    <x-careers.apply-form
+        :resume-url="$resume_url"
+        :resume-public-id="$resume_public_id"
+        :resume-original-name="$resume_original_name"
+        :resume-size="$resume_size"
+    />
 
     <x-careers.faq />
 </div>

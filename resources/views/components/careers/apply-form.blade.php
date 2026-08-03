@@ -1,4 +1,9 @@
-@props(['resume' => null])
+@props([
+    'resumeUrl' => null,
+    'resumePublicId' => null,
+    'resumeOriginalName' => null,
+    'resumeSize' => null,
+])
 
 <section id="apply" class="py-20 mt-2">
     <div class="max-w-7xl mx-auto px-6">
@@ -179,10 +184,10 @@
                                     <i class="fa-solid fa-cloud-arrow-up"></i>
                                 </div>
 
-                                @if ($resume)
+                                @if ($resumeOriginalName)
                                 <div class="flex items-center gap-2 rounded-xl border border-border bg-card px-4 py-2.5">
                                     <i class="fa-solid fa-file-pdf text-red-500"></i>
-                                    <span class="text-sm font-medium text-heading">{{ $resume->getClientOriginalName() }}</span>
+                                    <span class="text-sm font-medium text-heading">{{ $resumeOriginalName }}</span>
                                 </div>
                                 <p class="text-xs text-muted">Click to replace</p>
                                 @else
@@ -190,13 +195,14 @@
                                 <span class="text-xs text-muted">PDF, DOC, DOCX — Max 5MB</span>
                                 @endif
 
-                                <input type="file" wire:model="resume" accept=".pdf,.doc,.docx" class="hidden">
+                                <input type="file" id="resume-input" accept=".pdf,.doc,.docx" class="hidden" onchange="handleResumeUpload(event)">
                             </label>
-                            <div wire:loading wire:target="resume" class="mt-3 flex items-center gap-2 text-sm text-primary">
+                            <div id="resume-upload-status" class="mt-3 hidden items-center gap-2 text-sm text-primary">
                                 <i class="fa-solid fa-spinner fa-spin"></i>
                                 Uploading file...
                             </div>
-                            @error('resume')
+                            <p id="resume-upload-error" class="mt-1 hidden text-sm text-red-500"></p>
+                            @error('resume_url')
                             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
@@ -221,3 +227,54 @@
 
     </div>
 </section>
+
+<script>
+    window.handleResumeUpload = async function (event) {
+        const input = event.target;
+        const file = input.files[0];
+        if (!file) return;
+
+        const statusEl = document.getElementById('resume-upload-status');
+        const errorEl = document.getElementById('resume-upload-error');
+
+        errorEl.classList.add('hidden');
+        statusEl.classList.remove('hidden');
+        statusEl.classList.add('flex');
+
+        if (file.size > 5 * 1024 * 1024) {
+            statusEl.classList.add('hidden');
+            statusEl.classList.remove('flex');
+            errorEl.textContent = 'The resume is too large. Maximum size is 5MB.';
+            errorEl.classList.remove('hidden');
+            input.value = '';
+            return;
+        }
+
+        const form = new FormData();
+        form.append('file', file);
+        form.append('upload_preset', '{{ config('cloudinary.upload_preset') }}');
+
+        try {
+            const response = await fetch(
+                'https://api.cloudinary.com/v1_1/{{ config('cloudinary.cloud_name') }}/auto/upload',
+                { method: 'POST', body: form }
+            );
+
+            if (!response.ok) throw new Error('Upload failed');
+
+            const data = await response.json();
+
+            const wire = Livewire.first();
+            await wire.set('resume_url', data.secure_url);
+            await wire.set('resume_public_id', data.public_id);
+            await wire.set('resume_original_name', file.name);
+            await wire.set('resume_size', data.bytes);
+        } catch (error) {
+            statusEl.classList.add('hidden');
+            statusEl.classList.remove('flex');
+            errorEl.textContent = 'The resume failed to upload. Please try again.';
+            errorEl.classList.remove('hidden');
+            input.value = '';
+        }
+    };
+</script>

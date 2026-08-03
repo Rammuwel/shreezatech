@@ -45,12 +45,18 @@ new class extends Component
     {
         $this->validate();
 
+        $file = $this->resume;
+
+        // Convert the file to a base64 data URI instead of uploading by file path,
+        // since Vercel's ephemeral storage may not keep Livewire's temp file.
+        $dataUri = 'data:' . $file->getClientMimeType() . ';base64,' . base64_encode($file->getContent());
+
         $upload = new UploadApi();
 
-        $response = $upload->upload($this->resume->getRealPath(), [
+        $response = $upload->upload($dataUri, [
             'resource_type' => 'auto',
             'folder' => 'career_resumes',
-            'filename_override' => $this->resume->getClientOriginalName(),
+            'filename_override' => $file->getClientOriginalName(),
         ]);
 
         CareerApplication::create([
@@ -62,8 +68,8 @@ new class extends Component
             'message' => $this->message,
             'resume_url' => $response['secure_url'],
             'resume_public_id' => $response['public_id'],
-            'resume_original_name' => $this->resume->getClientOriginalName(),
-            'resume_size' => $this->resume->getSize(),
+            'resume_original_name' => $file->getClientOriginalName(),
+            'resume_size' => $file->getSize(),
         ]);
 
         $this->reset([

@@ -59,7 +59,7 @@ $navItems = [
     ['title' => 'Manufacturing', 'route' => 'manufacturing', 'description' => 'IIoT, MES & supply chain', 'icon' => 'industry'],
     ['title' => 'Retail & E-commerce', 'route' => 'retail', 'description' => 'Custom e-commerce & marketplace solutions', 'icon' => 'cart'],
   ]],
-  ['title' => 'Technologies', 'route' => 'technologies', 'dropdown' => true, 'left' => [
+  ['title' => 'Technologies', 'route' => 'technologies', 'dropdown' => false, 'left' => [
     'badge' => 'MODERN STACK',
     'heading' => 'We engineer with cutting-edge technologies.',
     'description' => 'From frontend to cloud, we leverage the best tools and frameworks to build scalable, future-proof software.',

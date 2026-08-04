@@ -24,6 +24,9 @@
 
   <link rel="canonical" href="{{ url()->current() }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logo.png') }}">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('logo.png') }}">
+  <!-- 3. APPLE HOME SCREEN ICON -->
+   <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 

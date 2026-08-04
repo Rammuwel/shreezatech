@@ -21,8 +21,9 @@
                             
                             <!-- Icon Wrapper -->
                             <div class="flex h-16 w-16 items-center justify-center rounded-xl bg-card transition-all duration-300 group-hover:scale-110 group-hover:shadow-sm">
-                                <i class="{{ $tech['icon'] }} text-4xl sm:text-5xl transition-transform duration-300" 
-                                   style="color: {{ $tech['color'] }}; filter: drop-shadow(0 2px 8px {{ $tech['color'] }}20);">
+                                @php($isHexColor = preg_match('/^#[0-9a-fA-F]{3,8}$/', $tech['color']) === 1)
+                                <i class="{{ $tech['icon'] }} text-4xl sm:text-5xl transition-transform duration-300"
+                                   style="color: {{ $tech['color'] }};{{ $isHexColor ? ' filter: drop-shadow(0 2px 8px '.$tech['color'].'20);' : '' }}">
                                 </i>
                             </div>
 

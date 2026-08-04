@@ -115,7 +115,7 @@ class TechnologyCategories
                         'description' => 'Efficient queries, indexing strategies, and caching for lightning-fast data access.',
                     ],
                 ],
-                'technologies' => ['Laravel', 'Livewire', 'Node.js', 'Express', 'Python', 'Django', 'PHP', 'Java'],
+                'technologies' => ['Laravel', 'Livewire', 'Node.js', 'Express', 'Python', 'Django', 'PHP', 'Java', '.NET', 'Spring Boot', 'Go', 'NestJS'],
                 'process' => ['System Architecture Design', 'API Contract Definition', 'Core Development', 'Database Design & Optimization', 'Security Audit', 'Performance Testing', 'Deployment & Scaling'],
                 'benefits' => ['Highly Scalable Architecture', 'Enterprise-Grade Security', 'Optimized Database Performance', 'Comprehensive API Documentation', 'Robust Error Handling', 'Cloud-Native Deployment'],
                 'faqs' => [
@@ -233,7 +233,7 @@ class TechnologyCategories
                         'description' => 'Encryption at rest and in transit, backup strategies, and disaster recovery planning.',
                     ],
                 ],
-                'technologies' => ['MySQL', 'PostgreSQL', 'MongoDB', 'MariaDB', 'SQLite', 'Redis', 'Firebase', 'Supabase'],
+                'technologies' => ['MySQL', 'PostgreSQL', 'MongoDB', 'MariaDB', 'SQLite', 'Redis', 'SQL Server', 'Firebase', 'Supabase'],
                 'process' => ['Requirement Analysis', 'Data Modeling', 'Schema Design', 'Implementation & Migration', 'Query Optimization', 'Backup & Security Setup', 'Monitoring & Tuning'],
                 'benefits' => ['Optimized Query Performance', 'High Availability & Replication', 'Automated Backups', 'Disaster Recovery Planning', 'Scalable Data Architecture', 'Cost-Effective Storage'],
                 'faqs' => [
@@ -272,7 +272,7 @@ class TechnologyCategories
                         'description' => 'Enterprise cloud platform with integrated DevOps, AI, and hybrid cloud capabilities.',
                     ],
                     [
-                        'icon' => 'fa-solid fa-dharmachakra',
+                        'icon' => 'fa-solid fa-circle-nodes',
                         'title' => 'Docker & Kubernetes',
                         'description' => 'Containerization and orchestration for consistent, scalable application deployment.',
                     ],

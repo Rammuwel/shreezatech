@@ -28,13 +28,31 @@ class Technologies extends Component
                 [
                     'name' => 'Next.js',
                     'icon' => 'fas fa-n',
-                    'color' => '#ffffff'
+                    'color' => 'var(--color-heading)'
                 ],
 
                 [
                     'name' => 'Vue.js',
                     'icon' => 'fab fa-vuejs',
                     'color' => '#42B883'
+                ],
+
+                [
+                    'name' => 'Angular',
+                    'icon' => 'fab fa-angular',
+                    'color' => '#DD0031'
+                ],
+
+                [
+                    'name' => 'TypeScript',
+                    'icon' => 'fa-solid fa-code',
+                    'color' => '#3178C6'
+                ],
+
+                [
+                    'name' => 'Svelte',
+                    'icon' => 'fa-solid fa-s',
+                    'color' => '#FF3E00'
                 ],
 
                 [
@@ -104,13 +122,49 @@ class Technologies extends Component
                 [
                     'name' => 'Express.js',
                     'icon' => 'fas fa-server',
-                    'color' => '#FFFFFF'
+                    'color' => 'var(--color-heading)'
                 ],
 
                 [
                     'name' => 'Java',
                     'icon' => 'fa-brands fa-java',
                     'color' => '#F89820'
+                ],
+
+                [
+                    'name' => '.NET',
+                    'icon' => 'fa-brands fa-microsoft',
+                    'color' => '#512BD4'
+                ],
+
+                [
+                    'name' => 'Spring Boot',
+                    'icon' => 'fa-solid fa-seedling',
+                    'color' => '#6DB33F'
+                ],
+
+                [
+                    'name' => 'Go',
+                    'icon' => 'fa-brands fa-golang',
+                    'color' => '#00ADD8'
+                ],
+
+                [
+                    'name' => 'Ruby on Rails',
+                    'icon' => 'fa-solid fa-gem',
+                    'color' => '#CC0000'
+                ],
+
+                [
+                    'name' => 'NestJS',
+                    'icon' => 'fa-solid fa-paw',
+                    'color' => '#E0234E'
+                ],
+
+                [
+                    'name' => 'GraphQL',
+                    'icon' => 'fa-solid fa-diagram-project',
+                    'color' => '#E10098'
                 ],
 
             ]
@@ -142,7 +196,7 @@ class Technologies extends Component
                 [
                     'name' => 'iOS',
                     'icon' => 'fab fa-apple',
-                    'color' => '#FFFFFF'
+                    'color' => 'var(--color-heading)'
                 ],
 
                 [
@@ -198,6 +252,18 @@ class Technologies extends Component
                 ],
 
                 [
+                    'name' => 'Redis',
+                    'icon' => 'fa-solid fa-bolt',
+                    'color' => '#DC382D'
+                ],
+
+                [
+                    'name' => 'SQL Server',
+                    'icon' => 'fa-solid fa-database',
+                    'color' => '#CC2927'
+                ],
+
+                [
                     'name' => 'SQLite',
                     'icon' => 'fas fa-database',
                     'color' => '#0F80CC'
@@ -240,14 +306,32 @@ class Technologies extends Component
 
                 [
                     'name' => 'Kubernetes',
-                    'icon' => 'fas fa-dharmachakra',
+                    'icon' => 'fa-solid fa-circle-nodes',
                     'color' => '#326CE5'
+                ],
+
+                [
+                    'name' => 'GitLab',
+                    'icon' => 'fa-brands fa-gitlab',
+                    'color' => '#FC6D26'
+                ],
+
+                [
+                    'name' => 'Jenkins',
+                    'icon' => 'fa-solid fa-user-secret',
+                    'color' => '#D24939'
+                ],
+
+                [
+                    'name' => 'Terraform',
+                    'icon' => 'fa-solid fa-t',
+                    'color' => '#844FBA'
                 ],
 
                 [
                     'name' => 'GitHub',
                     'icon' => 'fab fa-github',
-                    'color' => '#ffffff'
+                    'color' => 'var(--color-heading)'
                 ],
 
             ]

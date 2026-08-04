@@ -43,9 +43,16 @@ $schemas[] = [
   '@context' => 'https://schema.org',
   '@type' => 'Organization',
   'name' => 'Shreeza Tech',
-  'alternateName' => ['Shreeza', 'ShreezaTech', 'Shreeza Tech', 'Shreeja', 'ShreejaTech', 'Shreeja Tech'],
+  'alternateName' => ['Shreeza', 'Shreezatech', 'Shreeja', 'Shreejatech', 'Shreeja Tech'],
   'url' => $appUrl,
   'logo' => asset('logo.png'),
+  'hasPart' => [
+    $appUrl . '/services',
+    $appUrl . '/solutions',
+    $appUrl . '/contact',
+    $appUrl . '/careers',
+    $appUrl . '/about',
+  ],
   'description' => $description ?? 'Tech Consulting & Software Solutions',
   'contactPoint' => [
     '@type' => 'ContactPoint',
@@ -68,7 +75,7 @@ $schemas[] = [
   '@context' => 'https://schema.org',
   '@type' => 'WebSite',
   'name' => 'Shreeza Tech',
-  'alternateName' => 'Shreeza, ShreezaTech, Shreeja Tech',
+  'alternateName' => 'Shreeza, Shreezatech, Shreejatech, Shreeja Tech',
   'url' => $appUrl,
 ];
 

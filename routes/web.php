@@ -1,7 +1,42 @@
 <?php
 
+use App\Data\Services;
+use App\Data\Solutions;
+use App\Data\TechnologyCategories;
 use App\Http\Controllers\NewsletterController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/sitemap.xml', function () {
+    $base = rtrim(config('app.url'), '/');
+
+    $urls = [
+        ['loc' => $base . '/', 'changefreq' => 'weekly', 'priority' => '1.0'],
+        ['loc' => $base . '/services', 'changefreq' => 'weekly', 'priority' => '0.9'],
+        ['loc' => $base . '/solutions', 'changefreq' => 'weekly', 'priority' => '0.9'],
+        ['loc' => $base . '/portfolio', 'changefreq' => 'weekly', 'priority' => '0.8'],
+        ['loc' => $base . '/about', 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => $base . '/technologies', 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => $base . '/careers', 'changefreq' => 'monthly', 'priority' => '0.7'],
+        ['loc' => $base . '/blog', 'changefreq' => 'weekly', 'priority' => '0.7'],
+        ['loc' => $base . '/contact', 'changefreq' => 'monthly', 'priority' => '0.7'],
+    ];
+
+    foreach (Services::all() as $service) {
+        $urls[] = ['loc' => $base . '/services/' . $service['slug'], 'changefreq' => 'monthly', 'priority' => '0.7'];
+    }
+
+    foreach (Solutions::all() as $solution) {
+        $urls[] = ['loc' => $base . '/solutions/' . $solution['slug'], 'changefreq' => 'monthly', 'priority' => '0.7'];
+    }
+
+    foreach (TechnologyCategories::all() as $category) {
+        $urls[] = ['loc' => $base . '/technologies/' . $category['slug'], 'changefreq' => 'monthly', 'priority' => '0.7'];
+    }
+
+    return response()
+        ->view('sitemap', ['urls' => $urls])
+        ->header('Content-Type', 'application/xml');
+});
 
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 Route::get('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
@@ -28,6 +63,7 @@ Route::livewire('/cyber-security', 'pages::home')->name('cyber-security');
 
 Route::livewire('/services/{slug}', 'pages::service-details')->name('service');
 Route::livewire('/solutions/{slug}', 'pages::solution-details')->name('solution');
+Route::livewire('/technologies/{slug}', 'pages::technology-detail')->name('technology');
 Route::livewire('/portfolio/{slug}', 'pages::home')->name('portfolio.show');
 Route::livewire('/reviews', 'pages::home')->name('reviews');
 Route::livewire('/technologies', 'pages::technology')->name('technologies');

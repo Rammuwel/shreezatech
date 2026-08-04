@@ -5,9 +5,9 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public string $title = 'Shreeza | Careers';
+    public string $title = 'Shreeza Tech | Careers';
 
-    public string $metaDescription = 'Join Shreeza and be part of a team building the future of digital innovation. Explore exciting career opportunities.';
+    public string $metaDescription = 'Join Shreeza Tech and be part of a team building the future of digital innovation. Explore exciting career opportunities.';
 
     public string $name = '';
 

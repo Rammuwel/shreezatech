@@ -5,8 +5,8 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $title = "Shreeza | Blog";
-    public $metaDescription = "Explore the latest insights, tutorials, and updates from Shreeza on software development, AI, cloud computing, and digital innovation.";
+    public $title = "Shreeza Tech | Blog";
+    public $metaDescription = "Explore the latest insights, tutorials, and updates from Shreeza Tech on software development, AI, cloud computing, and digital innovation.";
 
     public string $category = '';
 
@@ -25,7 +25,7 @@ new class extends Component
         $this->activeCategory = $resolved ? Str::lower($resolved) : 'all';
         $this->posts = $resolved ? BlogPosts::findByCategory($resolved) : BlogPosts::all();
         $this->categories = BlogPosts::categories();
-        $this->title = $resolved ? "{$resolved} | Shreeza Blog" : "Shreeza | Blog";
+        $this->title = $resolved ? "{$resolved} | Shreeza Tech Blog" : "Shreeza Tech | Blog";
         $this->metaDescription = $resolved ? "Browse our articles about {$resolved} covering best practices, trends, and insights." : $this->metaDescription;
     }
 
@@ -36,11 +36,11 @@ new class extends Component
         if ($category === 'all') {
             $this->posts = BlogPosts::all();
             $this->category = 'All';
-            $this->title = 'Shreeza | Blog';
+            $this->title = 'Shreeza Tech | Blog';
         } else {
             $this->posts = BlogPosts::findByCategory($category);
             $this->category = ucfirst($category);
-            $this->title = ucfirst($category).' | Shreeza Blog';
+            $this->title = ucfirst($category).' | Shreeza Tech Blog';
         }
     }
 };

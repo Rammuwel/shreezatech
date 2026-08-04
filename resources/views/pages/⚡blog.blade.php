@@ -5,8 +5,8 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $title = "Shreeza | Blog";
-    public $metaDescription = "Explore the latest insights, tutorials, and updates from Shreeza on software development, AI, cloud computing, and digital innovation.";
+    public $title = "Shreeza Tech | Blog";
+    public $metaDescription = "Explore the latest insights, tutorials, and updates from Shreeza Tech on software development, AI, cloud computing, and digital innovation.";
 
     public array $posts = [];
 

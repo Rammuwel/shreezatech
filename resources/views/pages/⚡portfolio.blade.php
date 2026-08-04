@@ -57,7 +57,7 @@ new class extends Component
 };
 ?>
 <div>
-    <x-seo.meta title="Shreeza | Portfolio" description="Explore our portfolio of successful projects across various industries including fintech, healthcare, e-commerce, and more." />
+    <x-seo.meta title="Shreeza Tech | Portfolio" description="Explore Shreeza Tech's portfolio of successful projects across various industries including fintech, healthcare, e-commerce, and more." />
     <x-portfolio.hero />
     <x-portfolio.portfolio
         :projects="$projects"

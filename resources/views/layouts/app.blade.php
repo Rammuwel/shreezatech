@@ -23,11 +23,11 @@
   <meta name="twitter:description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
 
   <link rel="canonical" href="{{ url()->current() }}">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('favicon-48x48.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon-192x192.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logo.png') }}">
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('logo.png') }}">
-  <!-- 3. APPLE HOME SCREEN ICON -->
-   <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+  <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 

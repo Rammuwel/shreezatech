@@ -106,3 +106,7 @@ if (count($crumbs) > 1) {
 <link rel="canonical" href="{{ $canonical }}">
 
 <script type="application/ld+json">{!! json_encode($schemas, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
+
+@push('seo-title')
+<title>{{ $title ? (str_contains($title, config('app.name')) ? $title : $title.' | '.config('app.name')) : config('app.name') }}</title>
+@endpush

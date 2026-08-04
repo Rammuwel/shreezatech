@@ -15,7 +15,7 @@ new class extends Component
 ?>
 
 <div>
-    <x-seo.meta :title="'Shreeza Tech | '.($service['title'] ?? 'Service Details')" description="Learn about our {{ $service['title'] ?? 'service' }} - {{ $service['short'] ?? 'Professional software development services' }}" :breadcrumbs="[['name' => 'Home', 'url' => url('/')], ['name' => 'Services', 'url' => url('/services')], ['name' => $service['title'] ?? 'Service Details', 'url' => url()->current()]]" />
+    <x-seo.meta :title="'Shreeza Tech | '.($service['name'] ?? 'Service Details')" description="Learn about our {{ $service['name'] ?? 'service' }} - {{ $service['short_description'] ?? 'Professional software development services' }}" :breadcrumbs="[['name' => 'Home', 'url' => url('/')], ['name' => 'Services', 'url' => url('/services')], ['name' => $service['name'] ?? 'Service Details', 'url' => url()->current()]]" />
     <x-service-details.hero :service="$service" />
     <x-service-details.overview :service="$service" />
     <x-service-details.features :service="$service" />

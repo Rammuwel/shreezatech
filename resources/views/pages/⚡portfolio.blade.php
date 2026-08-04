@@ -64,6 +64,5 @@ new class extends Component
         :offset="$offset"
         :len="$len"
         :activeCategory="$activeCategory" />
-    <x-portfolio.termonology />
     <x-home.banner />
 </div>

@@ -157,18 +157,23 @@ $navItems = [
             <a
               wire:navigate
               href="{{ route($item['route']) }}"
-              class="relative flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 group"
-              :class="activeDropdown === '{{ $item['route'] }}' ? 'text-heading bg-primary/5' : 'text-text hover:text-heading hover:bg-card'">
+              class="group relative flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200"
+              :class="activeDropdown === '{{ $item['route'] }}' ? 'text-heading' : 'text-text hover:text-heading'">
               {{ $item['title'] }}
               <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === '{{ $item['route'] }}' }" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              <span
+                class="absolute left-3 right-3 -bottom-0.5 h-0.5 rounded-full bg-primary origin-left transition-transform duration-300"
+                :class="(activeDropdown === '{{ $item['route'] }}' || {{ request()->routeIs($item['route']) || collect($item['items'] ?? [])->contains(fn($sub) => request()->routeIs($sub['route'])) ? 'true' : 'false' }}) ? 'scale-x-100' : 'scale-x-0'"></span>
             </a>
           </div>
           @else
           <a
             wire:navigate
             href="{{ route($item['route']) }}"
-            class="relative px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 {{ request()->routeIs($item['route']) ? 'text-heading bg-primary/5' : 'text-text hover:text-heading hover:bg-card' }}">
+            class="group relative px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 {{ request()->routeIs($item['route']) ? 'text-heading' : 'text-text hover:text-heading' }}">
             {{ $item['title'] }}
+            <span
+              class="absolute left-3 right-3 -bottom-0.5 h-0.5 rounded-full bg-primary origin-left transition-transform duration-300 {{ request()->routeIs($item['route']) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
           </a>
           @endif
         @endforeach
@@ -216,15 +221,9 @@ $navItems = [
                   {{ $item['title'] }}
                 </h4>
                 <div class="grid grid-cols-2 gap-2">
-                  @foreach($item['items'] as $i => $subItem)
+                  @foreach($item['items'] as $subItem)
                   <a wire:navigate href="{{ route($item['route']) }}/{{ $subItem['route'] }}"
                     class="group relative rounded-xl border border-transparent p-3 hover:border-primary/15 hover:bg-background transition-all duration-200">
-                    @if($i === 0 && $item['route'] === 'services')
-                    <span class="absolute -top-1.5 -right-1.5 flex items-center gap-1 rounded-full bg-secondary/15 text-secondary px-2 py-0.5 text-[10px] font-semibold">
-                      <span class="w-1 h-1 rounded-full bg-secondary animate-pulse"></span>
-                      Popular
-                    </span>
-                    @endif
                     <div class="flex gap-3">
                       <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-sm transition-all duration-200">
                         <x-dynamic-component :component="'svg.'.$subItem['icon']" class="w-5 h-5" />

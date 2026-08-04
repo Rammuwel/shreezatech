@@ -2,6 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="theme" :class="{ 'dark': dark }">
 <head>
   <meta charset="utf-8">
+  <script>
+    (function() {
+      document.documentElement.classList.toggle('dark', localStorage.getItem('theme') !== 'light');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions. We build modern software, AI solutions and scalable cloud applications.' }}">
@@ -43,6 +48,14 @@
   </main>
 
   <x-footer />
+
+  <button
+    type="button"
+    @click="window.open('https://wa.me/918770699454', '_blank', 'noopener,noreferrer')"
+    aria-label="Chat with Shreeza on WhatsApp"
+    class="group fixed bottom-6 left-6 z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+    <i class="fab fa-whatsapp text-lg"></i>
+  </button>
 
   @livewireScripts
 </body>

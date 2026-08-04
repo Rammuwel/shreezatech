@@ -1,5 +1,5 @@
 <section class="portfolio-hero overflow-hidden  bg-background">
-    <div class="relative mt-20  flex items-center">
+    <div class="relative mt-20 py-5  flex items-center">
 
         <!-- ================= Background ================= -->
 
@@ -116,7 +116,7 @@
 
                     <img
                         src="{{ asset('/images/solutions/banner.png') }}"
-                        class="portfolio-image relative z-0 w-207 hero-float opacity-40 "
+                        class="portfolio-image relative z-0 w-207 hero-float opacity-60 "
                         alt="Shreeza">
 
                 </div>
@@ -124,7 +124,7 @@
 
         </div>
     </div>
-    <div class="max-w-7xl mx-auto  border-border bg-card rounded-2xl mb-3 ">
+    <div class="max-w-7xl mx-auto mt-4 border-border bg-card rounded-2xl mb-3 ">
 
         <!-- Features -->
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">
@@ -134,19 +134,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-microchip"></i>
+                    <i class="fa-solid fa-building"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Modern Technology
+                    Industry Expertise
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Laravel, React, Flutter, Node.js, AI, and cloud technologies to build future-ready products.
+                    Deep domain knowledge across healthcare, finance, education, retail, and more.
 
                 </p>
 
@@ -157,19 +157,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i class="fa-solid fa-puzzle-piece"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Scalable Architecture
+                    Custom-Built Approach
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Clean architecture that grows with your business while maintaining speed and stability.
+                    Solutions tailored to your exact workflows, not off-the-shelf templates.
 
                 </p>
 
@@ -180,19 +180,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-bolt"></i>
+                    <i class="fa-solid fa-circle-nodes"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Fast Delivery
+                    Seamless Integration
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Agile development with transparent communication ensures faster delivery without compromising quality.
+                    Connects with your existing systems so rollout is smooth and disruption-free.
 
                 </p>
 
@@ -203,19 +203,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-headset"></i>
+                    <i class="fa-solid fa-handshake"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Dedicated Support
+                    Long-Term Partnership
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Continuous maintenance, updates, and technical support to keep your business running smoothly.
+                    We stay alongside your business, evolving the solution as your needs grow.
 
                 </p>
 

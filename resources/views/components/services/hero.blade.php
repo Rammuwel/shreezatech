@@ -1,5 +1,5 @@
 <section class="portfolio-hero overflow-hidden  bg-background">
-    <div class="relative mt-20  flex items-center">
+    <div class="relative mt-20 py-5 flex items-center">
 
         <!-- ================= Background ================= -->
 
@@ -64,12 +64,12 @@
                     <h1
                         class="portfolio-hero-title mt-3 text-3xl lg:text-5xl font-semibold leading-tight text-heading">
 
-                        Solutions That Drive
-                
+                        Services Built to
+
                         <br>
                         <span
                             class="bg-linear-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
-                            Real Results
+                            Move Your Business Forward
 
                         </span>
 
@@ -80,8 +80,7 @@
                     <p
                         class="portfolio-hero-description mt-8 max-w-xl text-lg leading-8 text-text">
 
-                        We offer a complete range of digital services
-                to help businesses grow, innovate and succeed.
+                        From strategy to launch, we design and build scalable software, AI-powered platforms and cloud infrastructure tailored to your goals — so you can focus on growing your business.
 
                     </p>
 
@@ -118,7 +117,7 @@
 
                     <img
                         src="{{ asset('/images/services/banner.png') }}"
-                        class="portfolio-image relative z-0 w-207 hero-float opacity-30 "
+                        class="portfolio-image relative z-0 w-207 hero-float opacity-60 "
                         alt="Shreeza">
 
                         
@@ -128,7 +127,8 @@
 
         </div>
     </div>
-       <div class="max-w-7xl mx-auto  border-border bg-card rounded-2xl mb-3 ">
+       <div class="max-w-7xl mt-4 mx-auto px-4 sm:px-6 lg:px-8 mb-3">
+        <div class="border-border bg-card rounded-2xl">
 
         <!-- Features -->
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">
@@ -138,19 +138,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-microchip"></i>
+                    <i class="fa-solid fa-laptop-code"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Modern Technology
+                    End-to-End Development
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Laravel, React, Flutter, Node.js, AI, and cloud technologies to build future-ready products.
+                    From requirement to release, we own the entire product lifecycle with quality baked in.
 
                 </p>
 
@@ -161,19 +161,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i class="fa-solid fa-robot"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Scalable Architecture
+                    AI & Automation Ready
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Clean architecture that grows with your business while maintaining speed and stability.
+                    Intelligent features and workflow automation that scale with your business.
 
                 </p>
 
@@ -190,13 +190,13 @@
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Fast Delivery
+                    Agile Delivery
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Agile development with transparent communication ensures faster delivery without compromising quality.
+                    Transparent sprints and predictable milestones, so you always know what's next.
 
                 </p>
 
@@ -213,17 +213,19 @@
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Dedicated Support
+                    Ongoing Support
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Continuous maintenance, updates, and technical support to keep your business running smoothly.
+                    Monitoring, maintenance, and improvements long after launch.
 
                 </p>
 
             </div>
+
+        </div>
 
         </div>
 

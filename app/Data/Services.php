@@ -1623,6 +1623,184 @@ class Services
 
             ],
 
+            [
+                'id' => 13,
+
+                'name' => 'Digital Marketing',
+
+                'slug' => 'digital-marketing',
+
+                'icon' => 'fa-solid fa-bullhorn',
+
+                'short_description' =>
+                'Result-driven digital marketing services that boost visibility, generate leads, and accelerate business growth online.',
+
+                'hero' => [
+
+                    'badge' => 'Our Services',
+
+                    'title' => 'Digital Marketing Services',
+
+                    'subtitle' => 'Growing Your Brand. Generating Real Leads.',
+
+                    'description' =>
+                    'We plan and execute data-driven digital marketing strategies — SEO, paid ads, social media, and content marketing — that put your brand in front of the right audience and turn clicks into customers.',
+
+                    'image' => 'images/services/digital-marketing.png',
+
+                ],
+
+                'overview' => [
+
+                    'title' => 'Growth-Driven Digital Marketing',
+
+                    'description' =>
+                    'From search engine optimization to performance advertising, our digital marketing services help businesses build brand awareness, capture qualified leads, and maximize return on every marketing dollar invested.',
+
+                ],
+
+                'features' => [
+
+                    [
+                        'icon' => 'fa-solid fa-magnifying-glass-chart',
+
+                        'title' => 'SEO Optimization',
+
+                        'description' => 'Improve search rankings and drive organic traffic with technical and content SEO.',
+                    ],
+
+                    [
+                        'icon' => 'fa-solid fa-bullseye',
+
+                        'title' => 'PPC Advertising',
+
+                        'description' => 'Google, Meta, and LinkedIn ad campaigns engineered for maximum conversions.',
+                    ],
+
+                    [
+                        'icon' => 'fa-solid fa-share-nodes',
+
+                        'title' => 'Social Media Marketing',
+
+                        'description' => 'Engaging content and campaigns that build communities and brand loyalty.',
+                    ],
+
+                    [
+                        'icon' => 'fa-solid fa-pen-nib',
+
+                        'title' => 'Content Marketing',
+
+                        'description' => 'High-value blogs, videos, and copy that attract, inform, and convert.',
+                    ],
+
+                    [
+                        'icon' => 'fa-solid fa-envelope-open-text',
+
+                        'title' => 'Email Marketing',
+
+                        'description' => 'Personalized email funnels that nurture leads and drive repeat business.',
+                    ],
+
+                    [
+                        'icon' => 'fa-solid fa-chart-column',
+
+                        'title' => 'Analytics & Reporting',
+
+                        'description' => 'Transparent dashboards and insights to track performance and ROI.',
+                    ],
+
+                ],
+
+                'technologies' => [
+
+                    'Google Analytics',
+
+                    'Google Ads',
+
+                    'Meta Ads',
+
+                    'Ahrefs',
+
+                    'SEMrush',
+
+                    'Mailchimp',
+
+                    'HubSpot',
+
+                    'WordPress',
+
+                    'Canva',
+
+                ],
+
+                'process' => [
+
+                    'Market Research',
+
+                    'Strategy Development',
+
+                    'Campaign Planning',
+
+                    'Content Creation',
+
+                    'Campaign Execution',
+
+                    'Monitoring & Optimization',
+
+                    'Reporting & Insights',
+
+                ],
+
+                'benefits' => [
+
+                    'Increased Brand Visibility',
+
+                    'Qualified Lead Generation',
+
+                    'Higher Conversion Rates',
+
+                    'Better Search Rankings',
+
+                    'Measurable ROI',
+
+                    'Long-Term Growth',
+
+                ],
+
+                'faqs' => [
+
+                    [
+                        'question' => 'How long does it take to see results from digital marketing?',
+
+                        'answer' =>
+                        'Timelines vary by channel — paid ads can generate leads within weeks, while SEO typically shows meaningful results within 3 to 6 months.',
+                    ],
+
+                    [
+                        'question' => 'Which digital marketing channels do you manage?',
+
+                        'answer' =>
+                        'We manage SEO, Google and Meta advertising, social media, content, and email marketing as part of integrated campaigns.',
+                    ],
+
+                    [
+                        'question' => 'Do you provide regular performance reports?',
+
+                        'answer' =>
+                        'Yes. We share transparent analytics dashboards and monthly reports covering traffic, conversions, and return on ad spend.',
+                    ],
+
+                    [
+                        'question' => 'Can you work with our existing marketing tools?',
+
+                        'answer' =>
+                        'Absolutely. We integrate with CRMs, analytics platforms, and marketing automation tools already used by your business.',
+                    ],
+
+                ],
+
+            ],
+
         ];
     }
 

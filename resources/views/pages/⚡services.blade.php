@@ -39,6 +39,6 @@ new class extends Component
         :offset="$offset"
         :len="$len" />
     <x-services.features />
-    <x-services.process />
+    
     <x-home.banner/>
 </div>

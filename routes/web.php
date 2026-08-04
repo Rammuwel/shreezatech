@@ -1,17 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\NewsletterController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/newsletter/subscribe', function (Request $request) {
-    $request->validate(['email' => 'required|email|max:254']);
-
-    // Newsletter subscribe logic (e.g., create/update subscriber)
-
-    return $request->expectsJson()
-        ? response()->json(['message' => 'Subscribed successfully!'])
-        : back()->with('newsletter_status', 'Subscribed successfully!');
-})->name('newsletter.subscribe');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+Route::get('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 
 Route::livewire('/', 'pages::home')->name('home');
 Route::livewire('/login', 'pages::home')->name('login');

@@ -125,7 +125,7 @@
                                 <label class="mb-2 block text-sm font-medium text-heading">Phone Number <span class="text-primary">*</span></label>
                                 <div class="relative">
                                     <i class="fa-solid fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-muted text-sm"></i>
-                                    <input type="text" placeholder="+91 98765 43210" wire:model="phone"
+                                    <input type="text" placeholder="+91 87706 99454" wire:model="phone"
                                         class="h-14 w-full rounded-xl border border-border bg-background pl-11 pr-4 text-sm text-text outline-none transition focus:border-primary">
                                 </div>
                                 @error('phone')

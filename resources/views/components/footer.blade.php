@@ -77,25 +77,34 @@
         <p class="mt-1 text-sm text-muted">Stay updated with our latest news and insights.</p>
 
         <form
-          x-data="{ email: '', message: '', success: false }"
+          x-data="{ email: '', message: '', success: false, loading: false }"
           @submit.prevent="
+            loading = true; message = '';
             fetch('{{ route('newsletter.subscribe') }}', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}', 'Accept': 'application/json' },
               body: JSON.stringify({ email })
-            }).then(r => r.json()).then(data => {
-              if (data.message) { message = data.message; success = true; email = ''; }
-            }).catch(() => { message = 'Network error. Please try again.'; })
+            }).then(async r => {
+              const data = await r.json();
+              success = r.ok;
+              message = data.message || (r.ok ? 'Subscribed successfully!' : 'Something went wrong. Please try again.');
+              if (r.ok) email = '';
+            }).catch(() => { success = false; message = 'Network error. Please try again.'; })
+            .finally(() => { loading = false; })
           "
-          class="relative mt-3 flex items-center">
-          <input type="email" x-model="email" placeholder="Enter your email" required
-            class="w-full rounded-lg border border-border bg-card py-2.5 pl-4 pr-14 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors">
-          <button type="submit" class="absolute right-1 top-1 bottom-1 rounded-md bg-primary px-3.5 hover:bg-primary-hover active:scale-95 transition-all text-white">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-          </button>
-          <template x-if="message">
-            <p class="mt-1 text-xs" :class="success ? 'text-success' : 'text-danger'" x-text="message"></p>
-          </template>
+          class="mt-3">
+          <div class="relative flex items-center">
+            <input type="email" x-model="email" placeholder="Enter your email" required
+              class="w-full rounded-lg border border-border bg-card py-2.5 pl-4 pr-14 text-sm text-heading placeholder-muted focus:border-primary focus:outline-none transition-colors">
+            <button type="submit" :disabled="loading"
+              class="absolute right-1 top-1 bottom-1 flex items-center justify-center rounded-md bg-primary px-3.5 hover:bg-primary-hover active:scale-95 transition-all text-white disabled:opacity-60 disabled:cursor-not-allowed">
+              <span x-show="!loading">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+              </span>
+              <svg x-show="loading" x-cloak class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
+            </button>
+          </div>
+          <p x-show="message" x-cloak class="mt-2 text-xs" :class="success ? 'text-success' : 'text-danger'" x-text="message"></p>
         </form>
       </div>
 

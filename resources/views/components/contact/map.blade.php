@@ -35,42 +35,49 @@
 
             <div
                 class="absolute
-                left-8
-                top-8
+                left-3
+                top-3
+                sm:left-8
+                sm:top-8
                 z-30
-                w-80
+                w-56
+                sm:w-80
                 rounded-2xl
                 border
                 border-white/10
                 bg-background/80
                 backdrop-blur-xl
-                p-6">
+                p-3
+                sm:p-6">
 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 sm:gap-4">
 
                     <div
-                        class="h-14
-                        w-14
+                        class="h-10
+                        w-10
+                        sm:h-14
+                        sm:w-14
                         rounded-xl
                         bg-primary/20
                         flex
                         items-center
                         justify-center">
 
-                        <i class="fa-solid fa-location-dot text-primary text-xl"></i>
+                        <i class="fa-solid fa-location-dot text-primary text-base sm:text-xl"></i>
 
                     </div>
 
                     <div>
 
-                        <h3 class="font-bold text-heading">
+                        <h3 class="text-sm sm:text-lg font-bold text-heading">
 
                             Shreeza Office
 
                         </h3>
 
-                        <p class="text-sm text-muted">
+                        <p class="text-[11px] sm:text-sm text-muted">
 
+                            Ring Road, Mushakhedi,
                             Indore, Madhya Pradesh
 
                         </p>
@@ -79,37 +86,37 @@
 
                 </div>
 
-                <div class="mt-5 space-y-3">
+                <div class="mt-3 sm:mt-5 space-y-2 sm:space-y-3">
 
-                    <div class="flex gap-3">
+                    <div class="flex gap-2 sm:gap-3">
 
-                        <i class="fa-solid fa-phone text-primary mt-1"></i>
+                        <i class="fa-solid fa-phone text-primary mt-1 text-xs sm:text-base"></i>
 
-                        <span class="text-muted">
+                        <span class="text-[11px] sm:text-sm text-muted">
 
-                            +91 98765 43210
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex gap-3">
-
-                        <i class="fa-solid fa-envelope text-primary mt-1"></i>
-
-                        <span class="text-muted">
-
-                            contact@shreeza.in
+                            +91 87706 99454
 
                         </span>
 
                     </div>
 
-                    <div class="flex gap-3">
+                    <div class="flex gap-2 sm:gap-3">
 
-                        <i class="fa-solid fa-clock text-primary mt-1"></i>
+                        <i class="fa-solid fa-envelope text-primary mt-1 text-xs sm:text-base"></i>
 
-                        <span class="text-muted">
+                        <span class="text-[11px] sm:text-sm text-muted">
+
+                            info@shreezatech.com
+
+                        </span>
+
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-3">
+
+                        <i class="fa-solid fa-clock text-primary mt-1 text-xs sm:text-base"></i>
+
+                        <span class="text-[11px] sm:text-sm text-muted">
 
                             Mon - Sat | 9 AM - 7 PM
 
@@ -120,15 +127,19 @@
                     <a
                         href="https://maps.google.com"
                         target="_blank"
-                        class="mt-6
+                        class="mt-3
+                    sm:mt-6
                     inline-flex
                     items-center
                     gap-3
                     rounded-xl
                     bg-primary
-                    px-5
-                    py-3
-                    text-sm
+                    px-3.5
+                    sm:px-5
+                    py-2
+                    sm:py-3
+                    text-[11px]
+                    sm:text-sm
                     font-semibold
                     text-white
                     transition
@@ -194,8 +205,10 @@
             <!-- Map -->
 
             <iframe
-                src="https://www.google.com/maps?q=Indore,Madhya%20Pradesh&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.0114386075134!2d75.8910736!3d22.6906181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd0023eccb1f%3A0x40c3af96ba7ef484!2sShreeza%20tech%20cunsulting%20and%20software%20solution!5e0!3m2!1sen!2sin!4v1785804390200!5m2!1sen!2sin"
                 loading="lazy"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
                 class="h-[500px] w-full grayscale brightness-50 contrast-125">
             </iframe>
 

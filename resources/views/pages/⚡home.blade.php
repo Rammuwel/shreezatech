@@ -12,7 +12,7 @@ new class extends Component
 <div>
     <x-seo.meta :title="$title" :description="$metaDescription" />
     <x-home.hero />
-    <x-home.counter />
+    
     <x-home.services />
     <x-home.industries/>
     <x-home.process />

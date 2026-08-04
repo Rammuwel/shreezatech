@@ -44,35 +44,43 @@
 
         <!-- FAQ -->
 
-        <div x-data="{ open: null }">
+        <div class="grid gap-4 md:grid-cols-2">
 
-            @foreach($faqs as $index => $faq)
+            @foreach(collect($faqs)->chunk(ceil(count($faqs) / 2)) as $columnFaqs)
 
-            <div class="mb-4 rounded-2xl border border-border bg-card">
+                <div class="space-y-4" x-data="{ open: null }">
 
-                <button
-                    @click="open = open === {{ $index }} ? null : {{ $index }}"
-                    class="flex w-full items-center justify-between p-6 text-text">
+                    @foreach($columnFaqs as $index => $faq)
 
-                    <span>{{ $faq['question'] }}</span>
+                        <div class="rounded-2xl border border-border bg-card">
 
-                    <i
-                        class="fa-solid"
-                        :class="open === {{ $index }} ? 'fa-minus' : 'fa-plus'">
-                    </i>
+                            <button
+                                @click="open = open === {{ $index }} ? null : {{ $index }}"
+                                class="flex w-full items-center justify-between p-6 text-text">
 
-                </button>
+                                <span>{{ $faq['question'] }}</span>
 
-                <div
-                    x-show="open === {{ $index }}"
-                    x-collapse
-                    class="px-6 pb-6 text-muted">
+                                <i
+                                    class="fa-solid"
+                                    :class="open === {{ $index }} ? 'fa-minus' : 'fa-plus'">
+                                </i>
 
-                    {{ $faq['answer'] }}
+                            </button>
+
+                            <div
+                                x-show="open === {{ $index }}"
+                                x-collapse
+                                class="px-6 pb-6 text-muted">
+
+                                {{ $faq['answer'] }}
+
+                            </div>
+
+                        </div>
+
+                    @endforeach
 
                 </div>
-
-            </div>
 
             @endforeach
 

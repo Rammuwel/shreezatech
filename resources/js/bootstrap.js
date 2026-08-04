@@ -3,9 +3,14 @@ import axios from 'axios';
 window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+const applyTheme = () => {
+  const dark = localStorage.getItem('theme') !== 'light';
+  document.documentElement.classList.toggle('dark', dark);
+};
+
 document.addEventListener('alpine:init', () => {
   Alpine.data('theme', () => ({
-    dark: localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches),
+    dark: localStorage.getItem('theme') !== 'light',
     init() {
       this.$watch('dark', val => {
         document.documentElement.classList.toggle('dark', val);
@@ -189,3 +194,5 @@ document.addEventListener('alpine:init', () => {
     destroy() { clearInterval(this.autoplayTimer); window.removeEventListener('resize', this._resizeHandler); }
   }));
 });
+
+document.addEventListener('livewire:navigated', applyTheme);

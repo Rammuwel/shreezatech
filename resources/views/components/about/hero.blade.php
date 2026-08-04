@@ -1,5 +1,5 @@
 <section class="portfolio-hero overflow-hidden  bg-background">
-    <div class="relative mt-20  flex items-center">
+    <div class="relative py-5 mt-20  flex items-center">
 
         <!-- ================= Background ================= -->
 
@@ -131,75 +131,52 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto  border-border bg-card rounded-2xl mb-3 ">
+    <div class="max-w-7xl mx-auto mt-4  border-border bg-card rounded-2xl mb-3 ">
 
         <!-- Features -->
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">
+        <div class="grid gap-8 md:grid-cols-3 p-3">
 
             <!-- Card -->
-            <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
+            <div class="group flex flex-col items-center justify-center  transition-all duration-500 md:border-r border-border">
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-microchip"></i>
+                    <i class="fa-solid fa-bullseye"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Modern Technology
+                    Our Mission
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Laravel, React, Flutter, Node.js, AI, and cloud technologies to build future-ready products.
+                    Empowering businesses through technology and innovation.
 
                 </p>
 
             </div>
 
             <!-- Card -->
-            <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
+            <div class="group flex flex-col items-center justify-center  transition-all duration-500 md:border-r border-border">
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i class="fa-solid fa-eye"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Scalable Architecture
+                    Our Vision
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Clean architecture that grows with your business while maintaining speed and stability.
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-            <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
-
-                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
-
-                    <i class="fa-solid fa-bolt"></i>
-
-                </div>
-
-                <h3 class="mt-2 text-xl font-semibold text-heading">
-
-                    Fast Delivery
-
-                </h3>
-
-                <p class=" text-muted leading-7 text-center justify-center">
-
-                    Agile development with transparent communication ensures faster delivery without compromising quality.
+                    To be a global leader in delivering digital excellence.
 
                 </p>
 
@@ -210,19 +187,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-headset"></i>
+                    <i class="fa-solid fa-gem"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Dedicated Support
+                    Our Values
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Continuous maintenance, updates, and technical support to keep your business running smoothly.
+                    Integrity, innovation, quality, and customer success.
 
                 </p>
 

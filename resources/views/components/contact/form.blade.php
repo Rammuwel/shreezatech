@@ -113,7 +113,7 @@
                                 class="text-sm
                                 text-muted">
 
-                                +91 98765 43210
+                                +91 87706 99454
 
                             </p>
 
@@ -162,7 +162,7 @@
                                 class="text-sm
                                 text-muted">
 
-                                contact@shreeza.in
+                                info@shreezatech.com
 
                             </p>
 
@@ -212,8 +212,8 @@
                                 class="text-sm
                                 text-muted">
 
-                                AB Road, Indore,
-                                Madhya Pradesh
+                                Ring Road, Mushakhedi,
+                                Indore, Madhya Pradesh
 
                             </p>
 

@@ -1,4 +1,4 @@
-<section class="py-0">
+<section class="mb-10">
 
     <div class="container mx-auto px-6">
 

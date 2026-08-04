@@ -1,5 +1,5 @@
 <section class="portfolio-hero overflow-hidden  bg-background">
-    <div class="relative mt-20  flex items-center">
+    <div class="relative mt-20 py-4 flex items-center">
 
         <!-- ================= Background ================= -->
 
@@ -30,7 +30,7 @@
         <!-- ================= Container ================= -->
 
         <div
-            class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            class="relative mt-4 z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
             <div
                 class="grid lg:grid-cols-4 gap-10 lg:gap-20 items-center">
@@ -133,19 +133,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-microchip"></i>
+                    <i class="fa-solid fa-chart-line"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Modern Technology
+                    Proven Results
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Laravel, React, Flutter, Node.js, AI, and cloud technologies to build future-ready products.
+                    Every project shipped with measurable outcomes and real business value.
 
                 </p>
 
@@ -162,13 +162,13 @@
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Scalable Architecture
+                    Diverse Industries
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Clean architecture that grows with your business while maintaining speed and stability.
+                    Tailored solutions across healthcare, finance, education, retail, and more.
 
                 </p>
 
@@ -179,19 +179,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-bolt"></i>
+                    <i class="fa-solid fa-code"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Fast Delivery
+                    Full-Stack Expertise
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Agile development with transparent communication ensures faster delivery without compromising quality.
+                    End-to-end product engineering from design to deployment and beyond.
 
                 </p>
 
@@ -202,19 +202,19 @@
 
                 <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-headset"></i>
+                    <i class="fa-solid fa-handshake"></i>
 
                 </div>
 
                 <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    Dedicated Support
+                    Client-First Approach
 
                 </h3>
 
                 <p class=" text-muted leading-7 text-center justify-center">
 
-                    Continuous maintenance, updates, and technical support to keep your business running smoothly.
+                    Transparent collaboration and dedicated support from idea to launch.
 
                 </p>
 

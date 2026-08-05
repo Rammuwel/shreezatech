@@ -108,7 +108,7 @@
         </form>
       </div>
 
-      <p class="text-xs text-muted">&copy; {{ date('Y') }} Shreeza Tech. All rights reserved.</p>
+      <p class="text-xs text-muted">&copy; {{ date('Y') }} ShreezaTech. All rights reserved.</p>
 
       <button
         x-data

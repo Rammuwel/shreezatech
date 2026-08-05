@@ -87,8 +87,8 @@
                     <div
                         class="portfolio-hero-buttons mt-10 flex flex-wrap gap-5">
 
-                        <!-- <a
-                            href="#"
+                        <a
+                            href="{{ url('/contact') }}"
                             class="rounded-full bg-primary px-8 py-4 font-semibold text-white transition hover:scale-105">
 
                             Start Your Project
@@ -96,12 +96,12 @@
                         </a>
 
                         <a
-                            href="#"
+        href="{{ url('/portfolio') }}"
                             class="rounded-full border border-border px-8 py-4 font-semibold text-heading hover:border-primary">
 
                             Explore Work
 
-                        </a> -->
+                        </a>
 
                     </div>
                 </div>

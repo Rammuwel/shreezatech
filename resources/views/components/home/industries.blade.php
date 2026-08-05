@@ -59,7 +59,7 @@
 
                         <h3 class="text-3xl font-bold text-primary">
 
-                            100+
+                            6+
 
                         </h3>
 

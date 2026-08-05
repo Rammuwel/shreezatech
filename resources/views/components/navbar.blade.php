@@ -10,7 +10,7 @@ $navItems = [
   ], 'right' => [
     'heading' => 'Trusted by startups & enterprises',
     'stats' => [
-      ['value' => '150+', 'label' => 'Projects Delivered'],
+      ['value' => '50+', 'label' => 'Projects Delivered'],
       ['value' => '98%', 'label' => 'Client Satisfaction'],
     ],
     'points' => [
@@ -39,7 +39,7 @@ $navItems = [
   ], 'right' => [
     'heading' => 'Real results, real industries',
     'stats' => [
-      ['value' => '12+', 'label' => 'Years of Experience'],
+      ['value' => '5+', 'label' => 'Years of Experience'],
       ['value' => '6', 'label' => 'Industries Served'],
     ],
     'points' => [

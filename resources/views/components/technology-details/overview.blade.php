@@ -27,7 +27,7 @@
             </div>
             <div class="grid grid-cols-2 gap-6">
                 <div class="rounded-3xl border border-border bg-card p-8 text-center transition hover:-translate-y-2 hover:border-primary/30">
-                    <div class="text-5xl font-bold text-primary">150+</div>
+                    <div class="text-5xl font-bold text-primary">50+</div>
                     <p class="mt-3 text-muted">Projects Delivered</p>
                 </div>
                 <div class="rounded-3xl border border-border bg-card p-8 text-center transition hover:-translate-y-2 hover:border-secondary/30">
@@ -35,7 +35,7 @@
                     <p class="mt-3 text-muted">Client Satisfaction</p>
                 </div>
                 <div class="rounded-3xl border border-border bg-card p-8 text-center transition hover:-translate-y-2 hover:border-primary/30">
-                    <div class="text-5xl font-bold text-primary">12+</div>
+                    <div class="text-5xl font-bold text-primary">5+</div>
                     <p class="mt-3 text-muted">Years Experience</p>
                 </div>
                 <div class="rounded-3xl border border-border bg-card p-8 text-center transition hover:-translate-y-2 hover:border-secondary/30">

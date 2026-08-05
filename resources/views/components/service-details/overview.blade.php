@@ -73,7 +73,7 @@
 
                     <div class="text-5xl font-bold text-primary">
 
-                        150+
+                        50+
 
                     </div>
 
@@ -90,7 +90,7 @@
 
                     <div class="text-5xl font-bold text-secondary">
 
-                        99%
+                        98%
 
                     </div>
 

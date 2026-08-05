@@ -37,7 +37,7 @@ class State extends Component
 
         [
             "icon" => "fa-solid fa-star",
-            "count" => 99,
+            "count" => 98,
             "suffix" => "%",
             "label" => "Client Satisfaction",
         ],

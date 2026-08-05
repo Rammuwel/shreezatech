@@ -26,10 +26,12 @@
 
             @foreach($services as $service)
 
-            <div
-                relative
+            <a
+                wire:navigate
+                href="{{ route('service', $service['slug']) }}"
                 class="group
                     relative
+                    block
                     overflow-hidden
                     rounded-3xl
                     border
@@ -127,7 +129,7 @@
 
                 </div>
 
-            </div>
+            </a>
 
             @endforeach
 

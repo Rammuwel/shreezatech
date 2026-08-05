@@ -23,7 +23,7 @@
 
                 <a
                     wire:navigate
-                    href="#"
+                    href="{{ route('solution', $solution['slug']) }}"
                     class="group
                     overflow-hidden
                     rounded-2xl

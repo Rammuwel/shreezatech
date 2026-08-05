@@ -14,6 +14,7 @@ $canonical = $canonical ?? url()->current();
 $phone = $phone ?? config('app.phone', '+1-555-555-5555');
 $address = $address ?? config('app.address', '');
 $appUrl = config('app.url');
+$pageTitle = $title ? (str_contains($title, config('app.name')) ? $title : $title.' | '.config('app.name')) : config('app.name');
 
 $homeCrumb = ['name' => 'Home', 'url' => url('/')];
 
@@ -101,19 +102,17 @@ if (count($crumbs) > 1) {
 <meta name="description" content="{{ $description ?? 'Shreeza Tech - Software Development & Digital Innovation. We build enterprise software, AI-powered platforms, cloud infrastructure, and mobile applications.' }}">
 @if($keywords)<meta name="keywords" content="{{ $keywords }}">@endif
 
-<meta property="og:title" content="{{ $title ? (str_contains($title, config('app.name')) ? $title : $title.' | '.config('app.name')) : config('app.name') }}">
+<meta property="og:title" content="{{ $pageTitle }}">
 <meta property="og:description" content="{{ $description ?? 'Shreeza Tech - Software Development & Digital Innovation' }}">
 <meta property="og:type" content="{{ $ogType }}">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:image" content="{{ $ogImage ?? asset('og-image.png') }}">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $title ? $title.' | '.config('app.name') : config('app.name') }}">
+<meta name="twitter:title" content="{{ $pageTitle }}">
 <meta name="twitter:description" content="{{ $description ?? 'Shreeza Tech - Software Development & Digital Innovation' }}">
 
 <script type="application/ld+json">{!! json_encode($schemas, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
 @endpush
 
-@push('seo-title')
-{{ $title ? (str_contains($title, config('app.name')) ? $title : $title.' | '.config('app.name')) : config('app.name') }}
-@endpush
+@push('seo-title'){{ $pageTitle }}@endpush

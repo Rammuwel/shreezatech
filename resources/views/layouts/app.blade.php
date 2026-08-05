@@ -9,18 +9,6 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="{{ $metaDescription ?? 'Shreeza Tech - Software Development & Digital Innovation. We build modern software, AI solutions and scalable cloud applications.' }}">
-  <meta name="keywords" content="software development, web development, mobile apps, AI solutions, cloud computing, Laravel, Livewire">
-
-  <meta property="og:title" content="{{ $title ?? config('app.name') }}">
-  <meta property="og:description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:image" content="{{ asset('og-image.png') }}">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ $title ?? config('app.name') }}">
-  <meta name="twitter:description" content="{{ $metaDescription ?? 'Shreeza - Tech Consulting & Software Solutions' }}">
 
   <link rel="canonical" href="{{ url()->current() }}">
   <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('favicon-48x48.png') }}">
@@ -32,6 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <title>@stack('seo-title')</title>
+  @stack('seo-meta')
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @livewireStyles

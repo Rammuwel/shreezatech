@@ -17,7 +17,7 @@
               <small class="text-secondary text-xs font-medium">Welcome To Shreeza</small>
             </div>
 
-            <h1 class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-heading">
+            <h1 class="mt-3 text-4xl sm:text-4xl lg:text-5xl font-bold leading-tight text-heading">
                Engineering the Future of
               <br>
               <span class="bg-gradient-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
@@ -25,38 +25,38 @@
               </span>
             </h1>
 
-            <p class="mt-2 max-w-xl text-base lg:text-lg leading-8 text-text">
+            <p class="mt-4 max-w-xl text-lg lg:text-lg leading-8 text-text">
               We build enterprise software, AI-powered platforms, cloud infrastructure, mobile applications, and digital products that transform businesses worldwide.
             </p>
 
-            <div class="mt-3 flex flex-wrap gap-2 md:gap-3">
+            <div class="mt-5 flex flex-wrap gap-3 md:gap-3">
               <a wire:navigate href="{{ route('contact') }}"
-                class="rounded-full bg-primary px-5 md:px-8 py-2.5 md:py-3.5 text-sm md:font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all">
+                class="rounded-full bg-primary px-6 md:px-8 py-3 md:py-3.5 text-sm md:font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all">
                 Start Your Project
               </a>
               <a wire:navigate href="{{ route('portfolio') }}"
-                class="rounded-full border border-border px-5 md:px-8 py-2.5 md:py-3.5 text-sm md:font-semibold text-heading hover:border-primary transition-all">
+                class="rounded-full border border-border px-6 md:px-8 py-3 md:py-3.5 text-sm md:font-semibold text-heading hover:border-primary transition-all">
                 Explore Work
               </a>
             </div>
           </div>
         </div>
 
-        <div class="relative flex justify-center col-span-3 md:col-span-2 min-h-[14rem] md:min-h-[22rem] lg:min-h-[26rem]">
-          <div class="absolute w-[16rem] h-[16rem] md:w-[24rem] md:h-[24rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
-          <div class="absolute w-[12rem] h-[12rem] md:w-[18rem] md:h-[18rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
-          <div class="absolute w-[14rem] h-[14rem] md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
+        <div class="relative flex justify-center col-span-3 md:col-span-2 min-h-[20rem] md:min-h-[22rem] lg:min-h-[26rem]">
+          <div class="absolute w-[20rem] h-[20rem] md:w-[24rem] md:h-[24rem] lg:w-[30rem] lg:h-[30rem] rounded-full border border-primary/20 animate-spin-slow opacity-90"></div>
+          <div class="absolute w-[15rem] h-[15rem] md:w-[18rem] md:h-[18rem] lg:w-[22rem] lg:h-[22rem] rounded-full border border-secondary/20 animate-spin-slow-reverse opacity-60"></div>
+          <div class="absolute w-[17rem] h-[17rem] md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full bg-primary/20 blur-[120px] opacity-90"></div>
 
           <div class="relative z-0 mt-6 lg:mt-10 will-change-transform"
             :style="'transform:translate(' + (x * 6) + 'px,' + (y * 6) + 'px)'">
-            <img src="{{ asset('logo.webp') }}" class="w-64 lg:w-80 opacity-50" alt="Shreeza">
+            <img src="{{ asset('logo.webp') }}" class="w-72 lg:w-80 opacity-50" alt="Shreeza">
           </div>
 
           @foreach([
-          ['icon' => 'brain', 'title' => 'AI Powered', 'desc' => 'Automation', 'class' => '-left-4 lg:-left-16 top-8 lg:top-16', 'parallax' => -8],
-          ['icon' => 'desktop', 'title' => 'RAD', 'desc' => 'Rapid Application Development', 'class' => '-left-4 lg:-left-16 top-56 lg:top-80', 'parallax' => -15],
-          ['icon' => 'cloud', 'title' => 'Cloud', 'desc' => 'AWS & Azure', 'class' => '-right-4 lg:-right-16 top-24 lg:top-32', 'parallax' => 10],
-          ['icon' => 'shield', 'title' => 'Secure', 'desc' => 'Enterprise Grade', 'class' => '-right-4 lg:-right-8 bottom-12 lg:bottom-20', 'parallax' => 12],
+          ['icon' => 'brain', 'title' => 'AI Powered', 'desc' => 'Automation', 'class' => '-left-4 lg:-left-16 top-10 lg:top-16', 'parallax' => -8],
+          ['icon' => 'desktop', 'title' => 'RAD', 'desc' => 'Rapid Application Development', 'class' => '-left-4 lg:-left-16 top-72 lg:top-80', 'parallax' => -15],
+          ['icon' => 'cloud', 'title' => 'Cloud', 'desc' => 'AWS & Azure', 'class' => '-right-4 lg:-right-16 top-32 lg:top-32', 'parallax' => 10],
+          ['icon' => 'shield', 'title' => 'Secure', 'desc' => 'Enterprise Grade', 'class' => '-right-4 lg:-right-8 bottom-20 lg:bottom-20', 'parallax' => 12],
           ] as $card)
           <div :style="'transform:translate(' + (x * {{ $card['parallax'] }}) + 'px,' + (y * {{ $card['parallax'] }}) + 'px)'" class="absolute z-20 {{ $card['class'] }} will-change-transform">
             <div class="rounded-2xl bg-card/90 border border-border p-3 lg:p-4 backdrop-blur-xl shadow-lg" style="animation:float {{ 12 + $loop->index * 2 }}s ease-in-out {{ $loop->index * 0.8 }}s infinite">

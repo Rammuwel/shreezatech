@@ -5,7 +5,7 @@ use Livewire\Component;
 new class extends Component
 {
    public $title = "Shreeza Tech | Software Development Company";
-   public $metaDescription = "Shreeza Tech (ShreezaTech, Shreeja Tech) - Software Development Company. We build enterprise software, AI-powered platforms, cloud infrastructure, and digital products.";
+   public $metaDescription = "Shreeza Tech - Software Development Company. We build enterprise software, AI-powered platforms, cloud infrastructure, and digital products.";
 };
 ?>
 

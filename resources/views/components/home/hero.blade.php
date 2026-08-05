@@ -18,7 +18,7 @@
             </div>
 
             <h1 class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-heading">
-              <span class="text-primary">Shreeza Tech</span> — Engineering the Future of
+               Engineering the Future of
               <br>
               <span class="bg-gradient-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
                 Digital Innovation

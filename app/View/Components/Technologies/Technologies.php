@@ -171,7 +171,7 @@ class Technologies extends Component
 
         ],
          [
-            'title' => 'Mobile App Devlopment',
+            'title' => 'Mobile App Development',
 
             'items' => [
 

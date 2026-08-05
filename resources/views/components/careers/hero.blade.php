@@ -61,7 +61,7 @@
                     <h1
                         class="portfolio-hero-title mt-3 text-3xl lg:text-5xl font-semibold leading-tight text-heading">
 
-                        Build carees with 
+                        Build careers with 
                 
                         <br>
                         <span

@@ -17,7 +17,7 @@ class Solutions
 
                 'icon' => 'fa-solid fa-heart-pulse',
 
-                'short_description' => '',
+                'short_description' => 'Secure, compliant software solutions for hospitals, clinics, and healthcare providers that improve patient care and streamline operations.',
 
                 'hero' => [
 

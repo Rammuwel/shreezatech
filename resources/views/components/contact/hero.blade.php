@@ -51,7 +51,7 @@
                         <small
                             class="text-secondary ">
 
-                            Our Portfolio
+                            Contact Us
 
                         </small>
                     </div>

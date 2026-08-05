@@ -122,7 +122,7 @@
 
                     <img
                         src="{{ asset('/images/solutions/shreeza-tech-solutions-hero.webp') }}"
-                        class="relative z-0 w-207 hero-float opacity-60 "
+                        class="relative z-0 w-full h-72 sm:h-80 md:h-auto md:w-[30rem] lg:w-[34rem] xl:w-[36rem] object-cover hero-float"
                         alt="Shreeza Tech industry solutions">
 
                     <!-- Floating Cards -->

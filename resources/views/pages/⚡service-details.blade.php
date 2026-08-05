@@ -9,7 +9,11 @@ new class extends Component
 
     public function mount(string $slug)
     {
-        $this->service = Services::find($slug);
+        $service = Services::find($slug);
+
+        abort_unless($service, 404);
+
+        $this->service = $service;
     }
 };
 ?>

@@ -9,7 +9,11 @@ new class extends Component
 
     public function mount(string $slug)
     {
-        $this->category = TechnologyCategories::find($slug);
+        $category = TechnologyCategories::find($slug);
+
+        abort_unless($category, 404);
+
+        $this->category = $category;
     }
 };
 ?>

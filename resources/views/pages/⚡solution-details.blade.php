@@ -9,7 +9,11 @@ new class extends Component
 
     public function mount(string $slug)
     {
-        $this->solution = Solutions::find($slug);
+        $solution = Solutions::find($slug);
+
+        abort_unless($solution, 404);
+
+        $this->solution = $solution;
     }
 };
 ?>

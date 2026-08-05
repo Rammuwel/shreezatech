@@ -17,7 +17,7 @@ class Team extends Component
         [
             "name" => "Ram Muwel",
             "position" => "Founder & CEO",
-            "image" => "images/team/ram.png",
+            "image" => "images/team/shreeza-tech-team-ram.webp",
             "linkedin" => "#",
             "twitter" => "#",
         ],
@@ -25,7 +25,7 @@ class Team extends Component
         [
             "name" => "Lokendra Jatav",
             "position" => "Co-founder & CTO",
-            "image" => "images/team/loken2.png",
+            "image" => "images/team/shreeza-tech-team-loken.webp",
             "linkedin" => "#",
             "twitter" => "#",
         ],
@@ -33,7 +33,7 @@ class Team extends Component
         [
             "name" => "Priya Singh",
             "position" => "Head of Engineering",
-            "image" => "images/team/ananya.png",
+            "image" => "images/team/shreeza-tech-team-ananya.webp",
             "linkedin" => "#",
             "twitter" => "#",
         ],
@@ -41,7 +41,7 @@ class Team extends Component
         [
             "name" => "Neha Verma",
             "position" => "Head of Marketing",
-            "image" => "images/team/priya.png",
+            "image" => "images/team/shreeza-tech-team-priya.webp",
             "linkedin" => "#",
             "twitter" => "#",
         ],

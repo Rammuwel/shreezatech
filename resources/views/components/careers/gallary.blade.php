@@ -24,7 +24,7 @@
 
             <!-- Card -->
             <div class="group relative overflow-hidden rounded-3xl">
-                <img src="/images/career/team.jpg"
+                <img src="/images/career/shreeza-tech-careers-team-collaboration.webp"
                     class="h-80 w-full object-cover transition duration-700 group-hover:scale-110">
 
                 <div
@@ -45,7 +45,7 @@
 
             <!-- Card -->
             <div class="group relative overflow-hidden rounded-3xl">
-                <img src="/images/career/workspace.jpg"
+                <img src="/images/career/shreeza-tech-careers-modern-workspace.webp"
                     class="h-80 w-full object-cover transition duration-700 group-hover:scale-110">
 
                 <div
@@ -66,7 +66,7 @@
 
             <!-- Card -->
             <div class="group relative overflow-hidden rounded-3xl">
-                <img src="/images/career/events.jpg"
+                <img src="/images/career/shreeza-tech-careers-team-events.webp"
                     class="h-80 w-full object-cover transition duration-700 group-hover:scale-110">
 
                 <div
@@ -87,7 +87,7 @@
 
             <!-- Card -->
             <div class="group relative overflow-hidden rounded-3xl">
-                <img src="/images/career/hackathon.jpg"
+                <img src="/images/career/shreeza-tech-careers-innovation-days.webp"
                     class="h-80 w-full object-cover transition duration-700 group-hover:scale-110">
 
                 <div
@@ -108,7 +108,7 @@
 
             <!-- Card -->
             <div class="group relative overflow-hidden rounded-3xl">
-                <img src="/images/career/learning.jpg"
+                <img src="/images/career/shreeza-tech-careers-learning-sessions.webp"
                     class="h-80 w-full object-cover transition duration-700 group-hover:scale-110">
 
                 <div
@@ -129,7 +129,7 @@
 
             <!-- Card -->
             <div class="group relative overflow-hidden rounded-3xl">
-                <img src="/images/career/fun.jpg"
+                <img src="/images/career/shreeza-tech-careers-fun-fridays.webp"
                     class="h-80 w-full object-cover transition duration-700 group-hover:scale-110">
 
                 <div

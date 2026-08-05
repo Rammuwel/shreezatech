@@ -65,7 +65,7 @@ class Portfolio extends Component
     //         "title" => "Fitness Tracking App",
     //         "category" => "Mobile",
     //         "type" => "Mobile Application",
-    //         "image" => "images/projects/project3.jpg",
+    //         "image" => "images/projects/shreeza-tech-investo-fintech-project.webp",
     //         "route" => "fitness-app",
     //     ],
 
@@ -81,7 +81,7 @@ class Portfolio extends Component
     //         "title" => "AI Chat Platform",
     //         "category" => "UI/UX",
     //         "type" => "Web Application",
-    //         "image" => "images/projects/project5.jpg",
+    //         "image" => "images/projects/shreeza-tech-quickpay-payments-project.webp",
     //         "route" => "ai-chat",
     //     ],
     //     [
@@ -96,7 +96,7 @@ class Portfolio extends Component
     //         "title" => "AI Chat Platform",
     //         "category" => "UI/UX",
     //         "type" => "Web Application",
-    //         "image" => "images/projects/project5.jpg",
+    //         "image" => "images/projects/shreeza-tech-quickpay-payments-project.webp",
     //         "route" => "ai-chat",
     //     ],
     //     [
@@ -111,7 +111,7 @@ class Portfolio extends Component
     //         "title" => "AI Chat Platform",
     //         "category" => "UI/UX",
     //         "type" => "Web Application",
-    //         "image" => "images/projects/project5.jpg",
+    //         "image" => "images/projects/shreeza-tech-quickpay-payments-project.webp",
     //         "route" => "ai-chat",
     //     ],
 
@@ -119,7 +119,7 @@ class Portfolio extends Component
     //         "title" => "Food Delivery App",
     //         "category" => "Mobile",
     //         "type" => "Mobile Application",
-    //         "image" => "images/projects/project6.jpg",
+    //         "image" => "images/projects/shreeza-tech-taskly-productivity-project.webp",
     //         "route" => "food-delivery",
     //     ],
 

@@ -115,9 +115,9 @@
 
                     <!-- Image -->
                     <img
-                        src="{{ asset('/images/about/banner.png') }}"
+                        src="{{ asset('/images/about/shreeza-tech-about-hero.webp') }}"
                         class="relative  w-207 hero-float"
-                        alt="Shreeza">
+                        alt="Shreeza Tech about us hero banner">
 
                     <!-- Bottom Fade -->
                     <div class="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent z-20"></div>

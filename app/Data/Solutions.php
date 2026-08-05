@@ -30,7 +30,7 @@ class Solutions
                     'description' =>
                     'We build secure, scalable, and innovative healthcare software solutions that streamline hospital operations, improve patient experiences, automate clinical workflows, and ensure compliance with modern healthcare standards.',
 
-                    'image' => 'images/solutions/healthcare.png',
+                    'image' => 'images/solutions/shreeza-tech-healthcare-software-solution.webp',
 
                 ],
 
@@ -268,7 +268,7 @@ class Solutions
                     'description' =>
                     'We build modern financial software solutions that simplify banking operations, automate financial workflows, strengthen security, and deliver exceptional digital experiences for customers and businesses.',
 
-                    'image' => 'images/solutions/finance.png',
+                    'image' => 'images/solutions/shreeza-tech-finance-software-solution.webp',
 
                 ],
 
@@ -506,7 +506,7 @@ class Solutions
                     'description' =>
                     'We develop intelligent education software that simplifies academic management, enhances student engagement, automates administrative processes, and enables seamless online learning experiences.',
 
-                    'image' => 'images/solutions/education.png',
+                    'image' => 'images/solutions/shreeza-tech-education-software-solution.webp',
 
                 ],
 
@@ -744,7 +744,7 @@ class Solutions
                     'description' =>
                     'We develop powerful real estate software that simplifies property management, automates sales processes, improves customer engagement, and accelerates business growth.',
 
-                    'image' => 'images/solutions/realstate.png',
+                    'image' => 'images/solutions/shreeza-tech-real-estate-software-solution.webp',
 
                 ],
 
@@ -982,7 +982,7 @@ class Solutions
                     'description' =>
                     'We build intelligent manufacturing software that streamlines production planning, inventory management, quality control, procurement, and factory operations while improving efficiency and reducing operational costs.',
 
-                    'image' => 'images/solutions/manufacturing.png',
+                    'image' => 'images/solutions/shreeza-tech-manufacturing-software-solution.webp',
 
                 ],
 
@@ -1220,7 +1220,7 @@ class Solutions
                     'description' =>
                     'We build intelligent retail software solutions that simplify inventory management, automate sales processes, improve customer engagement, and provide real-time business insights for sustainable growth.',
 
-                    'image' => 'images/solutions/retail.png',
+                    'image' => 'images/solutions/shreeza-tech-retail-software-solution.webp',
 
                 ],
 
@@ -1458,7 +1458,7 @@ class Solutions
                     'description' =>
                     'We build intelligent logistics software that streamlines fleet operations, shipment tracking, warehouse management, route optimization, and supply chain visibility.',
 
-                    'image' => 'images/solutions/logistic.png',
+                    'image' => 'images/solutions/shreeza-tech-logistics-software-solution.webp',
 
                 ],
 
@@ -1696,7 +1696,7 @@ class Solutions
                     'description' =>
                     'We develop modern hospitality software that streamlines hotel operations, online bookings, guest management, billing, housekeeping, and customer engagement while enhancing operational efficiency.',
 
-                    'image' => 'images/solutions/hotal.png',
+                    'image' => 'images/solutions/shreeza-tech-hospitality-software-solution.webp',
 
                 ],
 
@@ -1934,7 +1934,7 @@ class Solutions
                     'description' =>
                     'We build intelligent travel software that simplifies tour bookings, hotel reservations, itinerary planning, customer management, online payments, and travel operations while delivering exceptional customer experiences.',
 
-                    'image' => 'images/solutions/travel.png',
+                    'image' => 'images/solutions/shreeza-tech-travel-tourism-software-solution.webp',
 
                 ],
 

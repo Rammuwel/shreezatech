@@ -4,7 +4,7 @@
     <div class="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
       <div class="col-span-2 lg:col-span-2">
         <a href="{{ route('home') }}" wire:navigate class="flex items-center gap-2">
-          <img src="{{ asset('logo.png') }}" class="w-8 sm:w-10" alt="Shreeza">
+          <img src="{{ asset('logo.webp') }}" class="w-8 sm:w-10" alt="Shreeza">
           <div>
             <h2 class="text-lg sm:text-2xl font-bold text-heading">Shreeza</h2>
             <p class="text-[10px] sm:text-xs text-muted">Tech Consulting & Software Solutions</p>

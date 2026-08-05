@@ -16,49 +16,49 @@ class Solutions extends Component
 
         [
             'title' => 'Healthcare',
-            'image' => 'images/solutions/healthcare.png',
+            'image' => 'images/solutions/shreeza-tech-healthcare-software-solution.webp',
             'description' => 'Smart healthcare solutions.'
         ],
 
         [
             'title' => 'Education',
-            'image' => 'images/solutions/education.png',
+            'image' => 'images/solutions/shreeza-tech-education-software-solution.webp',
             'description' => 'Digital learning platforms.'
         ],
 
         [
             'title' => 'Finance',
-            'image' => 'images/solutions/finance.png',
+            'image' => 'images/solutions/shreeza-tech-finance-software-solution.webp',
             'description' => 'Secure financial software.'
         ],
 
         [
             'title' => 'Retail',
-            'image' => 'images/solutions/retail.png',
+            'image' => 'images/solutions/shreeza-tech-retail-software-solution.webp',
             'description' => 'Digital commerce solutions.'
         ],
 
         [
             'title' => 'Logistics',
-            'image' => 'images/solutions/logistic.png',
+            'image' => 'images/solutions/shreeza-tech-logistics-software-solution.webp',
             'description' => 'Supply chain automation.'
         ],
 
         [
             'title' => 'Manufacturing',
-            'image' => 'images/solutions/manufacturing.png',
+            'image' => 'images/solutions/shreeza-tech-manufacturing-software-solution.webp',
             'description' => 'Industry 4.0 solutions.'
         ],
 
         [
             'title' => 'Real Estate',
-            'image' => 'images/solutions/realstate.png',
+            'image' => 'images/solutions/shreeza-tech-real-estate-software-solution.webp',
             'description' => 'Property management systems.'
         ],
 
         [
             'title' => 'Government',
-            'image' => 'images/solutions/goverment.png',
+            'image' => 'images/solutions/shreeza-tech-government-software-solution.webp',
             'description' => 'Digital governance platforms.'
         ],
 

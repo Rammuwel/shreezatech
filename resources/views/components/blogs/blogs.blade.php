@@ -39,42 +39,42 @@
 
             <!-- Cards Here -->
             <x-blogs.card
-                image="{{ asset('images/blog/ai.png') }}"
+                image="{{ asset('images/blog/shreeza-tech-blog-future-of-ai-in-business.webp') }}"
                 category="Technology"
                 title="The Future of AI in Business"
                 date="May 20, 2026"
                 readTime="5 min read" />
 
        <x-blogs.card
-                image="{{ asset('images/blog/cloud.jpg') }}"
+                image="{{ asset('images/blog/shreeza-tech-blog-cloud-computing-business.webp') }}"
                 category="Cloud"
                 title="How Cloud Computing Transforms Businesses"
                 date="May 17, 2026"
                 readTime="6 min read" />
 
              <x-blogs.card
-                image="{{ asset('images/blog/uiux.jpg') }}"
+                image="{{ asset('images/blog/shreeza-tech-blog-ui-ux-design-trends.webp') }}"
                 category="Design"
                 title="UI/UX Design Trends in 2026"
                 date="May 12, 2026"
                 readTime="4 min read" />
 
              <x-blogs.card
-                image="{{ asset('images/blog/digital.jpg') }}"
+                image="{{ asset('images/blog/shreeza-tech-blog-digital-transformation.webp') }}"
                 category="Business"
                 title="Why Digital Transformation Matters"
                 date="May 10, 2026"
                 readTime="5 min read" />
 
              <x-blogs.card
-                image="{{ asset('images/blog/programming.jpg') }}"
+                image="{{ asset('images/blog/shreeza-tech-blog-programming-languages.webp') }}"
                 category="Development"
                 title="Top Programming Languages in 2026"
                 date="May 08, 2026"
                 readTime="6 min read" />
 
             <x-blogs.card
-                image="{{ asset('images/blog/security.jpg') }}"
+                image="{{ asset('images/blog/shreeza-tech-blog-cybersecurity-best-practices.webp') }}"
                 category="Cyber Security"
                 title="Cybersecurity Best Practices for Businesses"
                 date="May 05, 2026"

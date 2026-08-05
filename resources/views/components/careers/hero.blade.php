@@ -114,9 +114,9 @@
                     class="relative flex justify-center col-span-2">
 
                     <img
-                        src="{{ asset('logo.png') }}"
+                        src="{{ asset('logo.webp') }}"
                         class="portfolio-image relative z-0 w-107 hero-float opacity-60 "
-                        alt="Shreeza">
+                        alt="Shreeza Tech careers hero banner">
 
                 </div>
             </div>

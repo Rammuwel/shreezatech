@@ -49,7 +49,7 @@
 
           <div class="relative z-0 mt-6 lg:mt-10 will-change-transform"
             :style="'transform:translate(' + (x * 6) + 'px,' + (y * 6) + 'px)'">
-            <img src="{{ asset('logo.png') }}" class="w-64 lg:w-80 opacity-50" alt="Shreeza">
+            <img src="{{ asset('logo.webp') }}" class="w-64 lg:w-80 opacity-50" alt="Shreeza">
           </div>
 
           @foreach([

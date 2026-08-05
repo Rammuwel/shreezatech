@@ -120,9 +120,9 @@
                     <!-- Logo -->
 
                     <img
-                        src="{{ asset('/images/services/banner.png') }}"
+                        src="{{ asset('/images/services/shreeza-tech-services-hero.webp') }}"
                         class="relative z-0 w-207 hero-float opacity-30 "
-                        alt="Shreeza">
+                        alt="Shreeza Tech software development services">
 
                     <!-- Floating Cards -->
 

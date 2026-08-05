@@ -30,7 +30,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/project3.jpg',
+                'image' => 'images/projects/shreeza-tech-investo-fintech-project.webp',
 
                 'gallery' => [
                     'images/projects/investo/gallery-1.jpg',
@@ -187,7 +187,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered an exceptional fintech platform that exceeded our expectations. The dashboard is intuitive, secure, and has significantly improved how our clients manage their investments.',
 
-                    'image' => 'images/testimonials/client3.jpeg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-3.webp',
 
                 ],
 
@@ -233,7 +233,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/project7.jpg',
+                'image' => 'images/projects/shreeza-tech-medicare-healthcare-project.webp',
 
                 'gallery' => [
                     'images/projects/medicare/gallery-1.jpg',
@@ -390,7 +390,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered an outstanding healthcare management solution that streamlined our daily operations and significantly improved patient care. Their professionalism and technical expertise were exceptional.',
 
-                    'image' => 'images/testimonials/client4.png',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-4.webp',
 
                 ],
 
@@ -435,7 +435,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/project8.jpg',
+                'image' => 'images/projects/shreeza-tech-shophub-ecommerce-project.webp',
 
                 'gallery' => [
                     'images/projects/shophub/gallery-1.jpg',
@@ -592,7 +592,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered an exceptional e-commerce platform that exceeded our expectations. The website is fast, secure, and incredibly easy to manage. Our online sales have grown significantly since launch.',
 
-                    'image' => 'images/testimonials/client1.jpeg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-1.webp',
 
                 ],
 
@@ -638,7 +638,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/project5.jpg',
+                'image' => 'images/projects/shreeza-tech-quickpay-payments-project.webp',
 
                 'gallery' => [
                     'images/projects/quickpay/gallery-1.jpg',
@@ -795,7 +795,7 @@ class Projects
                     'review' =>
                     'Shreeza developed a highly secure and user-friendly payment platform that transformed our business. The application performs flawlessly even during peak transaction hours.',
 
-                    'image' => 'images/testimonials/client6.jpg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-6.webp',
 
                 ],
 
@@ -841,7 +841,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/project6.jpg',
+                'image' => 'images/projects/shreeza-tech-taskly-productivity-project.webp',
 
                 'gallery' => [
                     'images/projects/taskly/gallery-1.jpg',
@@ -998,7 +998,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered a modern SaaS platform that completely transformed how our teams collaborate. The intuitive interface, real-time updates, and reporting tools have significantly improved our productivity.',
 
-                    'image' => 'images/testimonials/client5.jpg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-5.webp',
 
                 ],
 
@@ -1043,7 +1043,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/project9.png',
+                'image' => 'images/projects/shreeza-tech-edunova-edtech-project.webp',
 
                 'gallery' => [
                     'images/projects/edunova/gallery-1.jpg',
@@ -1200,7 +1200,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered an outstanding learning platform that transformed our online education system. The AI-powered recommendations and intuitive interface have significantly improved student engagement and learning outcomes.',
 
-                    'image' => 'images/testimonials/client2.jpg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-2.webp',
 
                 ],
 
@@ -1245,7 +1245,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/resto.png',
+                'image' => 'images/projects/shreeza-tech-tosty-restaurant-project.webp',
 
                 'gallery' => [
                     'images/projects/tosty/gallery-1.jpg',
@@ -1402,7 +1402,7 @@ class Projects
                     'review' =>
                     'Shreeza built a fantastic restaurant management platform that completely modernized our operations. Online orders increased dramatically, and our staff can now manage everything from one dashboard.',
 
-                    'image' => 'images/testimonials/client5.jpg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-5.webp',
 
                 ],
 
@@ -1447,7 +1447,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/property.png',
+                'image' => 'images/projects/shreeza-tech-estatepro-real-estate-project.webp',
 
                 'gallery' => [
                     'images/projects/estatepro/gallery-1.jpg',
@@ -1604,7 +1604,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered a modern real estate platform that simplified our sales process and significantly improved customer engagement. The platform is fast, scalable, and incredibly easy to use.',
 
-                    'image' => 'images/testimonials/client6.jpg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-6.webp',
 
                 ],
 
@@ -1650,7 +1650,7 @@ class Projects
 
                 'status' => 'Completed',
 
-                'image' => 'images/projects/eccom.png',
+                'image' => 'images/projects/shreeza-tech-ecommerce-platform-project.webp',
 
                 'gallery' => [
                     'images/projects/ecommerce/gallery-1.jpg',
@@ -1807,7 +1807,7 @@ class Projects
                     'review' =>
                     'Shreeza delivered an outstanding e-commerce platform that is fast, secure, and incredibly easy to manage. Our online sales have grown significantly since launch.',
 
-                    'image' => 'images/testimonials/client1.jpeg',
+                    'image' => 'images/testimonials/shreeza-tech-testimonial-client-1.webp',
 
                 ],
 

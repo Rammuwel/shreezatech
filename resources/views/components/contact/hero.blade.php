@@ -118,7 +118,7 @@
 
                     <img
                         src="{{ asset('logo.webp') }}"
-                        class="portfolio-image relative z-0 w-full h-72 sm:h-80 md:h-auto md:w-[30rem] lg:w-[34rem] xl:w-[36rem] object-cover hero-float opacity-60 "
+                        class="portfolio-image relative z-0 w-full h-72 sm:h-80 md:h-auto md:w-[30rem] lg:w-[34rem] xl:w-[36rem] object-cover hero-float "
                         alt="Shreeza Tech contact hero banner">
 
                 </div>

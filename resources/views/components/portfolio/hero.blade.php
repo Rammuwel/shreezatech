@@ -114,7 +114,7 @@
 
                     <img
                         src="{{ asset('/images/projects/shreeza-tech-portfolio-hero.webp') }}"
-                        class="portfolio-image relative z-0 w-full h-72 sm:h-80 md:h-auto md:w-[30rem] lg:w-[34rem] xl:w-[36rem] object-cover hero-float opacity-30 "
+                        class="portfolio-image relative z-0 w-full h-72 sm:h-80 md:h-auto md:w-[30rem] lg:w-[34rem] xl:w-[36rem] object-cover hero-float "
                         alt="Shreeza Tech portfolio hero banner">
 
                 </div>

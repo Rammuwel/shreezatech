@@ -56,7 +56,7 @@
           </a>
         </div>
 
-        <img src="{{ asset('images/shreeza-tech-global-network.webp') }}" alt="Shreeza Tech global software development network" class="absolute -bottom-8 -right-20 lg:-right-40 w-60 lg:w-80 opacity-60 pointer-events-none">
+      
       </div>
 
     </div>

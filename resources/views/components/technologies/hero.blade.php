@@ -113,7 +113,7 @@
                     <img
                         src="{{ asset('/images/technology/shreeza-tech-technology-hero.webp') }}"
                         width="1152" height="768"
-                        class="portfolio-image relative z-0 w-full h-56 sm:h-64 md:h-auto md:max-w-[30rem] lg:max-w-[32rem] xl:max-w-[34rem] mx-auto object-cover hero-float opacity-70"
+                        class="portfolio-image relative z-0 w-full h-auto md:max-w-[34rem] lg:max-w-[38rem] xl:max-w-[42rem] mx-auto object-cover opacity-70 -scale-x-100"
                         alt="Shreeza Tech technology expertise hero banner">
 
                 </div>

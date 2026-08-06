@@ -120,37 +120,30 @@ document.addEventListener('alpine:init', () => {
     destroy() { clearInterval(this.autoplayTimer); window.removeEventListener('resize', this._resizeHandler); }
   }));
 
-  Alpine.data('mouseParallax', () => ({
-    x: 0,
-    y: 0,
-    targetX: 0,
-    targetY: 0,
+  Alpine.data('navigationProgress', () => ({
+    visible: false,
+    progress: 0,
+    timer: null,
 
-    move(e) {
-      const rect = this.$el.getBoundingClientRect();
-      this.targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      this.targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-      if (!this._raf) this._raf = requestAnimationFrame(() => this.tick());
-    },
-
-    leave() {
-      this.targetX = 0;
-      this.targetY = 0;
-      if (!this._raf) this._raf = requestAnimationFrame(() => this.tick());
-    },
-
-    tick() {
-      this._raf = null;
-      const dx = this.targetX - this.x;
-      const dy = this.targetY - this.y;
-      if (Math.abs(dx) > 0.001 || Math.abs(dy) > 0.001) {
-        this.x += dx * 0.12;
-        this.y += dy * 0.12;
-        this._raf = requestAnimationFrame(() => this.tick());
-      } else {
-        this.x = this.targetX;
-        this.y = this.targetY;
-      }
+    init() {
+      const start = () => {
+        this.visible = true;
+        this.progress = 10;
+        clearInterval(this.timer);
+        this.timer = setInterval(() => {
+          this.progress = Math.min(this.progress + Math.random() * 12 + 4, 90);
+        }, 350);
+      };
+      const finish = () => {
+        clearInterval(this.timer);
+        this.progress = 100;
+        setTimeout(() => {
+          this.visible = false;
+          this.progress = 0;
+        }, 300);
+      };
+      document.addEventListener('livewire:navigating', start);
+      document.addEventListener('livewire:navigated', finish);
     }
   }));
 

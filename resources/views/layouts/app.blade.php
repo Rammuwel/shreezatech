@@ -19,7 +19,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"></noscript>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"></noscript>
@@ -31,6 +32,10 @@
   @livewireStyles
 </head>
 <body class="bg-surface text-text font-sans antialiased page-transition" x-data="smoothScroll">
+
+  <div x-data="navigationProgress" class="fixed top-0 left-0 right-0 z-[10000] h-1" aria-hidden="true">
+    <div x-show="visible" x-cloak class="h-full bg-primary shadow-[0_0_10px_rgba(37,99,235,0.6)] transition-[width] duration-200 ease-out" :style="'width: ' + progress + '%'"></div>
+  </div>
 
   <div wire:loading class="fixed top-4 right-4 z-[9999]">
     <div class="flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 shadow-lg">

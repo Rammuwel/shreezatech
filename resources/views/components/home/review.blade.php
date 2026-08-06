@@ -13,7 +13,7 @@
       </div>
 
       <div class="relative">
-        <button @click="prevGroup()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 lg:-translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
+        <button @click="prevGroup()" aria-label="Previous testimonials" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 lg:-translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
           <x-svg.index icon="arrow-left" class="w-4 h-4 text-text" />
         </button>
 
@@ -23,9 +23,9 @@
               <div class="min-w-[100%] md:min-w-[50%] lg:min-w-[33.33%] px-2">
                 <div class="rounded-2xl border border-border bg-card/70 p-4 h-full">
                   <div class="flex items-center gap-3 mb-3">
-                    <img :src="'{{ asset('') }}' + item.image" :alt="item.name" class="w-11 h-11 rounded-full object-cover">
+                    <img :src="'{{ asset('') }}' + item.image" :alt="item.name" loading="lazy" class="w-11 h-11 rounded-full object-cover">
                     <div>
-                      <h4 class="font-semibold text-heading text-sm" x-text="item.name"></h4>
+                      <p class="font-semibold text-heading text-sm" x-text="item.name"></p>
                       <p class="text-xs text-muted" x-text="item.designation"></p>
                     </div>
                   </div>
@@ -41,14 +41,14 @@
           </div>
         </div>
 
-        <button @click="nextGroup()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 lg:translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
+        <button @click="nextGroup()" aria-label="Next testimonials" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 lg:translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
           <x-svg.index icon="arrow-right" class="w-4 h-4 text-text" />
         </button>
       </div>
 
       <div class="flex justify-center gap-2 mt-6">
         <template x-for="i in groups" :key="i">
-          <button @click="goToGroup(i - 1)" class="h-2 rounded-full transition-all duration-300"
+          <button @click="goToGroup(i - 1)" :aria-label="'Go to testimonial group ' + i" :aria-current="(i - 1) === group ? 'true' : 'false'" class="h-2 rounded-full transition-all duration-300"
             :class="(i - 1) === group ? 'w-8 bg-primary' : 'w-2 bg-border hover:bg-muted'"></button>
         </template>
       </div>

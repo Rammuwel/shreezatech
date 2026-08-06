@@ -20,7 +20,7 @@
               <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full {{ $step['color'] }} text-white shadow-lg transition-transform group-hover:scale-110 duration-300">
                 <x-svg.index :icon="$step['icon']" class="w-6 h-6" />
               </div>
-              <h4 class="mt-4 font-bold text-heading">{{ $step['title'] }}</h4>
+              <h3 class="mt-4 font-bold text-heading">{{ $step['title'] }}</h3>
               <p class="mt-2 text-sm leading-6 text-muted">{{ $step['desc'] }}</p>
             </div>
             @endforeach

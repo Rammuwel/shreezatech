@@ -32,7 +32,7 @@
         @foreach($projects as $project)
 
         <a
-            href="javascript:void[0]"
+            href="{{ route('portfolio.show', $project['slug']) }}"
             wire:navigate
             class="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 hover:-translate-y-2 hover:border-primary">
 
@@ -40,6 +40,8 @@
 
                 <img
                     src="{{ asset($project['image']) }}"
+                    loading="lazy"
+                    alt="{{ $project['title'] }}"
                     class="h-56 w-full object-cover transition duration-700 group-hover:scale-110">
 
             </div>

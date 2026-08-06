@@ -14,6 +14,7 @@
         <img
             src="{{ asset($image) }}"
             alt="{{ $title }}"
+            loading="lazy"
             class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
             onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>

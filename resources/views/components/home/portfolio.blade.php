@@ -13,7 +13,7 @@
       </div>
 
       <div class="relative">
-        <button @click="prevGroup()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 lg:-translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
+        <button @click="prevGroup()" aria-label="Previous projects" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 lg:-translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
           <x-svg.index icon="arrow-left" class="w-4 h-4 text-text" />
         </button>
 
@@ -24,7 +24,7 @@
                 <a :href="'/portfolio/' + project.route" wire:navigate
                   class="group block rounded-2xl border border-border bg-card/70 p-3 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_15px_40px_rgba(37,99,235,0.15)]">
                   <div class="relative overflow-hidden rounded-xl">
-                    <img :src="'{{ asset('') }}' + project.image" :alt="project.title"
+                    <img :src="'{{ asset('') }}' + project.image" :alt="project.title" loading="lazy"
                       class="h-48 w-full rounded-xl object-cover transition duration-700 group-hover:scale-105">
                     <span class="absolute bottom-3 left-3 rounded-full px-3 py-1 text-[11px] font-semibold"
                       :class="project.color === 'primary' ? 'bg-primary text-white' : 'bg-secondary text-background'"
@@ -43,14 +43,14 @@
           </div>
         </div>
 
-        <button @click="nextGroup()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 lg:translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
+        <button @click="nextGroup()" aria-label="Next projects" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 lg:translate-x-6 z-20 h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary transition-colors">
           <x-svg.index icon="arrow-right" class="w-4 h-4 text-text" />
         </button>
       </div>
 
       <div class="flex justify-center gap-2 mt-6">
         <template x-for="i in groups" :key="i">
-          <button @click="goToGroup(i - 1)" class="h-2 rounded-full transition-all duration-300"
+          <button @click="goToGroup(i - 1)" :aria-label="'Go to project group ' + i" :aria-current="(i - 1) === group ? 'true' : 'false'" class="h-2 rounded-full transition-all duration-300"
             :class="(i - 1) === group ? 'w-8 bg-primary' : 'w-2 bg-border hover:bg-muted'"></button>
         </template>
       </div>

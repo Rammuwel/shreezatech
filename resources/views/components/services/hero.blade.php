@@ -1,5 +1,5 @@
 <section class="portfolio-hero overflow-hidden  bg-background">
-    <div class="relative mt-20 py-5 flex items-center">
+    <div class="relative mt-20 flex items-center">
 
         <!-- ================= Background ================= -->
 
@@ -23,38 +23,32 @@
             <div
                 class="absolute bottom-0 right-0 w-125 h-125  bg-linear-to-r to-transparent from-background  to-b rounded-full blur-[680px]">
             </div>
-           
+
 
         </div>
 
         <!-- ================= Container ================= -->
 
-        <div
-            class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 to-background">
-
-            
-
-
-            <div
-                class="grid lg:grid-cols-4 gap-10 items-center">
+        <div class="relative py-5 z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-6 gap-6 md:gap-12 lg:gap-20 items-center">
 
                 <!-- ================================================= -->
                 <!-- LEFT -->
                 <!-- ================================================= -->
 
-                <div class="col-span-2">
+              <div class="col-span-3 md:relative md:z-10">
 
                     <!-- Badge -->
 
                     <div
                         class="portfolio-hero-badge  inline-flex items-center gap-3  px-3 py-1">
 
-                        
+
 
                         <small
                             class="text-secondary ">
 
-                             Our Services
+                            Our Services
 
                         </small>
                     </div>
@@ -64,12 +58,12 @@
                     <h1
                         class="portfolio-hero-title mt-3 text-3xl lg:text-5xl font-semibold leading-tight text-heading">
 
-                        Services Built to
+                        Services Built to Move
 
                         <br>
                         <span
                             class="bg-linear-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
-                            Move Your Business Forward
+                             Your Business Forward
 
                         </span>
 
@@ -98,7 +92,7 @@
                         </a>
 
                         <a
-        href="{{ url('/portfolio') }}"
+                            href="{{ url('/portfolio') }}"
                             class="rounded-full border border-border px-8 py-4 font-semibold text-heading hover:border-primary">
 
                             Explore Work
@@ -112,121 +106,120 @@
                 <!-- RIGHT -->
                 <!-- ================================================= -->
 
-                <div
-                    class="relative flex justify-center col-span-2 mb-2">
+                 <div class="relative flex justify-center col-span-3 md:col-span-3">
 
                     <img
                         src="{{ asset('/images/services/shreeza-tech-services-hero.webp') }}"
-                        width="1152" height="768"
-                        class="portfolio-image relative z-0 w-full h-56 sm:h-64 md:h-auto md:max-w-[30rem] lg:max-w-[32rem] xl:max-w-[34rem] mx-auto object-cover hero-float opacity-70"
+
+                        class="portfolio-image relative z-0 w-full h-auto md:max-w-136 lg:max-w-152 xl:max-w-2xl mx-auto object-cover opacity-70 -scale-x-100"
                         alt="Shreeza Tech software services hero banner">
 
-                        
+
 
                 </div>
             </div>
 
         </div>
     </div>
-       <div class="max-w-7xl mt-4 mx-auto px-4 sm:px-6 lg:px-8 mb-3">
+    <div class="max-w-7xl mt-4 mx-auto px-4 sm:px-6 lg:px-8 mb-3">
         <div class="border-border bg-card rounded-2xl">
 
-        <!-- Features -->
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">
+            <!-- Features -->
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">
 
-            <!-- Card -->
-            <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
+                <!-- Card -->
+                <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
 
-                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
+                    <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                    <i class="fa-solid fa-laptop-code"></i>
+                        <i class="fa-solid fa-laptop-code"></i>
 
-                </div>
+                    </div>
 
-                <h3 class="mt-2 text-xl font-semibold text-heading">
+                    <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                    End-to-End Development
+                        End-to-End Development
 
-                </h3>
+                    </h3>
 
-                <p class=" text-muted leading-7 text-center justify-center">
+                    <p class=" text-muted leading-7 text-center justify-center">
 
-                    From requirement to release, we own the entire product lifecycle with quality baked in.
+                        From requirement to release, we own the entire product lifecycle with quality baked in.
 
-                </p>
-
-            </div>
-
-            <!-- Card -->
-            <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
-
-                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
-
-                    <i class="fa-solid fa-robot"></i>
+                    </p>
 
                 </div>
 
-                <h3 class="mt-2 text-xl font-semibold text-heading">
+                <!-- Card -->
+                <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
 
-                    AI & Automation Ready
+                    <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                </h3>
+                        <i class="fa-solid fa-robot"></i>
 
-                <p class=" text-muted leading-7 text-center justify-center">
+                    </div>
 
-                    Intelligent features and workflow automation that scale with your business.
+                    <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                </p>
+                        AI & Automation Ready
 
-            </div>
+                    </h3>
 
-            <!-- Card -->
-            <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
+                    <p class=" text-muted leading-7 text-center justify-center">
 
-                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
+                        Intelligent features and workflow automation that scale with your business.
 
-                    <i class="fa-solid fa-bolt"></i>
-
-                </div>
-
-                <h3 class="mt-2 text-xl font-semibold text-heading">
-
-                    Agile Delivery
-
-                </h3>
-
-                <p class=" text-muted leading-7 text-center justify-center">
-
-                    Transparent sprints and predictable milestones, so you always know what's next.
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-            <div class="group flex flex-col items-center justify-center   transition-all duration-500 ">
-
-                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
-
-                    <i class="fa-solid fa-headset"></i>
+                    </p>
 
                 </div>
 
-                <h3 class="mt-2 text-xl font-semibold text-heading">
+                <!-- Card -->
+                <div class="group flex flex-col items-center justify-center  transition-all duration-500 border-r border-border">
 
-                    Ongoing Support
+                    <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
 
-                </h3>
+                        <i class="fa-solid fa-bolt"></i>
 
-                <p class=" text-muted leading-7 text-center justify-center">
+                    </div>
 
-                    Monitoring, maintenance, and improvements long after launch.
+                    <h3 class="mt-2 text-xl font-semibold text-heading">
 
-                </p>
+                        Agile Delivery
+
+                    </h3>
+
+                    <p class=" text-muted leading-7 text-center justify-center">
+
+                        Transparent sprints and predictable milestones, so you always know what's next.
+
+                    </p>
+
+                </div>
+
+                <!-- Card -->
+                <div class="group flex flex-col items-center justify-center   transition-all duration-500 ">
+
+                    <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary text-2xl">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                    </div>
+
+                    <h3 class="mt-2 text-xl font-semibold text-heading">
+
+                        Ongoing Support
+
+                    </h3>
+
+                    <p class=" text-muted leading-7 text-center justify-center">
+
+                        Monitoring, maintenance, and improvements long after launch.
+
+                    </p>
+
+                </div>
 
             </div>
-
-        </div>
 
         </div>
 

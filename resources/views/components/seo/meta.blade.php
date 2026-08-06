@@ -47,6 +47,12 @@ $schemas[] = [
   'alternateName' => ['Shreeza', 'Shreezatech'],
   'url' => $appUrl,
   'logo' => asset('logo.png'),
+  'founder' => [
+    '@type' => 'Person',
+    'name' => 'Ram Muwel',
+    'jobTitle' => 'Founder & CEO',
+    'url' => $appUrl . '/about',
+  ],
   'hasPart' => [
     $appUrl . '/services',
     $appUrl . '/solutions',
@@ -59,6 +65,21 @@ $schemas[] = [
     '@type' => 'ContactPoint',
     'telephone' => $phone,
     'contactType' => 'sales',
+  ],
+];
+
+$schemas[] = [
+  '@context' => 'https://schema.org',
+  '@type' => 'Person',
+  'name' => 'Ram Muwel',
+  'jobTitle' => 'Founder & CEO',
+  'description' => 'Ram Muwel is the founder and CEO of Shreeza Tech, a software development company building enterprise software, AI-powered platforms, cloud infrastructure, and digital products.',
+  'url' => $appUrl . '/about',
+  'image' => asset('images/team/shreeza-tech-team-ram.webp'),
+  'worksFor' => [
+    '@type' => 'Organization',
+    'name' => 'Shreeza Tech',
+    'url' => $appUrl,
   ],
 ];
 

@@ -1,5 +1,5 @@
 <section class="relative max-w-7xl m-auto py-5 lg:py-10">
-    <div class="container">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class=" flex flex-wrap items-center  gap-4">
 
@@ -33,7 +33,7 @@
     </div>
 
 
-    <div class="container mt-10">
+    <div class="container mx-auto mt-10 px-4 sm:px-6 lg:px-8">
 
         <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 

@@ -4,7 +4,7 @@
 
 <section class="py-24">
 
-    <div class="container">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {{-- Section Heading --}}
         <div class="mx-auto max-w-3xl text-center">

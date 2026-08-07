@@ -1,7 +1,7 @@
 @props(['category'])
 
 <section class="relative py-5">
-    <div class="container relative m-auto">
+    <div class="container relative m-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto mb-10 max-w-3xl text-center">
             <span class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary">
                 <i class="fa-solid fa-layer-group"></i>

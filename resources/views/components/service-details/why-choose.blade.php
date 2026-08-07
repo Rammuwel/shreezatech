@@ -2,7 +2,7 @@
 
     
 
-    <div class="container relative m-auto">
+    <div class="container relative m-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section Heading -->
 

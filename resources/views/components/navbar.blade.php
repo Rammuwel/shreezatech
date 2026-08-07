@@ -336,6 +336,10 @@ $navItems = [
               {{ $subItem['title'] }}
             </a>
             @endforeach
+            <a wire:navigate href="{{ route($item['route']) }}" class="mt-1 flex items-center justify-between gap-2 p-2.5 rounded-lg text-secondary font-semibold transition-colors text-sm" @click="open = false">
+              View All {{ $item['title'] }}
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
         @else

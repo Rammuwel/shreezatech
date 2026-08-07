@@ -4,7 +4,7 @@
 
     
 
-    <div class="container relative mx-auto">
+    <div class="container relative mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section Heading -->
         <div class="mx-auto mb-10 max-w-3xl text-center">

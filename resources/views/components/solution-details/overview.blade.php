@@ -2,7 +2,7 @@
 
 <section id="overview" class="py-10">
 
-    <div class="container m-auto">
+    <div class="container m-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid items-center gap-10 lg:grid-cols-2">
 

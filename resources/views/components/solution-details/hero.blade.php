@@ -1,11 +1,11 @@
 @props(['solution'])
 
-<section class="py-10 hero overflow-hidden  bg-background">
-    <div class="relative mt-10  flex items-center">
+<section class="portfolio-hero overflow-hidden bg-background">
+    <div class="relative mt-20 flex items-center">
 
-       
+        <!-- ================= Background ================= -->
 
-     <div class="absolute inset-0">
+        <div class="absolute inset-0">
 
             <!-- Grid -->
 
@@ -17,43 +17,40 @@
 
             <!-- Blue Glow -->
             <div
-                class="absolute top-20 left-0 w-96 h-96  bg-linear-to-r from-primary/10 to-transparent  rounded-full blur-[140px]">
+                class="absolute top-20 left-0 w-96 h-96 bg-linear-to-r from-primary/10 to-transparent rounded-full blur-[140px]">
             </div>
 
             <!-- Gold Glow -->
 
             <div
-                class="absolute bottom-0 right-0 w-125 h-125  bg-linear-to-r to-transparent from-background  to-b rounded-full blur-[680px]">
+                class="absolute bottom-0 right-0 w-125 h-125 bg-linear-to-r to-transparent from-background rounded-full blur-[680px]">
             </div>
-           
 
         </div>
+
         <!-- ================= Container ================= -->
 
-        <div
-            class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-
-            <div
-                class="grid lg:grid-cols-4 gap-20 items-center">
+        <div class="relative py-5 z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-6 gap-6 md:gap-12 lg:gap-20 items-center">
 
                 <!-- ================================================= -->
                 <!-- LEFT -->
                 <!-- ================================================= -->
 
-                <div class="col-span-2">
+                <div class="col-span-3 md:relative md:z-10">
 
-                    <!-- Badge -->
+                    <!-- Breadcrumb -->
 
-                    <nav class="mb-3 flex items-center gap-3 text-sm text-muted">
+                    <nav class="mb-4 flex items-center flex-wrap gap-3 text-sm text-muted">
 
-                        <a  wire:navigate href="{{ route('home') }}" class="transition text-secondary hover:text-secondary">
+                        <a wire:navigate href="{{ route('home') }}" class="transition text-secondary hover:text-secondary">
                             Home
                         </a>
 
                         <i class="fa-solid fa-chevron-right text-xs"></i>
 
-                        <a  wire:navigate href="{{ route('solutions') }}" class="transition text-secondary hover:text-secondary">
-                            solutions
+                        <a wire:navigate href="{{ route('solutions') }}" class="transition text-secondary hover:text-secondary">
+                            Solutions
                         </a>
 
                         <i class="fa-solid fa-chevron-right text-xs"></i>
@@ -64,19 +61,34 @@
 
                     </nav>
 
+                    <!-- Badge -->
+
+                    <div class="portfolio-hero-badge inline-flex items-center gap-3 px-3 py-1">
+
+                        <small class="text-secondary">
+                            Our Solutions
+                        </small>
+                    </div>
+
                     <!-- Heading -->
 
-                    <h1
-                        class="hero-title mt-3 text-3xl lg:text-5xl font-semibold leading-tight text-heading">
+                    <h1 class="portfolio-hero-title mt-3 text-3xl lg:text-5xl font-semibold leading-tight text-heading">
 
-                         {{ $solution['hero']['title'] }}
-                      
+                        {{ $solution['hero']['title'] }}
+
+                        <br>
+                        <span
+                            class="bg-linear-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
+
+                            {{ $solution['hero']['subtitle'] }}
+
+                        </span>
+
                     </h1>
 
                     <!-- Description -->
 
-                    <p
-                        class="hero-description mt-3 max-w-xl text-lg leading-8 text-text">
+                    <p class="portfolio-hero-description mt-8 max-w-xl text-lg leading-8 text-text">
 
                         {{ $solution['hero']['description'] }}
 
@@ -84,8 +96,7 @@
 
                     <!-- Buttons -->
 
-                    <div
-                        class="hero-buttons mt-5 flex flex-wrap gap-5">
+                    <div class="portfolio-hero-buttons mt-10 flex flex-wrap gap-5">
 
                         <a
                             wire:navigate
@@ -97,7 +108,7 @@
                         </a>
 
                         <a
-                             wire:navigate
+                            wire:navigate
                             href="{{ route('contact') }}"
                             class="rounded-full border border-border px-8 py-4 font-semibold text-heading hover:border-primary">
 
@@ -107,33 +118,23 @@
 
                     </div>
 
-                    <!-- Stats -->
-
                 </div>
 
                 <!-- ================================================= -->
                 <!-- RIGHT -->
                 <!-- ================================================= -->
 
-                <div
-                    class="relative flex justify-center col-span-2">
-
-                    <!-- Logo -->
+                <div class="relative flex justify-center col-span-3">
 
                     <img
                         src="{{ asset('/images/solutions/shreeza-tech-solutions-hero.webp') }}"
                         width="948" height="632"
-                        class="portfolio-image relative z-0 w-full h-auto md:max-w-[34rem] lg:max-w-[38rem] xl:max-w-[42rem] mx-auto object-cover opacity-70"
+                        class="portfolio-image relative z-0 w-full h-auto md:max-w-136 lg:max-w-152 xl:max-w-2xl mx-auto object-cover opacity-70 -scale-x-100"
                         alt="Shreeza Tech industry solutions">
 
-                    <!-- Floating Cards -->
-
-                 
                 </div>
 
             </div>
-
         </div>
     </div>
-   
 </section>

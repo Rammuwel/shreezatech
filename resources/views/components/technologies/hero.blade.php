@@ -121,7 +121,7 @@
 
         </div>
     </div>
-    <div class="max-w-7xl mt-4 mx-auto  border-border bg-card/30 rounded-2xl mb-3 ">
+    <div class="max-w-7xl mt-4 mx-auto  border-border bg-card/30 rounded-2xl mb-3 px-4 sm:px-6 lg:px-8">
 
         <!-- Features -->
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-3">

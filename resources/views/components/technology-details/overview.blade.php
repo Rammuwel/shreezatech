@@ -1,7 +1,7 @@
 @props(['category'])
 
 <section id="overview" class="relative py-10 overflow-hidden">
-    <div class="container relative max-w-7xl m-auto">
+    <div class="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-16 lg:grid-cols-2">
             <div>
                 <span class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary">

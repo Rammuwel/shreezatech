@@ -1,4 +1,4 @@
-<section id="contact-form" class="relative mt-20 py-16 sm:py-20 overflow-hidden">
+<section id="contact-form" class="relative mt-10 sm:mt-20 py-16 sm:py-20 overflow-hidden">
 
     <!-- Decorative Glows -->
     <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-primary/5 blur-[120px]"></div>

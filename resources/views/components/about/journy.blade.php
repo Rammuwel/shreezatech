@@ -48,7 +48,7 @@
 
                     <!-- Card -->
                     <div x-intersect="animate-fade-in-up" style="animation-delay: {{ $loop->index * 120 }}ms"
-                        class="group opacity-0 relative overflow-hidden rounded-2xl border border-border bg-card p-6 h-full transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:shadow-2xl hover:shadow-primary/10">
+                        class="group opacity-0 relative overflow-hidden rounded-2xl border border-border bg-card p-6 h-full ml-10 lg:ml-0 transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:shadow-2xl hover:shadow-primary/10">
 
                         <!-- Top Accent -->
                         <div class="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-primary to-secondary opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>

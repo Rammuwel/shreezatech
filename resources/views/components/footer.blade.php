@@ -112,14 +112,6 @@
       </div>
 
       <p class="text-xs text-muted">&copy; {{ date('Y') }} shreezatech. All rights reserved.</p>
-
-      <button
-        x-data
-        aria-label="Back to top"
-        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="flex h-9 w-9 items-center justify-center rounded-full bg-card border border-border text-muted hover:text-heading hover:border-primary transition-all group">
-        <svg class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"/></svg>
-      </button>
     </div>
   </div>
 </footer>

@@ -6,7 +6,7 @@
     <div class="container relative mx-auto px-4 lg:px-8">
 
         <div
-            class="relative overflow-hidden rounded-[32px] border border-white/10 bg-card px-8 py-16 lg:px-16">
+            class="relative overflow-hidden rounded-[32px] border border-white/10 bg-card px-4 py-10 sm:px-8 sm:py-16 lg:px-16">
 
             <!-- Decorative Circle -->
             <div

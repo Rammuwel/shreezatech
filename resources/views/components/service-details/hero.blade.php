@@ -31,13 +31,13 @@
         <!-- ================= Container ================= -->
 
         <div class="relative py-5 z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-6 gap-6 md:gap-12 lg:gap-20 items-center">
+            <div class="grid md:grid-cols-8 gap-10 md:gap-5  items-center">
 
                 <!-- ================================================= -->
                 <!-- LEFT -->
                 <!-- ================================================= -->
 
-                <div class="col-span-3 md:relative md:z-10">
+                <div class=" col-span-1  md:col-span-5 md:relative md:z-10">
 
                     <!-- Breadcrumb -->
 
@@ -61,14 +61,7 @@
 
                     </nav>
 
-                    <!-- Badge -->
-
-                    <div class="portfolio-hero-badge inline-flex items-center gap-3 px-3 py-1">
-
-                        <small class="text-secondary">
-                            Our Services
-                        </small>
-                    </div>
+                   
 
                     <!-- Heading -->
 
@@ -76,7 +69,7 @@
 
                         {{ $service['hero']['title'] }}
 
-                        <br>
+                       
                         <span
                             class="bg-linear-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
 
@@ -124,12 +117,12 @@
                 <!-- RIGHT -->
                 <!-- ================================================= -->
 
-                <div class="relative flex justify-center col-span-3">
+                <div class="relative flex justify-center col-span-1  md:col-span-3">
 
                     <img
                         src="{{ asset('/images/services/shreeza-tech-services-hero.webp') }}"
                         width="1152" height="768"
-                        class="portfolio-image relative z-0 w-full h-auto md:max-w-136 lg:max-w-152 xl:max-w-2xl mx-auto object-cover opacity-70 -scale-x-100"
+                        class="portfolio-image relative z-0  h-auto md:max-w-136 lg:max-w-152 xl:max-w-2xl mx-auto object-cover opacity-70 -scale-x-100"
                         alt="Shreeza Tech software development services">
 
                 </div>
